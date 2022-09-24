@@ -22,8 +22,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  <link href="<?php echo base_url(); ?> assets/css/authentication/form-2.css" rel="stylesheet" type="text/css" />
     <!-- BEGIN PAGE LEVEL STYLE -->
     <link href="<?php echo base_url(); ?>plugins/flatpickr/custom-flatpickr.css" rel="stylesheet" type="text/css">
+      <link href="<?php echo base_url(); ?>assets/css/pages/helpdesk.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo base_url(); ?>assets/css/forms/theme-checkbox-radio.css" rel="stylesheet" type="text/css" />
-    <link href="assets/css/components/custom-modal.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url(); ?>assets/css/components/custom-modal.css" rel="stylesheet" type="text/css" />
        <style>
         .widget { margin-bottom: 10px; }
         .widget-content-area { border-radius: 6px; }
@@ -31,6 +32,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             z-index: 1059;
         }
     </style>
-    
+       <script src="<?php echo base_url(); ?>assets/js/libs/jquery-3.1.1.min.js"></script>
 </head>
 <body >

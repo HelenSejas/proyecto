@@ -284,4 +284,6 @@ $indice ++;
 	</div>
 </div>
 </div>
+
+
 <img src="<?php echo base_url(); ?>assets/img/img1.jpg" width="446" class="rounded float-left"><img src="<?php echo base_url(); ?>assets/img/img1.jpg" width="446" class="rounded float-left"><img src="<?php echo base_url(); ?>assets/img/img1.jpg" width="446" class="rounded float-left">

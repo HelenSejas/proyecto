@@ -7,9 +7,9 @@
             <div class="form-form-wrap">
                 <div class="form-container">
                     <div class="form-content">
-<img src="<?php echo base_url(); ?> assets/img/usuario.png" width="110" >
+
                         <h1 class="">LOGIN </h1>
-                       
+                      <a class="navbar-brand" href="index.html"><img src="<?php echo base_url(); ?>assets/img/usuario.png" width="80">
                         <form class="text-left">
                             <div class="form d-grid my-4">
 
@@ -26,7 +26,7 @@
                                
                                     <div class="field-wrapper">
                                            <?php echo form_open_multipart('usuarios/index'); ?>
-                        <button type="submit" class="btn btn-outline-warning">ingresar</button>
+                        <button type="submit" class="btn btn-warning">ingresar</button>
                         <?php echo form_close(); ?>
                                     </div>
                                     
