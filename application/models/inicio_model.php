@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class estudiante_model extends CI_Model {
+class inicio_model extends CI_Model {
 
 	
 	public function listaestudiantes()
@@ -10,6 +10,13 @@ class estudiante_model extends CI_Model {
 		$this->db->from('estudiante');
 		return $this->db->get();
 	}
-
+	public function validar($usuario,$password)
+	{
+		$this->db->select('*');
+		$this->db->from('entrenador');
+		$this->db->where('usuario',$usuario);
+		$this->db->where('password',$password);
+		return $this->db->get();
+	}
 }
 ?>
