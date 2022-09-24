@@ -18,5 +18,17 @@ public function indexE()
 		$this->load->view('listaEntrenador');
 		$this->load->view('include/fooder');
 	}
+	public function indexUsuario()
+	{
+		if ($this session->userdata('usuario')){
+			redirect ('estudiantes/index', refresh);
+		}
+		else{
+		$this->load->view('include/header');
+		$this->load->view('login');
+		$this->load->view('include/fooder');
+		}
+	}
+	
 
 	}
