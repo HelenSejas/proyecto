@@ -78,20 +78,19 @@
                     <li class="menu single-menu active">
                         <a href="#app" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">
                             <div class="">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-cpu"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+                              
                                 <span>Pagos</span>
                             </div>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </a>
                         <ul class="collapse submenu list-unstyled" id="app" data-parent="#topAccordion">
                             <li>
-                                <a href="apps_chat.html">mensualidades</a>
+                                 <?php echo form_open_multipart('usuarios/index'); ?>
+                                 <button type="submit" class="btn btn-outline-warning">Mesualidades</button>
+                                 <?php echo form_close(); ?>
                             </li>
                             <li>
-                                <a href="apps_todoList.html">Historial</a>
-                            </li>
-                            <li>
-                                <a href="apps_notes.html">pago por sesion</a>
+                                 <button type="submit" class="btn btn-outline-warning">Pago por sesion</button>
                             </li>
                         </ul>
                     </li>
@@ -153,7 +152,9 @@
                         </a>
                         <ul class="collapse submenu list-unstyled" id="page"  data-parent="#topAccordion">
                             <li>
-                                <a href="pages_helpdesk.html"> Helpdesk </a>
+                               <?php echo form_open_multipart('usuarios/indexE'); ?>
+                        <button type="submit" class="btn btn-outline-warning">ver</button>
+                        <?php echo form_close(); ?>
                             </li>
                             <li>
                                 <a href="pages_contact_us.html"> Contact Form </a>
@@ -194,17 +195,6 @@
                                 </ul>
                             </li>
 
-                            <li class="sub-sub-submenu-list">
-                                <a href="#user-lockscreen" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> Lockscreen <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg> </a>
-                                <ul class="collapse list-unstyled sub-submenu" id="user-lockscreen" data-parent="#page"> 
-                                    <li>
-                                        <a href="auth_lockscreen.html"> Unlock </a>
-                                    </li>
-                                    <li>
-                                        <a href="auth_lockscreen_boxed.html"> Unlock Boxed </a>
-                                    </li>
-                                </ul>
-                            </li>
                         </ul>
                     </li>
 
@@ -238,6 +228,7 @@
 
   <button type="submit" class="btn btn-info">Agregar estudiante</button>
 <?php echo form_close(); ?>
+ <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></span>
 
 		<table class="table style-3  table-hover">
   <thead>
