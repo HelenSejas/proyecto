@@ -4,223 +4,133 @@
         <div class="overlay"></div>
         <div class="search-overlay"></div>
 
- <div class="header-container">
-        <header class="header navbar navbar-expand-sm">
 
-            <a href="javascript:void(0);" class="sidebarCollapse" data-placement="bottom"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></a>
 
-            <div class="nav-logo align-self-center">
-                <a class="navbar-brand" href="index.html"><img alt="logo" src="<?php echo base_url(); ?>assets/img/logo.jpg" > <span class="navbar-brand-name">VICTOR MURIEL</span></a>
+    <div class="helpdesk container">
+        <nav class="navbar navbar-expand navbar-light">
+            <a class="navbar-brand" href="#">Helpdesk</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="pages_contact_us.html">Contact Us</a>
+                    </li>
+                </ul>
             </div>
+        </nav>
 
-            <ul class="navbar-item flex-row mr-auto">
-              
-            </ul>
+        <div class="helpdesk layout-spacing">
 
-            <ul class="navbar-item flex-row nav-dropdowns">
+            <div class="hd-header-wrapper">
+                <div class="row">                                
+                    <div class="col-md-12 text-center">
+                        <h4 class="">CORK</h4>
+                        <p class="">A knowledge base Admin Template </p>
 
-                <li class="nav-item dropdown user-profile-dropdown order-lg-0 order-1">
-                    <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="user-profile-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="media">
-                            <img src="<?php echo base_url(); ?>assets/img/usuario.png" class="img-fluid" alt="admin-profile">
-                            <div class="media-body align-self-center">
-                                <h6><span>Hi,</span> Usuario</h6>
-                            </div>
-                        </div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                    </a>
-                    <div class="dropdown-menu position-absolute animated fadeInUp" aria-labelledby="user-profile-dropdown">
-                        <div class="">
-                            <div class="dropdown-item">
-                                <a class="" href="user_profile.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> My Profile</a>
-                            </div>
-                            <div class="dropdown-item">
-                                <a class="" href="apps_mailbox.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-inbox"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path></svg> Inbox</a>
-                            </div>
-                            <div class="dropdown-item">
-                                <a class="" href="auth_lockscreen.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> Lock Screen</a>
-                            </div>
-                            <div class="dropdown-item">
-                                <a class="" href="auth_login.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg> Sign Out</a>
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-7 col-md-7 col-sm-11 col-11 mx-auto">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Let's find your question in fast way" aria-label="Username" aria-describedby="basic-addon1">
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
 
-                </li>
-            </ul>
-        </header>
+            <div class="hd-contact-section">
+                <div class="hd-slider">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                </ol>
+                                <div class="carousel-inner">
+                                  <div class="carousel-item active community-help">
+                                      <div class="carousel-item-content">
+                                          <h4 class="hd-slide-header">Get help by community.</h4>
+                                          <div class="row">
+                                              <div class="col-md-6">
+                                                  <div class="media">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                                      <div class="media-body">
+                                                          <h5>CORK Forum</h5>
+                                                          <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                              <div class="col-md-6">
+                                                  <div class="media">
+                                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-terminal"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+                                                      <div class="media-body">
+                                                          <h5>How to Code</h5>
+                                                          <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="carousel-item news-updates ">
+                                      <div class="carousel-item-content">
+                                          <h4 class="hd-slide-header">Latest news and updates</h4>
+                                          <div class="row">
+                                              <div class="col-md-12">
+                                                  <div class="media">
+                                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bookmark"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+                                                      <div class="media-body">
+                                                          <h5>CORK Blog</h5>
+                                                          <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                </div>
+                                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left"><polyline points="15 18 9 12 15 6"></polyline></svg></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
-    <!--  BEGIN TOPBAR  -->
-        <div class="topbar-nav header navbar" role="banner">
-            <nav id="topbar">
 
-                <ul class="list-unstyled menu-categories" id="topAccordion">
-
-                    <li class="menu single-menu">
-                        <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle autodroprown">
-                            <div class="">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-                                <span>Cursos</span>
-                            </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                        </a>
-                        <ul class="collapse submenu list-unstyled" id="dashboard" data-parent="#topAccordion">
-                        <li>
-                        <?php echo form_open_multipart('curso/index'); ?>
-                        <button type="submit" class="btn btn-outline-warning">curso</button>
-                        <?php echo form_close(); ?>
-                        </li>
-                        </ul>
-                    </li>
-
-                    <li class="menu single-menu active">
-                        <a href="#app" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">
-                            <div class="">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-cpu"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
-                                <span>Pagos</span>
-                            </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                        </a>
-                        <ul class="collapse submenu list-unstyled" id="app" data-parent="#topAccordion">
-                            <li>
-                                <a href="apps_chat.html">mensualidades</a>
-                            </li>
-                            <li>
-                                <a href="apps_todoList.html">Historial</a>
-                            </li>
-                            <li>
-                                <a href="apps_notes.html">pago por sesion</a>
-                            </li>
-                        </ul>
-                    </li>
-                    
-                    <li class="menu single-menu">
-                        <a href="#components" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                            <div class="">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-                                <span>Equipos</span>
-                            </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                        </a>
-                        <ul class="collapse submenu list-unstyled" id="components" data-parent="#topAccordion">
-                            <li>
-                                <a href="component_tabs.html"> Ver Equipos </a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="menu single-menu">
-                        <a href="#uiKit" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                            <div class="">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-zap"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-                                <span>Poleras</span>
-                            </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                        </a>
-                        <ul class="collapse submenu list-unstyled" id="uiKit" data-parent="#topAccordion">
-                            <li>
-                                <a href="ui_alerts.html">Ver precios</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="menu single-menu">
-                        <a href="#tables" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                            <div class="">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layout"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
-                                <span>Estudiantes</span>
-                            </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                        </a>
-                        <ul class="collapse submenu list-unstyled" id="tables"  data-parent="#topAccordion">
-                            <li>
-                          <?php echo form_open_multipart('estudiante/index'); ?>
-                        <button type="submit" class="btn btn-outline-warning">Ver Estudiantes</button>
-                        <?php echo form_close(); ?>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="menu single-menu">
-                        <a href="#page" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                            <div class="">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
-                                <span>Empleados</span>
-                            </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                        </a>
-                        <ul class="collapse submenu list-unstyled" id="page"  data-parent="#topAccordion">
-                            <li>
-                                <a href="pages_helpdesk.html"> Helpdesk </a>
-                            </li>
-                            <li>
-                                <a href="pages_contact_us.html"> Contact Form </a>
-                            </li>
-                            <li>
-                            <li class="sub-sub-submenu-list">
-                                <a href="#user-login" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> Login <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg> </a>
-                                <ul class="collapse list-unstyled sub-submenu" id="user-login" data-parent="#page"> 
-                                    <li>
-                                        <a href="auth_login.html"> Login </a>
-                                    </li>
-                                    <li>
-                                        <a href="auth_login_boxed.html"> Login Boxed </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="sub-sub-submenu-list">
-                                <a href="#user-register" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> Register <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg> </a>
-                                <ul class="collapse list-unstyled sub-submenu" id="user-register" data-parent="#page"> 
-                                    <li>
-                                        <a href="auth_register.html"> Register </a>
-                                    </li>
-                                    <li>
-                                        <a href="auth_register_boxed.html"> Register Boxed </a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li class="sub-sub-submenu-list">
-                                <a href="#user-passRecovery" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> Password Recovery <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg> </a>
-                                <ul class="collapse list-unstyled sub-submenu" id="user-passRecovery" data-parent="#page"> 
-                                    <li>
-                                        <a href="auth_pass_recovery.html"> Recover ID </a>
-                                    </li>
-                                    <li>
-                                        <a href="auth_pass_recovery_boxed.html"> Recover ID Boxed </a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li class="sub-sub-submenu-list">
-                                <a href="#user-lockscreen" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> Lockscreen <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg> </a>
-                                <ul class="collapse list-unstyled sub-submenu" id="user-lockscreen" data-parent="#page"> 
-                                    <li>
-                                        <a href="auth_lockscreen.html"> Unlock </a>
-                                    </li>
-                                    <li>
-                                        <a href="auth_lockscreen_boxed.html"> Unlock Boxed </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="menu single-menu">
-                        <a href="#more" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                            <div class="">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
-                                <span>Inscribir</span>
-                            </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                        </a>
-                        <ul class="collapse submenu list-unstyled" id="more" data-parent="#topAccordion">
-                            <li>
-                                <a href="dragndrop_dragula.html"> Inscribir Nuevo Alumno</a>
-                            </li>
-
-                         
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
+    <div id="miniFooterWrapper" class="">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12">
+                    <div class="position-relative">
+                        <div class="arrow text-center">
+                            <p class="">Up</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-5 mx-auto col-lg-6 col-md-6 site-content-inner text-md-left text-center copyright align-self-center">
+                            <p class="mt-md-0 mt-4 mb-0">2021 &copy; <a target="_blank" href="https://designreset.com/cork">Design Reset</a>.</p>
+                        </div>
+                        <div class="col-xl-5 mx-auto col-lg-6 col-md-6 site-content-inner text-md-right text-center align-self-center">
+                            <p class="mb-0">1355 Market Street, Suit 900 San Francisco, CA 94103</p>
+                        </div>
+                    </div>
+                </div>      
+            </div>
+        </div>
+    </div> 
