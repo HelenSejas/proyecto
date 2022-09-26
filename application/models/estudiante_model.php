@@ -33,5 +33,12 @@ class estudiante_model extends CI_Model {
 		$this->db->where('IdEstudiante',$IdEstudiante);
 	    $this->db->update('estudiante',$data);
 	}
+		public function encontrarestudiante($busqueda)
+	{
+		$this->db->select('*');
+		$this->db->from('estudiante');
+		$this->db->where('ApellidoPaterno',$busqueda);
+		return $this->db->get();
+	}
 }
 ?>

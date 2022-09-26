@@ -29,7 +29,6 @@ public function agregar()
         $data['sexo'] =$_POST['sexo'];
        
 	  $lista=$this->estudiante_model->agregarestudiante($data);
-	  print_r('estudiante agregado exitosamente');
      redirect('estudiante/index','refresh');
 }
 public function eliminarbd()
@@ -59,5 +58,14 @@ public function eliminarbd()
     $data['sexo'] =$_POST['sexo'];
     	$this->estudiante_model->modificarestudiante($IdEstudiante,$data);
 		redirect('estudiante/index','refresh');
+	}
+	public function buscar() {
+     $busqueda=$_POST['buscar'];
+     $data['infoestudiante']=$this->estudiante_model->recuperarestudiante($busqueda);
+    $this->estudiante_model->encontrarestudiante($busqueda);  
+    $this->load->view('include/header');
+	$this->load->view('inicio',$data);
+	$this->load->view('include/fooder');
+        
 	}
 }

@@ -11,4 +11,4 @@ class usuarios extends CI_Controller {
 		$this->load->view('include/fooder');
 	}
 
-	}
+}
