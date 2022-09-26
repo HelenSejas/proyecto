@@ -33,5 +33,11 @@ class curso_model extends CI_Model {
 		$this->db->where('idCurso',$idCurso);
 	    $this->db->update('curso',$data);
 	}
+	public function listaentrenador()
+	{
+		$this->db->select('*');
+		$this->db->from('entrenador');
+		return $this->db->get();
+	}
 }
 ?>

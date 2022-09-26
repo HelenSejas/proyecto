@@ -228,25 +228,33 @@
             </nav>
                             
 </nav>
+<br>
+<div class="row">
+         <div class="col-xl-6 col-lg-7 col-md-7 col-sm-11 col-11 mx-auto">
+         <div class="input-group mb-3">
+         <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></span>
+         </div>
+        <input type="text" class="form-control" name="primerApellido" placeholder="buscar entrenador" aria-label="Username" aria-describedby="basic-addon1">
+        </div></div></div>
 
-
-<div class="container my-5">
+<div class="container my-3¿2 col-xl-6">
 <div class="row layout-spacing">
 	<div class="col-md-12">
-    <h1>Lista estudiantes</h1>
+    <h1>Entrenador</h1>
   <?php echo form_open_multipart('entrenador/agregar'); ?>
 
-  <button type="submit" class="btn btn-info">Agregar empleado</button>
+  <button type="submit" class="btn btn-danger">Agregar empleado</button>
 <?php echo form_close(); ?>
-
+<br>
 		<table class="table style-3  table-hover">
   <tbody>
 <?php
 $indice=1;
 foreach ($entrenador->result() as $row) {
 ?>
-	  <div class="card component-card_5 bg-primary" style="max-width: 20rem;">
-   <img class="card-img-top" src="<?php echo base_url(); ?>assets/img/muriel.jpg" > 
+	  <div class="card component-card_4 bg-info" style="max-width: 13rem;">
+   <img class="card-img-top" src="<?php echo base_url(); ?>assets/img/usuario.png" > 
   <div class="card-header">Entrenador</div>
   <div class="card-body">
     <h5 class="card-title"> Nombres: <?php echo $row->nombres;?></h5>

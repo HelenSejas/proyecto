@@ -1,12 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Entrenador extends CI_Controller {
+class entrenador extends CI_Controller {
 
 	
 	public function index()
 	{   
-	    $lista=$this->entrenador_model->listaEntrenador();
+	    $lista=$this->curso_model->listaEntrenador();
          $data['entrenador']=$lista;
 		$this->load->view('include/header');
 		$this->load->view('listaEntrenador', $data);
@@ -30,13 +30,13 @@ public function agregar()
        
 	  $lista=$this->entrenador_model->agregarestudiante($data);
 	  print_r('Nuevo Entrenador agregado exitosamente');
-     redirect('Entrenador/index','refresh');
+     redirect('entrenador/index','refresh');
 }
 public function eliminarbd()
 	{
 		$IdEstudiante=$_POST['IdEstudiante'];
 		$this->entrenador_model->eliminarestudiante($idEntrenador);
-		redirect('Entrenador/index','refresh');
+		redirect('entrenador/index','refresh');
 	}
 	public function modificar()
 	{
@@ -58,6 +58,6 @@ public function eliminarbd()
     $data['Curso'] =$_POST['Curso'];
     $data['sexo'] =$_POST['sexo'];
     	$this->entrenador_model->modificarEntrenador($idEntrenador,$data);
-		redirect('Entrenador/index','refresh');
+		redirect('entrenador/index','refresh');
 	}
 }

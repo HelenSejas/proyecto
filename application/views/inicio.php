@@ -34,11 +34,12 @@
                                     </div>
                                    
 
-                                    <?php foreach ($estudiante->result() as $row) { 
-                                        echo form_open_multipart('estudiante/buscar'); ?>
                                      <input type="text" class="form-control" name="buscar" placeholder="ingresar apellido de estudiante" aria-label="Username" aria-describedby="basic-addon1">
+                                     
+                                    <?php 
+                                        echo form_open_multipart('estudiante/buscar'); ?>
                                     <button type="submit" class="btn btn-info">seleccionado</button>
-                                  <label><?php echo $row->nombres;?></label><br>
+                                  <label></label><br>
                                     <?php echo form_close(); ?>
 
                                 </div>
@@ -92,9 +93,7 @@
     </div> 
 </div>
 </div>
-<?php
-}
-?>
+
     <div id="miniFooterWrapper" class="">
         <div class="container">
             <div class="row">
