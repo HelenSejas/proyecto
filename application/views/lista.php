@@ -152,7 +152,7 @@
                         </a>
                         <ul class="collapse submenu list-unstyled" id="page"  data-parent="#topAccordion">
                             <li>
-                               <?php echo form_open_multipart('usuarios/indexE'); ?>
+                               <?php echo form_open_multipart('Entrenador/index'); ?>
                         <button type="submit" class="btn btn-outline-warning">ver</button>
                         <?php echo form_close(); ?>
                             </li>

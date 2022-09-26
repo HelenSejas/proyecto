@@ -10,25 +10,5 @@ class usuarios extends CI_Controller {
 		$this->load->view('inicio');
 		$this->load->view('include/fooder');
 	}
-public function indexE()
-	{
-		 $lista=$this->entrenador_model->listaentrenador();
-         $data['entrenador']=$lista;
-		$this->load->view('include/header');
-		$this->load->view('listaEntrenador');
-		$this->load->view('include/fooder');
-	}
-	public function indexUsuario()
-	{
-		if ($this session->userdata('usuario')){
-			redirect ('estudiantes/index', refresh);
-		}
-		else{
-		$this->load->view('include/header');
-		$this->load->view('login');
-		$this->load->view('include/fooder');
-		}
-	}
-	
 
 	}
