@@ -6,10 +6,10 @@ class Entrenador extends CI_Controller {
 	
 	public function index()
 	{   
-	    $lista=$this->entrenador_model->listaentrenador();
-         $data['Entrenador']=$lista;
+	    $lista=$this->entrenador_model->listaEntrenador();
+         $data['entrenador']=$lista;
 		$this->load->view('include/header');
-		$this->load->view('listaentrenador', $data);
+		$this->load->view('listaEntrenador', $data);
 		$this->load->view('include/fooder');
 	}
 public function agregar()
