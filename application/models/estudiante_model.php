@@ -35,10 +35,8 @@ class estudiante_model extends CI_Model {
 	}
 		public function encontrarestudiante($busqueda)
 	{
-		$this->db->select('*');
-		$this->db->from('estudiante');
-		$this->db->where('ApellidoPaterno',$busqueda);
-		return $this->db->get();
+		$sql="SELECT * FROM estudiantes WHERE ApellidoPaterno LIKE %Flores%";
+		return $this->db->get($sql);
 	}
 }
 ?>

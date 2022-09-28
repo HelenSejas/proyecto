@@ -10,19 +10,18 @@
            <?php echo form_close(); ?>
 </nav>
 <div class="container my-5">
-<div class="row">
-	<div class="col-md-12">
-    <h1>Lista Curso</h1>
-  <?php echo form_open_multipart('curso/agregar'); ?>
+  <h1>Lista Curso</h1>
+    <?php echo form_open_multipart('curso/agregar'); ?>
 
   <button type="submit" class="btn btn-warning">Agregar Curso</button>
 <?php echo form_close(); ?>
-
+<div class="row">
+	<div class="col-xl-6 col-lg-7 col-md-6 col-sm-11 col-11 ">
   <tbody>
 <?php
 foreach ($curso->result() as $row) {
 ?>
-  <div class="card component-card_5 bg-primary" style="max-width: 20rem;">
+  <div class="card component-card_5 bg-primary" style="max-width: 15rem;">
    <img class="card-img-top" src="<?php echo base_url(); ?>assets/img/muriel.jpg" > 
   <div class="card-header">Curso</div>
   <div class="card-body">
@@ -133,7 +132,5 @@ foreach ($curso->result() as $row) {
                             </div>
                         </div>
                     </div>
-
-
 
         <script src="<?php echo base_url(); ?> assets/js/libs/jquery-3.1.1.min.js"></script>

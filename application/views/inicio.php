@@ -35,7 +35,7 @@
                                    
 
                                      <input type="text" class="form-control" name="buscar" placeholder="ingresar apellido de estudiante" aria-label="Username" aria-describedby="basic-addon1">
-                                     
+
                                     <?php 
                                         echo form_open_multipart('estudiante/buscar'); ?>
                                     <button type="submit" class="btn btn-info">seleccionado</button>
@@ -44,6 +44,7 @@
 
                                 </div>
                             </div>
+                            <form></form>
                         </div>
                 </div>
                 </div>
@@ -53,9 +54,7 @@
     </div>
       <div class="col-xl-6 col-lg-7 col-md-7 col-sm-11 col-11 mx-auto">
 <div class="row">
- 
     <div class="form-group ">   
-
     <legend>Datos</legend>
     <label>Estudiante:</label>
    <label>es</label><br>

@@ -61,11 +61,11 @@ public function eliminarbd()
 	}
 	public function buscar() {
      $busqueda=$_POST['buscar'];
-     $data['infoestudiante']=$this->estudiante_model->recuperarestudiante($busqueda);
-    $this->estudiante_model->encontrarestudiante($busqueda);  
+    $this->estudiante_model->encontrarestudiante();  
     $this->load->view('include/header');
 	$this->load->view('inicio',$data);
-	$this->load->view('include/fooder');
-        
+	$this->load->view('include/fooder');   
 	}
+
+
 }
