@@ -39,5 +39,14 @@ class curso_model extends CI_Model {
 		$this->db->from('entrenador');
 		return $this->db->get();
 	}
+		public function validar($usuario,$password)
+	{
+		$this->db->select('*');
+		$this->db->from('entrenador');
+		$this->db->where('usuario',$usuario);
+		$this->db->where('password',$password);
+		return $this->db->get();
+	}
+
 }
 ?>
