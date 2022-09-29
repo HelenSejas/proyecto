@@ -20,9 +20,8 @@
 
         <div class="helpdesk layout-spacing">
 
-            <div class="hd-header-wrapper">
-                <div class="row">                                
-                <div class="col-md-12 text-center">
+            <div class="hd-header-wrapper text-center" id="" doSearch>
+               
                         <h4 class="">MENSUALIDAD</h4>
                         <p class="">Buscar estudiante</p>
 
@@ -44,7 +43,7 @@
 
                                 </div>
                             </div>
-                            <form></form>
+                            <div class="" id="datos" ></div>
                         </div>
                 </div>
                 </div>

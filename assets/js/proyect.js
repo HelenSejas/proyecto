@@ -136,8 +136,8 @@ function comprarEstudiante(e) {
 function leerDatosEstudiante(estudiante) {
      const infoestudiante = {
           imagen: estudiante.querySelector('th').textContent,
-          titulo: estudiante.querySelector('td').textContent,
-          precio: estudiante.querySelector('.leccion').textContent,
+          nombres: estudiante.querySelector('td').textContent,
+          primerApellido: estudiante.querySelector('.primerApellido').textContent,
           idP: estudiante.querySelector('.idpregunta').textContent,
           id: estudiante.querySelector('a').getAttribute('data-id')
      }
@@ -149,13 +149,13 @@ function insertarCarrito(estudiante) {
      const row = document.createElement('tr');
      row.innerHTML = `
           <td>  
-               <th>"${curso.imagen}" </th>
+               <th>"${estudiante.imagen}" </th>
           </td>
           <td>${estudiante.nombre}</td>
           <td>${estudiante.ApellidoPaterno}</td>
            <td>${estudiante.ApellidoMaterno}</td>
           <td>${estudiante.Curso}</td>
-          <td>${curso.idP}</td>
+          <td>${estudiante.idP}</td>
           <td>
                <a href="#" class="borrar-estudiante btn btn-primary" data-id="${estudiante.id}">X</a>
           </td>
@@ -195,7 +195,7 @@ function vaciarCarrito() {
 
 // Almacena cursos en el carrito a Local Storage
 
-function guardarCursoLocalStorage(estudiante) {
+function guardarEstudianteLocalStorage(estudiante) {
     let estudiantes;
      // Toma el valor de un arreglo con datos de LS o vacio
     estudiantes = obtenerestudiantesLocalStorage();
@@ -208,7 +208,7 @@ function guardarCursoLocalStorage(estudiante) {
 
 
 // Comprueba que haya elementos en Local Storage
-function obtenerCursosLocalStorage() {
+function obtenerEstudianteLocalStorage() {
      let estudiantesLS;
 
      // comprobamos si hay algo en localStorage
@@ -221,12 +221,12 @@ function obtenerCursosLocalStorage() {
 
 }
 
-// Imprime los cursos de Local Storage en el carrito
+// Imprime los estudiante de Local Storage en el carrito
 
 function leerLocalStorage() {
     let estudiantesLS;
 
-    estudiantesLS = obtenerCursosLocalStorage();
+    estudiantesLS = obtenerEstudiantesLocalStorage();
 
     estudiantesLS.forEach(function(estudiante){
         // constrir el template
@@ -241,7 +241,7 @@ function leerLocalStorage() {
    <td>${estudiante.Curso}</td>
    <td>${estudiante.idP}</td>
    <td>
-		<a href="#" class="borrar-curso btn btn-primary " data-id="${estudiante.id}">X</a>
+		<a href="#" class="borrar-estudiante btn btn-primary " data-id="${estudiante.id}">X</a>
    </td>
         `;
         listaEstudiante.appendChild(row);
@@ -254,7 +254,7 @@ function eliminarEstudianteLocalStorage(estudiante) {
     let estudiantesLS;
     // Obtenemos el arreglo de cursos
     estudiantesLS = obtenerEstudianteLocalStorage();
-    // Iteramos comparando el ID del curso borrado con los del LS
+    // Iteramos comparando el ID del estudiante borrado con los del LS
     estudiantesLS.forEach(function(estudiantesLS, index) {
         if(estudiantesLS.id === estudiante) {
             estudiantesLS.splice(index, 1);

@@ -85,7 +85,7 @@
                         </a>
                         <ul class="collapse submenu list-unstyled" id="app" data-parent="#topAccordion">
                             <li>
-                                 <?php echo form_open_multipart('usuarios/index'); ?>
+                                 <?php echo form_open_multipart('usuarios/indexInicio'); ?>
                                  <button type="submit" class="btn btn-outline-warning">Mesualidades</button>
                                  <?php echo form_close(); ?>
                             </li>

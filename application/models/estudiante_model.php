@@ -33,9 +33,9 @@ class estudiante_model extends CI_Model {
 		$this->db->where('IdEstudiante',$IdEstudiante);
 	    $this->db->update('estudiante',$data);
 	}
-		public function encontrarestudiante($busqueda)
+		public function encontrarestudiante()
 	{
-		$sql="SELECT * FROM estudiantes WHERE ApellidoPaterno LIKE %Flores%";
+		$sql="SELECT * FROM estudiante WHERE ApellidoPaterno LIKE '%F%'";
 		return $this->db->get($sql);
 	}
 }

@@ -13,7 +13,7 @@ class usuarios extends CI_Controller {
 public function index()
 	{
 		if($this->session->userdata('login')){
-			redirect ('usuarios/panel');
+			redirect ('usuarios/panel', refresh);
 		}
 		else{
 		$this->load->view('include/header');
@@ -48,7 +48,7 @@ public function panel()
 		}
 		else
 	{
-			redirect ('usuarios/index', refresh);
+			redirect ('estudiante/index', refresh);
 		}
 	}
 }
