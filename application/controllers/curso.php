@@ -28,12 +28,6 @@ public function agregar()
 	  $lista=$this->curso_model->agregarcurso($data);
      redirect('curso/index','refresh');
 }
-public function eliminarcursobd()
-	{
-		$idCurso=$_POST['idCurso'];
-		$this->curso_model->eliminarcurso($idCurso);
-		redirect('curso/index','refresh');
-	}
 	public function modificar()
 	{
     $idCurso=$_POST['idCurso'];

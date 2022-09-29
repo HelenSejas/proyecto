@@ -16,11 +16,6 @@ class estudiante_model extends CI_Model {
 	
 	}
 	
-	public function eliminarestudiante($IdEstudiante)
-	{
-		$this->db->where('IdEstudiante',$IdEstudiante);
-	    $this->db->delete('estudiante');
-	}
 		public function recuperarestudiante($IdEstudiante)
 	{
 		$this->db->select('*');
@@ -35,7 +30,7 @@ class estudiante_model extends CI_Model {
 	}
 		public function encontrarestudiante()
 	{
-		$sql="SELECT * FROM estudiante WHERE ApellidoPaterno LIKE '%F%'";
+		$sql="SELECT * FROM estudiante WHERE ApellidoPaterno LIKE '%Flores%'";
 		return $this->db->get($sql);
 	}
 }

@@ -31,10 +31,11 @@ public function agregar()
 	  $lista=$this->estudiante_model->agregarestudiante($data);
      redirect('estudiante/index','refresh');
 }
-public function eliminarbd()
+public function deshabilitarbd()
 	{
 		$IdEstudiante=$_POST['IdEstudiante'];
-		$this->estudiante_model->eliminarestudiante($IdEstudiante);
+		$data['estado']=0;
+		$this->estudiante_model->modificarestudiante($IdEstudiante,$data);
 		redirect('estudiante/index','refresh');
 	}
 	public function modificar()
@@ -60,12 +61,10 @@ public function eliminarbd()
 		redirect('estudiante/index','refresh');
 	}
 	public function buscar() {
-     $busqueda=$_POST['buscar'];
     $this->estudiante_model->encontrarestudiante();  
     $this->load->view('include/header');
 	$this->load->view('inicio',$data);
 	$this->load->view('include/fooder');   
 	}
-
 
 }

@@ -246,7 +246,7 @@
       <th scope="col">Primer Apellido</th>
       <th scope="col">segundo Apellido</th>
       <th scope="col">Modificar</th>
-      <th scope="col">Eliminar</th>
+      <th scope="col">Deshabilitar</th>
       
     </tr>
   </thead>
@@ -267,9 +267,9 @@ foreach ($estudiante->result() as $row) {
           <?php echo form_close(); ?>
         </td>
         <td>
-          <?php echo form_open_multipart('estudiante/eliminarbd'); ?>
+          <?php echo form_open_multipart('estudiante/deshabilitarbd'); ?>
           <input type="hidden" name="IdEstudiante" value="<?php echo $row->IdEstudiante;?>">
-          <input type="submit" name="buttonE" value="X" class="btn btn-danger">
+          <input type="submit" name="buttonE" value="Deshabilitar" class="btn btn-danger">
         <?php echo form_close(); ?>
         </td> 
     </tr>

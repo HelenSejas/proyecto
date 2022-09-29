@@ -11,11 +11,6 @@ class pagos_model extends CI_Model {
 		return $this->db->get();
 	}
 	
-	public function eliminarestudiante($IdEstudiante)
-	{
-		$this->db->where('IdEstudiante',$IdEstudiante);
-	    $this->db->delete('estudiante');
-	}
 		public function recuperarestudiante($IdEstudiante)
 	{
 		$this->db->select('*');
