@@ -33,5 +33,13 @@ class estudiante_model extends CI_Model {
 		$sql="SELECT * FROM estudiante WHERE ApellidoPaterno LIKE '%Flores%'";
 		return $this->db->get($sql);
 	}
+		public function validarusuario($usuario,$password)
+	{
+		$this->db->select('*');
+		$this->db->from('entrenador');
+		$this->db->where('usuario',$usuario);
+		$this->db->where('password',$password);
+		return $this->db->get();
+	}
 }
 ?>

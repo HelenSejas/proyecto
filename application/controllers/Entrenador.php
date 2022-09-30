@@ -14,9 +14,11 @@ class entrenador extends CI_Controller {
 	}
 public function agregar()
 	{
+		if ($this->session->userdata('tipo')==1){
 		$this->load->view('include/header');
 		$this->load->view('formulario');
 		$this->load->view('include/fooder');
+		}
 	}
 	public function agregarbd()
 	{
@@ -40,12 +42,14 @@ public function eliminarbd()
 	}
 	public function modificar()
 	{
+		if ($this->session->userdata('tipo')==1){
     $IdEstudiante=$_POST['idEntrenador'];
 	$data['infoEntrenador']=$this->entrenador_model->recuperentrenador($idEntrenador);
 
 	$this->load->view('include/header');
 	$this->load->view('formularioME',$data);
 	$this->load->view('include/fooder');
+}
 	}
 	public function modificarbd()
 	{

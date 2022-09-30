@@ -12,12 +12,13 @@ class usuarios extends CI_Controller {
 	}
 public function index()
 	{
+		 $data['msg']=$this->uri->segment(3);
 		if($this->session->userdata('login')){
 			redirect ('usuarios/panel',' refresh');
 		}
 		else{
 		$this->load->view('include/header');
-		$this->load->view('login');
+		$this->load->view('login',$data);
 		$this->load->view('include/fooder');
 		}
 		
@@ -26,8 +27,8 @@ public function index()
 public function validar()
 	{
 			$usuario=$_POST['usuario'];
-			$password=$_POST['password'];
-			$consulta=$this->usuario_model->validar($usuario,$password);
+			$password=md5($_POST['password']);
+			$consulta=$this->estudiante_model->validarusuario($usuario,$password);
 		if($consulta->num_rows()>0){
 			foreach ($consulta->result() as $row) 
 			{
@@ -38,18 +39,26 @@ public function validar()
 		}
 		}
 		else{
-			redirect ('usuarios/index', 'refresh');
+			redirect ('usuarios/index/2', 'refresh');
 		}
 	}
 public function panel()
 	{
-		if($this->session->userdata('login'))
+		if($this->session->userdata('usuario'))
 		{
 			redirect ('estudiante/index', 'refresh');
 		}
 		else
 	{
-			redirect ('usuarios/index', 'refresh');
+			redirect ('usuarios/index/3', 'refresh');
 		}
 	}
+
+	public function logout()
+	{
+	
+		$this->session->sess_destroy();
+		redirect ('usuarios/index/1', 'refresh');
+	}
+
 }
