@@ -105,7 +105,7 @@ cargarEventListeners();
 
 function cargarEventListeners() {
      // Dispara cuando se presiona "Agregar Carrito"
-     cursos.addEventListener('click', comprarEstudiante);
+     estudiantes.addEventListener('click', comprarEstudiante);
 
      // Cuando se elimina un estudiante del carrito
      carrito.addEventListener('click', eliminarEstudiante);
@@ -128,17 +128,17 @@ function comprarEstudiante(e) {
      // Delegation para agregar-carrito
      if(e.target.classList.contains('agregar-carrito')) {
           const estudiante = e.target.parentElement.parentElement;
-          // Enviamos el curso seleccionado para tomar sus datos
+          // Enviamos el estudiante seleccionado para tomar sus datos
           leerDatosEstudiante(estudiante);
      }
 }
-// Lee los datos del estudiantes
+// Lee los datos del estudiante
 function leerDatosEstudiante(estudiante) {
      const infoestudiante = {
           imagen: estudiante.querySelector('th').textContent,
           nombres: estudiante.querySelector('td').textContent,
           primerApellido: estudiante.querySelector('.primerApellido').textContent,
-          idP: estudiante.querySelector('.idpregunta').textContent,
+          idP: estudiante.querySelector('.IdEstudiante').textContent,
           id: estudiante.querySelector('a').getAttribute('data-id')
      }
      insertarCarrito(infoestudiante);

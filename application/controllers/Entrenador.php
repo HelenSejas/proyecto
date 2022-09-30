@@ -34,10 +34,11 @@ public function agregar()
 	  print_r('Nuevo Entrenador agregado exitosamente');
      redirect('entrenador/index','refresh');
 }
-public function eliminarbd()
+public function deshabilitarbd()
 	{
-		$IdEstudiante=$_POST['IdEstudiante'];
-		$this->entrenador_model->eliminarestudiante($idEntrenador);
+		$idEntrenador=$_POST['idEntrenador'];
+		$data['estado']=0;
+		$this->entrenador_model->modificarentrenador($idEntrenador,$data);
 		redirect('entrenador/index','refresh');
 	}
 	public function modificar()

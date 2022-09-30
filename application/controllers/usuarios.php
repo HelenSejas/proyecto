@@ -6,8 +6,16 @@ class usuarios extends CI_Controller {
 	
 	public function indexInicio()
 	{
+		$lista=$this->estudiante_model->listaestudiantes();
+		 $data['estudiante']=$lista;
 		$this->load->view('include/header');
-		$this->load->view('inicio');
+		$this->load->view('inicio',$data);
+		$this->load->view('include/fooder');
+	}
+		public function indexSesion()
+	{
+		$this->load->view('include/header');
+		$this->load->view('sesion');
 		$this->load->view('include/fooder');
 	}
 public function index()

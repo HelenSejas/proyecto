@@ -260,18 +260,18 @@ foreach ($entrenador->result() as $row) {
     <h5 class="card-title"> Nombres: <?php echo $row->nombres;?></h5>
     <p class="card-text">Apellidos: <?php echo $row->primerApellido;?>  <?php echo $row->segundoApellido;?><br>
      Sueldo: <?php echo $row->sueldo;?></p>
+
          <?php echo form_open_multipart('entrenador/modificar'); ?>
           <input type="hidden" name="idEntrenador" value="<?php echo $row->idEntrenador;?>">
           <input type="submit" name="buttonM" value="Modificar" class="btn btn-outline-secondary mb-2">
           <?php echo form_close(); ?>
-        </td>
-        <td>
-          <?php echo form_open_multipart('entrenador/eliminarbd'); ?>
+        
+          <?php echo form_open_multipart('entrenador/deshabilitarbd'); ?>
           <input type="hidden" name="idEntrenador" value="<?php echo $row->idEntrenador;?>">
-          <input type="submit" name="buttonE" value="X" class="btn btn-danger">
+          <input type="submit" name="buttonE" value="deshabilitar" class="btn btn-danger">
         <?php echo form_close(); ?>
-        </td> 
-    </tr>
+        
+   
 	<?php
 $indice ++;
 }

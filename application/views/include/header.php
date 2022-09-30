@@ -13,7 +13,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Jhesica Helen Sejas Quispe">
-    <meta name="generator" content="Hugo 0.88.1">
 	<link rel="stylesheet"  type="text/css" href="<?php echo base_url(); ?>bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>bootstrap/css/interfaz.css">
 	 <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
@@ -22,8 +21,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  <link href="<?php echo base_url(); ?> assets/css/authentication/form-2.css" rel="stylesheet" type="text/css" />
     <!-- BEGIN PAGE LEVEL STYLE -->
     <link href="<?php echo base_url(); ?>plugins/flatpickr/custom-flatpickr.css" rel="stylesheet" type="text/css">
-      <link href="<?php echo base_url(); ?>assets/css/pages/helpdesk.css" rel="stylesheet" type="text/css" />
-    <link href="<?php echo base_url(); ?>assets/css/forms/theme-checkbox-radio.css" rel="stylesheet" type="text/css" />
+  
+    <link href="<?php echo base_url(); ?>assets/css/forms/theme-checkbox-radio.css" rel="stylesheet" type="text/css" />   
+     <link href="<?php echo base_url(); ?>assets/css/pages/helpdesk.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo base_url(); ?>assets/css/components/custom-modal.css" rel="stylesheet" type="text/css" />
        <style>
         .widget { margin-bottom: 10px; }
@@ -33,5 +33,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         }
     </style>
        <script src="<?php echo base_url(); ?>assets/js/libs/jquery-3.1.1.min.js"></script>
+        <script src="<?php echo base_url(); ?>assets/js/proyect.js"></script>
+           <link href="<?php echo base_url(); ?>assets/css/elements/search.css" rel="stylesheet" type="text/css" />
 </head>
-<body >
+<body class="sidebar-noneoverflow" data-spy="scroll" data-target="#navSection" data-offset="140">

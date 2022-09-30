@@ -69,7 +69,9 @@
                                  <?php echo form_close(); ?>
                             </li>
                             <li>
+                                   <?php echo form_open_multipart('usuarios/indexSesion'); ?>
                                  <button type="submit" class="btn btn-outline-warning">Pago por sesion</button>
+                                 <?php echo form_close(); ?>
                             </li>
                         </ul>
                     </li>

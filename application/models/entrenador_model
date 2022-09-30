@@ -16,11 +16,6 @@ class entrenador_model extends CI_Model {
 	
 	}
 	
-	public function eliminarentrenador($idCurso)
-	{
-		$this->db->where('idEntrenador',$idEntrenador);
-	    $this->db->update('entrenador',);
-	}
 		public function recuperarentrenador($idEntrenador)
 	{
 		$this->db->select('*');

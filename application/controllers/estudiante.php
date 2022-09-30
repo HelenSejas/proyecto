@@ -66,5 +66,13 @@ public function deshabilitarbd()
 	$this->load->view('inicio',$data);
 	$this->load->view('include/fooder');   
 	}
+	public function seleccionado()
+	{
+    $IdEstudiante=$_POST['IdEstudiante'];
+	$data['infoestudiante']=$this->estudiante_model->recuperarestudiante($IdEstudiante);
 
+	$this->load->view('include/header');
+	$this->load->view('cobrarmensualidad',$data);
+	$this->load->view('include/fooder');
+	}
 }
