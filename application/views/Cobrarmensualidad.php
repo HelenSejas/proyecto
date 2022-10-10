@@ -23,8 +23,6 @@
             <div class="hd-header-wrapper text-center" id="">
                
                         <h4 class="">MENSUALIDAD</h4>
-                        <p class="">Buscar nombre</p>
-
                 </div>
                 </div>
             </div>
@@ -54,9 +52,27 @@ foreach ($infoestudiante->result() as $row) {
         <option>2</option>
         <option>3</option>
     </select><br>
-<label> cantidad a cancelar: </label><h1>150 bs</h1>
+<label> cantidad a cancelar: <h1 >150 bs</h1></label>
     <div class="d-grid gap-2 my-4">
-<button type="submit" class="btn btn-info">Cancelar mensualidad</button>
+<button type="submit" class="btn btn-info" data-toggle="modal" data-target="#profileModal">Cancelar mensualidad</button>
+  <div class="modal fade profile-modal" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel" aria-hidden="true">
+                                      <div class="modal-dialog modal-sm" role="document">
+                                        <div class="modal-content">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                              <span aria-hidden="true">&times;</span>
+                                            </button>
+
+                                          <div class="modal-body text-center">
+                                                <p class="mt-2">Click on view to access your profile.</p>
+                                          </div>
+                                          <div class="modal-footer justify-content-center mb-4">
+                                            <button type="button" class="btn">View</button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+
+
 </div >
    <?php }
     ?>

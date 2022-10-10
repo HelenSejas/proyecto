@@ -7,7 +7,7 @@
 
     <nav class="nav navbar-dark bg-dark ">
     <?php echo form_open_multipart('estudiante/index'); ?>
-           <button type="submit" class="btn btn-outline-warning">Atras</button>
+           <button type="submit" class="btn btn-outline-warning btn-rounded">Atras</button>
            <?php echo form_close(); ?>
           <?php echo form_open_multipart('inicio/index'); ?>
            <button type="submit" class="btn btn-outline-warning">Inicio</button>

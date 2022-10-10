@@ -25,6 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link href="<?php echo base_url(); ?>assets/css/forms/theme-checkbox-radio.css" rel="stylesheet" type="text/css" />   
      <link href="<?php echo base_url(); ?>assets/css/pages/helpdesk.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo base_url(); ?>assets/css/components/custom-modal.css" rel="stylesheet" type="text/css" />
+    
        <style>
         .widget { margin-bottom: 10px; }
         .widget-content-area { border-radius: 6px; }
