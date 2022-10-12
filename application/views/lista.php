@@ -90,6 +90,9 @@
                         <button type="submit" class="btn btn-outline-warning">login</button>
                         <?php echo form_close(); ?>
                             </li>
+                            <li>  <?php echo form_open_multipart('curso/indexEquipo'); ?>
+                        <button type="submit" class="btn btn-outline-warning">ver Equipo</button>
+                        <?php echo form_close(); ?></li>
                         </ul>
                     </li>
 

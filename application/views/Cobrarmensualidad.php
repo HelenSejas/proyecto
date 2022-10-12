@@ -51,6 +51,9 @@ foreach ($infoestudiante->result() as $row) {
         <option>1</option>
         <option>2</option>
         <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
     </select><br>
 <label> cantidad a cancelar: <h1 >150 bs</h1></label>
     <div class="d-grid gap-2 my-4">

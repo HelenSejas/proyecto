@@ -47,4 +47,11 @@ public function agregar()
     $this->curso_model->modificarcurso($idCurso,$data);
     redirect('curso/index','refresh');	
 	}
+
+		public function indexEquipo()
+	{
+		$this->load->view('include/header');
+		$this->load->view('equipos');
+		$this->load->view('include/fooder');
+	}
 }
