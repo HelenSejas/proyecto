@@ -17,7 +17,7 @@
 
             <div class="theme-logo">
                 <a href="index.html">
-                    <img src="assets/img/90x90.jpg" class="navbar-logo" alt="logo">
+                    <img src="<?php echo base_url(); ?>assets/img/logo.jpg" class="navbar-logo" alt="logo" width=140 >
                     <span class="admin-logo">CORK<span></span></span>
                 </a>
             </div>
@@ -133,3 +133,4 @@
         
 
     </div>
+</body>

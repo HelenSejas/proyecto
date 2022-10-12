@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link href="<?php echo base_url(); ?>assets/css/forms/theme-checkbox-radio.css" rel="stylesheet" type="text/css" />   
      <link href="<?php echo base_url(); ?>assets/css/pages/helpdesk.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo base_url(); ?>assets/css/components/custom-modal.css" rel="stylesheet" type="text/css" />
-     <link href="<?php echo base_url(); ?>assets/css/structure.css" rel="stylesheet" type="text/css" class="structure" />
+   <link href="<?php echo base_url(); ?>assets/css/structure.css" rel="stylesheet" type="text/css" class="structure" />
        <style>
         .widget { margin-bottom: 10px; }
         .widget-content-area { border-radius: 6px; }
@@ -37,4 +37,4 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <script src="<?php echo base_url(); ?>assets/js/proyect.js"></script>
            <link href="<?php echo base_url(); ?>assets/css/elements/search.css" rel="stylesheet" type="text/css" />
 </head>
-<body class="sidebar-noneoverflow" data-spy="scroll" data-target="#navSection" data-offset="140">
+<body class="application admin-header" data-spy="scroll" data-target="#navSection" data-offset="140">
