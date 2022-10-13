@@ -1,4 +1,4 @@
-<body class="application admin-header">
+
 
     <!-- BEGIN LOADER -->
     <div id="load_screen"> <div class="loader"> <div class="loader-content">

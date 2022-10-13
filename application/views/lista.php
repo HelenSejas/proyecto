@@ -47,8 +47,8 @@
                         </a>
                         <ul class="collapse submenu list-unstyled" id="dashboard" data-parent="#topAccordion">
                         <li>
-                        <?php echo form_open_multipart('estudiante/index'); ?>
-                        <button type="submit" class="btn btn-outline-warning">Inicio</button>
+                        <?php echo form_open_multipart('curso/index'); ?>
+                        <button type="submit" class="btn btn-outline-warning">ver Curso</button>
                         <?php echo form_close(); ?>
                         </li>
                         </ul>

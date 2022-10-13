@@ -26,7 +26,6 @@
                         <p class="">Buscar estudiante</p>
 
                       
-   
  <div class="main-container" id="container">
 
         <div class="overlay"></div>
@@ -69,6 +68,7 @@ foreach ($estudiante->result() as $row) {
                                                 <th><?php echo $row->ApellidoMaterno;?> :</th> 
                                                 <th><?php echo $row->Curso;?></th>
                                                 <th> <?php echo form_open_multipart('estudiante/seleccionado'); ?>
+                                               
                                           <input type="hidden" name="IdEstudiante" value="<?php echo $row->IdEstudiante;?>">
                                            <input type="submit" name="buttonM" value="seleccionar" class="btn btn-secondary mb-2">
                                              <?php echo form_close(); ?></th>

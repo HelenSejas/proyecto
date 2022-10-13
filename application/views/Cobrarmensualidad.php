@@ -6,10 +6,10 @@
 
 
     <nav class="nav navbar-dark bg-dark ">
-    <?php echo form_open_multipart('estudiante/index'); ?>
+    <?php echo form_open_multipart('usuarios/indexInicio'); ?>
            <button type="submit" class="btn btn-outline-warning">Atras</button>
            <?php echo form_close(); ?>
-          <?php echo form_open_multipart('inicio/index'); ?>
+          <?php echo form_open_multipart('estudiante/index'); ?>
            <button type="submit" class="btn btn-outline-warning">Inicio</button>
            <?php echo form_close(); ?>
 </nav>
@@ -44,37 +44,23 @@ foreach ($infoestudiante->result() as $row) {
     <label>Segundo Apellido:</label>
     <input type="text" class="form-control"  name="segundoApellido" placeholder="Ingrese Segundo Apellido" value="<?php echo $row->ApellidoMaterno;?> "><br>
     <label>Curso:</label>
-    <input type="text" class="form-control" name="Curso" placeholder="prueba" value="<?php echo $row->Curso;?>"><br>
+    <input type="text" class="form-control" name="Curso" placeholder="curso" value="<?php echo $row->Curso;?>"><br>
 <br>
      <label>cantidad:</label>
-        <select class="custom-select custom-select-sm" name="cantidad">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-        <option>6</option>
+        <select  name="cantidad" id="cantidad"> 
+        <option value="150">1</option>
+        <option value="300">2</option>
+        <option value="450">3</option>
+        <option value="600">4</option>
+        <option value=750>5</option>
+        <option value="900">6</option>
     </select><br>
-<label> cantidad a cancelar: <h1 >150 bs</h1></label>
+
+<label for="result"> cantidad a cancelar: </label>
+<input type="text" name="result" id="result">
+<div id="capaResultado">...</div>
     <div class="d-grid gap-2 my-4">
-<button type="submit" class="btn btn-info" data-toggle="modal" data-target="#profileModal">Cancelar mensualidad</button>
-  <div class="modal fade profile-modal" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel" aria-hidden="true">
-                                      <div class="modal-dialog modal-sm" role="document">
-                                        <div class="modal-content">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                              <span aria-hidden="true">&times;</span>
-                                            </button>
-
-                                          <div class="modal-body text-center">
-                                                <p class="mt-2">Click on view to access your profile.</p>
-                                          </div>
-                                          <div class="modal-footer justify-content-center mb-4">
-                                            <button type="button" class="btn">View</button>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-
+<button type="submit" class="btn btn-info">Cancelar mensualidad</button>
 
 </div >
    <?php }
@@ -82,6 +68,24 @@ foreach ($infoestudiante->result() as $row) {
     </div> 
 </div>
 </div>
+
+<script >
+    const cantidad=document.querySelector('#cantidad');
+    console.log(cantidad)
+    cantidad.addEventListener('change',() => {
+        let valorOption =cantidad.value;
+        console.log(valorOption);
+
+        var opcionSeleccionar=cantidad.options[cantidad.selectedIndex];
+
+        console.log("Option:",opcionSeleccionar.text);
+        console.log("Valor:",opcionSeleccionar.value);
+
+        let inputResult=document.querySelector('#result').value(opcionSeleccionar.text+' -- '+opcionSeleccionar.value);
+        const capa = document.querySelector('#capaResultado');
+        capa.textContent=`mi cantidad es: ${valorOption}`;
+    });
+</script>
 
     <div id="miniFooterWrapper" class="">
         <div class="container">

@@ -15,7 +15,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta name="author" content="Jhesica Helen Sejas Quispe">
 	<link rel="stylesheet"  type="text/css" href="<?php echo base_url(); ?>bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>bootstrap/css/interfaz.css">
-	 <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
     <link href="<?php echo base_url(); ?>assets/css/plugins.css" rel="stylesheet" type="text/css" />
     <!-- END GLOBAL MANDATORY STYLES -->
  <link href="<?php echo base_url(); ?> assets/css/authentication/form-2.css" rel="stylesheet" type="text/css" />
@@ -34,7 +33,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         }
     </style>
        <script src="<?php echo base_url(); ?>assets/js/libs/jquery-3.1.1.min.js"></script>
-        <script src="<?php echo base_url(); ?>assets/js/proyect.js"></script>
+        
            <link href="<?php echo base_url(); ?>assets/css/elements/search.css" rel="stylesheet" type="text/css" />
 </head>
 <body class="application admin-header" data-spy="scroll" data-target="#navSection" data-offset="140">

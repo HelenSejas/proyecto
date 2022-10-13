@@ -70,7 +70,6 @@ public function deshabilitarbd()
 	{
     $IdEstudiante=$_POST['IdEstudiante'];
 	$data['infoestudiante']=$this->estudiante_model->recuperarestudiante($IdEstudiante);
-
 	$this->load->view('include/header');
 	$this->load->view('cobrarmensualidad',$data);
 	$this->load->view('include/fooder');
