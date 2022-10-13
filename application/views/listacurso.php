@@ -1,5 +1,6 @@
 <link href="<?php echo base_url(); ?> assets/css/components/custom-modal.css" rel="stylesheet" type="text/css" />
-<link href="<?php echo base_url(); ?> assets/css/scrollspyNav.css" rel="stylesheet" type="text/css" />
+ <link href="<?php echo base_url(); ?>assets/css/apps/notes.css" rel="stylesheet" type="text/css" />
+ <link href="<?php echo base_url(); ?>assets/css/forms/theme-checkbox-radio.css" rel="stylesheet" type="text/css" />
 
 <nav class="nav navbar-dark bg-dark ">
     <?php echo form_open_multipart('estudiante/index'); ?>
@@ -8,7 +9,142 @@
           <?php echo form_open_multipart('inicio/index'); ?>
            <button type="submit" class="btn btn-outline-warning">Inicio</button>
            <?php echo form_close(); ?>
+
+           <div class="topbar-nav header navbar" role="banner">
+            <nav id="topbar">
+
+                <ul class="list-unstyled menu-categories" id="topAccordion">
+
+                    <li class="menu single-menu">
+                        <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle autodroprown">
+                            <div class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                                <span>Cursos</span>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </a>
+                        <ul class="collapse submenu list-unstyled" id="dashboard" data-parent="#topAccordion">
+                        <li>
+                        <?php echo form_open_multipart('curso/index'); ?>
+                        <button type="submit" class="btn btn-outline-warning">ver Curso</button>
+                        <?php echo form_close(); ?>
+                        </li>
+                        </ul>
+                    </li>
+
+                    <li class="menu single-menu active">
+                        <a href="#app" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">
+                            <div class="">
+                              
+                                <span>Pagos</span>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </a>
+                        <ul class="collapse submenu list-unstyled" id="app" data-parent="#topAccordion">
+                            <li>
+                                 <?php echo form_open_multipart('usuarios/indexInicio'); ?>
+                                 <button type="submit" class="btn btn-outline-warning">Mesualidades</button>
+                                 <?php echo form_close(); ?>
+                            </li>
+                            <li>
+                                   <?php echo form_open_multipart('usuarios/indexSesion'); ?>
+                                 <button type="submit" class="btn btn-outline-warning">Pago por sesion</button>
+                                 <?php echo form_close(); ?>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li class="menu single-menu">
+                        <a href="#components" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                            <div class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                                <span>Equipos</span>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </a>
+                        <ul class="collapse submenu list-unstyled" id="components" data-parent="#topAccordion">
+                            <li>
+                                 <?php echo form_open_multipart('usuarios/index'); ?>
+                        <button type="submit" class="btn btn-outline-warning">login</button>
+                        <?php echo form_close(); ?>
+                            </li>
+                            <li>  <?php echo form_open_multipart('curso/indexEquipo'); ?>
+                        <button type="submit" class="btn btn-outline-warning">ver Equipo</button>
+                        <?php echo form_close(); ?></li>
+                        </ul>
+                    </li>
+
+                    <li class="menu single-menu">
+                        <a href="#uiKit" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                            <div class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-zap"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                                <span>Poleras</span>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </a>
+                        <ul class="collapse submenu list-unstyled" id="uiKit" data-parent="#topAccordion">
+                            <li>
+                                <a href="ui_alerts.html">Ver precios</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="menu single-menu">
+                        <a href="#tables" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                            <div class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layout"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                                <span>Estudiantes</span>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </a>
+                        <ul class="collapse submenu list-unstyled" id="tables"  data-parent="#topAccordion">
+                            <li>
+                          <?php echo form_open_multipart('estudiante/index'); ?>
+                        <button type="submit" class="btn btn-outline-warning">Ver Estudiantes</button>
+                        <?php echo form_close(); ?>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="menu single-menu">
+                        <a href="#page" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                            <div class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
+                                <span>Empleados</span>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </a>
+                        <ul class="collapse submenu list-unstyled" id="page"  data-parent="#topAccordion">
+                            <li>
+                               <?php echo form_open_multipart('entrenador/index'); ?>
+                        <button type="submit" class="btn btn-outline-warning">ver</button>
+                        <?php echo form_close(); ?>
+                            </li>
+                            
+                        </ul>
+                    </li>
+
+                    <li class="menu single-menu">
+                        <a href="#more" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                            <div class="">
+                                <span>sesion</span>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </a>
+                        <ul class="collapse submenu list-unstyled" id="more" data-parent="#topAccordion">
+                            <li>
+                        <?php echo form_open_multipart('usuarios/logout'); ?>
+                        <button type="submit" class="btn btn-outline-warning">Cerrar sesion</button>
+                        <?php echo form_close(); ?>
+                            </li>
+
+                         
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
 </nav>
+
 <div class="container my-5">
   <h1>Lista Curso</h1>
     <?php echo form_open_multipart('curso/agregar'); ?>
@@ -16,19 +152,30 @@
   <button type="submit" class="btn btn-warning">Agregar Curso</button>
 <?php echo form_close(); ?>
 <div class="row">
+  <div class="row app-notes layout-top-spacing" id="cancel-row">
 	<div class="col-xl-6 col-lg-7 col-md-6 col-sm-11 col-11 ">
   <tbody>
 <?php
 foreach ($curso->result() as $row) {
 ?>
-  <div class="card component-card_5 bg-primary my-4 mx-4" style="max-width: 15rem;">
-   <img class="card-img-top" src="<?php echo base_url(); ?>assets/img/muriel.jpg" > 
-  <div class="card-header">Curso</div>
-  <div class="card-body">
-    <h5 class="card-title"><?php echo $row->curso;?></h5>
-    <p class="card-text">Cantidad: <?php echo $row->cantidad;?><br>
-     Horario: <?php echo $row->horario;?></p>
-     
+ <div class="app-hamburger-container">
+      <div class="app-container">
+<div class="app-note-container">
+<div class="note-container note-grid">
+  <div class="note-item all-notes note-social" style="max-width: 25rem;">
+    
+  <div class="note-inner-content my-4">Curso<br>
+<img src="<?php echo base_url(); ?>assets/img/muriel.jpg " width=180 >
+  </div>
+  <div class="note-content">
+   
+<h5 class="note-title" ><?php echo $row->curso;?></h5>
+<p class="note-title" >Cantidad: <?php echo $row->cantidad;?></p>
+    <br>
+      <p class="meta-time">Horario: <?php echo $row->horario;?></p>
+       <div class="note-description-content">
+            <p class="note-description"></p>
+                                                
          <?php echo form_open_multipart('curso/modificar'); ?>
           <input type="hidden" name="idCurso" value="<?php echo $row->idCurso; ?>">
           <div class="d-grid gap-2 my-4">
@@ -40,60 +187,15 @@ foreach ($curso->result() as $row) {
           <div class="d-grid gap-2 my-4">
           <input type="submit" name="buttonE" value="Eliminar" class="btn btn-danger"></div>
         <?php echo form_close(); ?>
-
+      </div>
       </div>
   </div>
+</div>
+</div>
+</div>
+</div>
+
 	<?php
 }
 ?>
-<div id="content" class="main-content">
-            <div class="layout-px-spacing">
-                
-                <div class="row app-notes layout-top-spacing" id="cancel-row">
-                    <div class="col-lg-12">
-                        <div class="app-hamburger-container">
-                            <div class="hamburger"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu chat-menu d-xl-none"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></div>
-                        </div>
-
-                        <div class="app-container">
-                            
-                            <div class="app-note-container">
-
-                                <div id="ct" class="note-container note-grid">
-                                    
-                                    <div class="note-item all-notes note-personal">
-                                        <div class="note-inner-content">
-                                            <div class="note-content">
-                                                <p class="note-title" data-noteTitle="Meeting with Kelly">Meeting with Kelly</p>
-                                                <p class="meta-time">11/01/2020</p>
-                                                <div class="note-description-content">
-                                                    <p class="note-description" data-noteDescription="Curabitur facilisis vel elit sed dapibus sodales purus rhoncus.">Curabitur facilisis vel elit sed dapibus sodales purus rhoncus.</p>
-                                                </div>
-                                            </div>
-                                            
-                                        </div>
-                                    </div>
-
-                                    <div class="note-item all-notes note-social">
-                                        <div class="note-inner-content">
-
-                                            <div class="note-content">
-                                                <p class="note-title" data-noteTitle="Download Server Logs">Download Server Logs</p>
-                                                <p class="meta-time">11/09/2020</p>
-                                                <div class="note-description-content">
-                                                    <p class="note-description" data-noteDescription="Suspendisse efficitur diam quis gravida. Nunc molestie est eros.">Suspendisse efficitur diam quis gravida. Nunc molestie est eros.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                        
-                    </div>
-                </div>
-
-                </div>
-            </div>
-             <!--  END CONTENT AREA  -->
-
-        
-    </div>
     <script src="<?php echo base_url(); ?> assets/js/libs/jquery-3.1.1.min.js"></script>

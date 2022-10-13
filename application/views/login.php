@@ -25,14 +25,14 @@ switch ($msg) {
             <div class="form-form-wrap">
                 <div class="form-container">
                     <div class="form-content">
-                        <h1 class="">LOGIN </h1>
+                        <h1 class="">LOGIN</h1>
                       <a class="navbar-brand" href="index.html"><img src="<?php echo base_url(); ?>assets/img/usuario.png" width="80"></a>
                         <form class="text-left">
                             <div class="form d-grid my-4">
-<div class="alert alert-info mb-3" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
-    <?php echo $mensaje; ?></button>
-</div>
+
+    <h1 class="text-danger">
+    <?php echo $mensaje; ?></h1>
+
                             
                                 <div id="username-field" class="field-wrapper input">
                                 <label class="form-label">Nombre de Usuario</label>
