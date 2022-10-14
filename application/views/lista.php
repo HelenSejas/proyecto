@@ -1,4 +1,4 @@
-
+ <link href="<?php echo base_url(); ?>assets/css/apps/todolist.css" rel="stylesheet" type="text/css" />
 <nav class="nav navbar-dark bg-dark ">
     <div class="main-container" id="container">
 
@@ -223,33 +223,69 @@
             </nav>
                             
 </nav>
+<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#miModal">Agregar Estudiante</button>
+ <div id="content" class="main-content">
+            <div class="layout-px-spacing">
 
+                <div class="row layout-top-spacing">
+                    <div class="col-xl-12 col-lg-12 col-md-12">
 
-<div class="container my-5">
-<div class="row layout-spacing">
-	<div class="col-md-12">
-    <h1>Lista estudiantes</h1>
+                        <div class="mail-box-container">
+                            <div class="mail-overlay"></div>
 
-<div class="row">
-         <div class="col-xl-6 col-lg-7 col-md-7 col-sm-11 col-11 mx-auto">
-         <div class="input-group mb-3">
-         <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></span>
-         </div>
-        <input type="text" class="form-control" name="primerApellido" placeholder="buscar estudiante" aria-label="Username" aria-describedby="basic-addon1">
-        </div></div>
+                            <div class="tab-title">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-12 text-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clipboard"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                                        <h5 class="app-title">Todo List</h5>
+                                    </div>
+
+                                    <div class="todoList-sidebar-scroll">
+                                        <div class="col-md-12 col-sm-12 col-12 mt-4 pl-0">
+                                            <ul class="nav nav-pills d-block" id="pills-tab" role="tablist">
+                                                <li class="nav-item">
+                                                    <a class="nav-link list-actions active" id="all-list" data-toggle="pill" href="#pills-inbox" role="tab" aria-selected="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3" y2="6"></line><line x1="3" y1="12" x2="3" y2="12"></line><line x1="3" y1="18" x2="3" y2="18"></line></svg> Lista Completa <span class="todo-badge badge"></span></a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link list-actions" id="todo-task-done" data-toggle="pill" href="#pills-sentmail" role="tab" aria-selected="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-thumbs-up"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>Activos<span class="todo-badge badge"></span></a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link list-actions" id="todo-task-important" data-toggle="pill" href="#pills-important" role="tab" aria-selected="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><span class="todo-badge badge"></span>nuevos</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link list-actions" id="todo-task-trash" data-toggle="pill" href="#pills-trash" role="tab" aria-selected="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg> Deshabilidados</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="todo-inbox" class="accordion todo-inbox">
+                                <div class="search">
+                                    <input type="text" class="form-control input-search" placeholder="Search Here...">
+                                    
+                                </div>
+                        
+                                <div class="todo-box">
+                                    
+                                    <div id="ct" class="todo-box-scroll">
+                                        <div class="todo-item all-list">
+                                            <div class="todo-item-inner">
+                                                <div class="n-chk text-center">
+                                                    
+                                                </div>
+
+                                                <div class="todo-content">
+                                                   <div class="row">
         
-        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#miModal">Agregar Estudiante</button>
-    
-
-		<table class="table style-3  table-hover">
+        <table class="table style-3  table-hover">
   <thead>
     <tr>
       <th scope="col">Nro</th>
       <th scope="col">Nombres</th>
       <th scope="col">Primer Apellido</th>
-      <th scope="col">segundo Apellido</th>
-      
+      <th scope="col">segundo Apellido</th>  
       
     </tr>
   </thead>
@@ -258,7 +294,7 @@
 $indice=1;
 foreach ($estudiante->result() as $row) {
 ?>
-	    <tr>
+        <tr>
       <th class="checkbox-column text-center" scope="row"><?php echo $indice;?></th>
       <td><?php echo $row->nombres;?></td>
       <td><?php echo $row->ApellidoPaterno;?></td>
@@ -270,10 +306,30 @@ foreach ($estudiante->result() as $row) {
           <?php echo form_close(); ?>
         </td> 
     </tr>
-	<?php
+    <?php
 $indice ++;
 }
 ?>
+
+                             </div>
+
+                            </div>
+                         </div>
+ 
+                        </div>
+
+                    </div>
+
+                </div>                                    
+            </div>
+
+                    
+            </div>
+         </div>
+
+         </div>
+     
+        </div>
 
 
 <div class="modal" id="miModal">
