@@ -5,12 +5,17 @@
            <button type="submit" class="btn btn-outline-warning">Atras</button>
            <?php echo form_close(); ?>
 <nav>
-	<div class="alert alert-info"> <img alt="logo" src="<?php echo base_url(); ?>assets/img/logo.jpg" width="110" > </div>
+	<div class="alert alert-info"> <img alt="logo" src="<?php echo base_url(); ?>assets/img/logo.jpg" width="110" > <h2 class="text-center text-black">Datos estudiante</h2></div>
 </nav>
 <div class="container my-5">
 <div class="row">
-	<div class="col-md-12 py-4 form-group">
-		<h2>Modificar estudiante</h2>
+ <div class="form-container ">
+        <div class="form-form">
+            <div class="form-wrap">
+                <div class="form-container">
+                    <div class="form-content">
+	<div class="col-md-12 py-3 form-group">
+		
 
 <?php
 foreach ($infoestudiante->result() as $row) {
@@ -35,18 +40,24 @@ foreach ($infoestudiante->result() as $row) {
 		<option value="<?php echo $row->sexo;?>">F</option>
 		<option value="<?php echo $row->sexo;?>">otro</option>
 	</select><br>
+  <label>Fecha de Ingreso:</label>
+    <input type="text" class="form-control" name="Curso" placeholder="Ingrese Curso" value="<?php echo $row->fechaInicio;?>"><br>
 	<div class="d-grid gap-2 my-4">
   <button type="submit" class="btn btn-primary">Modificar estudiante</button>
+
 </div>
   <?php echo form_close();
 }
 ?>
-	<div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-  <div class="card-header">Aviso</div>
-  <div class="card-body">
-    <h5 class="card-title">Acciones de Empleado</h5>
-    <p class="card-text">La accion del usuario que modifique se guardara , no hacer cambios innecesarios</p>
-  </div>
-	</div>
+<div class="d-grid gap-2 my-4">
+<?php echo form_open_multipart('estudiante/deshabilitarbd'); ?>
+          <input type="hidden" name="IdEstudiante" value="<?php echo $row->IdEstudiante;?>">
+          <input type="submit" name="buttonE" value="Deshabilitar Estudiante" class="btn btn-danger">
+        <?php echo form_close(); ?></div>
+</div>
+</div>
+</div>
+</div>
+
 </div>
 </div>

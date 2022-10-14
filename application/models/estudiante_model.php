@@ -8,12 +8,12 @@ class estudiante_model extends CI_Model {
 	{
 		$this->db->select('*');
 		$this->db->from('estudiante');
+		
 		return $this->db->get();
 	}
 	public function agregarestudiante($data)
 	{
 		$this->db->insert('estudiante',$data);
-	
 	}
 	
 		public function recuperarestudiante($IdEstudiante)
@@ -28,11 +28,7 @@ class estudiante_model extends CI_Model {
 		$this->db->where('IdEstudiante',$IdEstudiante);
 	    $this->db->update('estudiante',$data);
 	}
-		public function encontrarestudiante()
-	{
-		$sql="SELECT * FROM estudiante WHERE ApellidoPaterno LIKE '%Flores%'";
-		return $this->db->get($sql);
-	}
+	
 		public function validarusuario($usuario,$password)
 	{
 		$this->db->select('*');

@@ -238,12 +238,8 @@
          </div>
         <input type="text" class="form-control" name="primerApellido" placeholder="buscar estudiante" aria-label="Username" aria-describedby="basic-addon1">
         </div></div>
-
-       <?php echo form_open_multipart('estudiante/agregar'); ?>
-       <button type="submit" class="btn btn-info">Agregar estudiante</button>
-       <?php echo form_close(); ?>
         
-        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#miModal">abrir modal</button>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#miModal">Agregar Estudiante</button>
     
 
 		<table class="table style-3  table-hover">
@@ -253,8 +249,7 @@
       <th scope="col">Nombres</th>
       <th scope="col">Primer Apellido</th>
       <th scope="col">segundo Apellido</th>
-      <th scope="col">Modificar</th>
-      <th scope="col">Deshabilitar</th>
+      
       
     </tr>
   </thead>
@@ -271,14 +266,8 @@ foreach ($estudiante->result() as $row) {
     <td >
          <?php echo form_open_multipart('estudiante/modificar'); ?>
           <input type="hidden" name="IdEstudiante" value="<?php echo $row->IdEstudiante;?>">
-          <input type="submit" name="buttonM" value="Modificar" class="btn btn-outline-secondary mb-2">
+          <input type="submit" name="buttonM" value="Ver" class="btn btn-outline-secondary mb-2">
           <?php echo form_close(); ?>
-        </td>
-        <td>
-          <?php echo form_open_multipart('estudiante/deshabilitarbd'); ?>
-          <input type="hidden" name="IdEstudiante" value="<?php echo $row->IdEstudiante;?>">
-          <input type="submit" name="buttonE" value="Deshabilitar" class="btn btn-danger">
-        <?php echo form_close(); ?>
         </td> 
     </tr>
 	<?php
