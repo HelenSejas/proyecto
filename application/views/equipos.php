@@ -14,120 +14,20 @@
         <!--  BEGIN SIDEBAR  -->
         <div class="sidebar-wrapper sidebar-theme">
 
-            <div class="theme-logo">
+         
+
+           <nav class="nav navbar-dark bg-dark ">
+               <div class="theme-logo">
                 <a href="index.html">
-                    <img src="assets/img/90x90.jpg" class="navbar-logo" alt="logo">
-                    <span class="admin-logo">CORK<span></span></span>
+                    <img src="<?php echo base_url(); ?>assets/img/logo.jpg" class="navbar-logo" alt="logo" width=50>
+                    <span class="admin-logo">VICTOR MURIEL</span>
                 </a>
-            </div>
+            </div> 
 
-            <div class="sidebarCollapseFixed">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-            </div>
-            
-            <nav id="compactSidebar">
-                <ul class="menu-categories">
-                    <li class="menu">
-                        <a href="#dashboard" data-active="false" class="menu-toggle">
-                            <div class="base-menu">
-                                <div class="base-icons">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-                                </div>
-                                <span>Dashboard</span>
-                            </div>
-                        </a>
-                    </li>
-
-                    <li class="menu active">
-                        <a href="#app" data-active="true" class="menu-toggle">
-                            <div class="base-menu">
-                                <div class="base-icons">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-cpu"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
-                                </div>
-                                <span>Apps</span>
-                            </div>
-                        </a>
-                    </li>
-
-                    <li class="menu">
-                        <a href="#uiKit" data-active="false" class="menu-toggle">
-                            <div class="base-menu">
-                                <div class="base-icons">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-zap"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-                                </div>
-                                <span>UI Kit</span>
-                            </div>
-                        </a>
-                    </li>
-
-                    <li class="menu">
-                        <a href="#components" data-active="false" class="menu-toggle">
-                            <div class="base-menu">
-                                <div class="base-icons">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-                                </div>
-                                <span>Components</span>
-                            </div>
-                        </a>
-                    </li>
-
-                    <li class="menu">
-                        <a href="#forms" data-active="false" class="menu-toggle">
-                            <div class="base-menu">
-                                <div class="base-icons">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clipboard"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
-                                </div>
-                                <span>Forms</span>
-                            </div>
-                        </a>
-                    </li>
-
-                    <li class="menu">
-                        <a href="#tables" data-active="false" class="menu-toggle">
-                            <div class="base-menu">
-                                <div class="base-icons">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layout"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
-                                </div>
-                                <span>Tables</span>
-                            </div>
-                        </a>
-                    </li>
-
-                    <li class="menu">
-                        <a href="#pages" data-active="false" class="menu-toggle">
-                            <div class="base-menu">
-                                <div class="base-icons">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
-                                </div>
-                                <span>Pages</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="menu menu-single">
-                        <a href="widgets.html" data-active="false" class="menu-toggle">
-                            <div class="base-menu">
-                                <div class="base-icons">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
-                                </div>
-                                <span>Widgets</span>
-                            </div>
-                        </a>
-                    </li>
-
-                    <li class="menu">
-                        <a href="#more" data-active="false" class="menu-toggle">
-                            <div class="base-menu">
-                                <div class="base-icons">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
-                                </div>
-                                <span class="">More</span>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-
-            
+    <?php echo form_open_multipart('estudiante/index'); ?>
+           <button type="submit" class="btn btn-outline-warning">Atras</button>
+           <?php echo form_close(); ?>
+         </nav>
 
         </div>
         <!--  END SIDEBAR  -->
@@ -149,33 +49,10 @@
                                                 <span></span>
                                             </div>
                                         </a>
-                                        <div class="page-header">
-                                            <div class="page-title">
-                                                <h3>Notes</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="header-actions">
-                                        <div class="nav-item dropdown language-dropdown more-dropdown">
-                                            <div class="dropdown custom-dropdown-icon">
-                                                <a class="dropdown-toggle btn" href="#" role="button" id="customDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/img/flag-ca2.svg" class="flag-width" alt="flag"><span>English</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
-                        
-                                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="customDropdown">
-                                                    <a class="dropdown-item" data-img-value="flag-de3" data-value="German" href="javascript:void(0);"><img src="assets/img/flag-de3.svg" class="flag-width" alt="flag"> German</a>
-                                                    <a class="dropdown-item" data-img-value="flag-sp" data-value="Spanish" href="javascript:void(0);"><img src="assets/img/flag-sp.svg" class="flag-width" alt="flag"> Spanish</a>
-                                                    <a class="dropdown-item" data-img-value="flag-fr3" data-value="French" href="javascript:void(0);"><img src="assets/img/flag-fr3.svg" class="flag-width" alt="flag"> French</a>
-                                                    <a class="dropdown-item" data-img-value="flag-ca2" data-value="English" href="javascript:void(0);"><img src="assets/img/flag-ca2.svg" class="flag-width" alt="flag"> English</a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="toggle-notification-bar">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
-                                        </div>
-                                    </div>
-                                </header>
-                            </div>
+                                        <div class="text-center">
+                                           
+                                                <h3>Equipos</h3>
+                             
 
                             <div class="admin-data-content layout-top-spacing">
 
@@ -193,35 +70,32 @@
                                 
                                                 <div class="tab-title">
                                                     <div class="row">
-                                                        <div class="col-md-12 col-sm-12 col-12 text-center">
-                                                            <a id="btn-add-notes" class="btn btn-dark" href="javascript:void(0);">Add</a>
-                                                        </div>
                                                         <div class="col-md-12 col-sm-12 col-12 mt-5">
                                                             <ul class="nav nav-pills d-block" id="pills-tab3" role="tablist">
                                                                 <li class="nav-item">
                                                                     <a class="nav-link list-actions active" id="all-notes"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg> All Notes</a>
                                                                 </li>
                                                                 <li class="nav-item">
-                                                                    <a class="nav-link list-actions" id="note-fav"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> Favourites</a>
+                                                                    <a class="nav-link list-actions" id="note-fav"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> Profesional</a>
                                                                 </li>
                                                             </ul>
                                 
                                                             <hr/>
                                 
-                                                            <p class="group-section"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg> Tags</p>
+                                                           
                                 
                                                             <ul class="nav nav-pills d-block group-list" id="pills-tab" role="tablist">
                                                                 <li class="nav-item">
-                                                                    <a class="nav-link list-actions g-dot-primary" id="note-personal">Personal</a>
+                                                                    <a class="nav-link list-actions g-dot-primary" id="note-personal">Horarios</a>
                                                                 </li>
                                                                 <li class="nav-item">
-                                                                    <a class="nav-link list-actions g-dot-warning" id="note-work">Work</a>
+                                                                    <a class="nav-link list-actions g-dot-warning" id="note-work">Categorias</a>
                                                                 </li>
                                                                 <li class="nav-item">
-                                                                    <a class="nav-link list-actions g-dot-success" id="note-social">Social</a>
+                                                                    <a class="nav-link list-actions g-dot-success" id="note-social">Detelle</a>
                                                                 </li>
                                                                 <li class="nav-item">
-                                                                    <a class="nav-link list-actions g-dot-danger" id="note-important">Important</a>
+                                                                    <a class="nav-link list-actions g-dot-danger" id="note-important">Ver reportes</a>
                                                                 </li>
                                                             </ul>
                                                         </div>
@@ -559,6 +433,7 @@
                                 </div>
 
                             </div>
+
 
                         </div>
 

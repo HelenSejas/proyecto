@@ -242,6 +242,9 @@
        <?php echo form_open_multipart('estudiante/agregar'); ?>
        <button type="submit" class="btn btn-info">Agregar estudiante</button>
        <?php echo form_close(); ?>
+        
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#miModal">abrir modal</button>
+    
 
 		<table class="table style-3  table-hover">
   <thead>
@@ -265,7 +268,7 @@ foreach ($estudiante->result() as $row) {
       <td><?php echo $row->nombres;?></td>
       <td><?php echo $row->ApellidoPaterno;?></td>
       <td><?php echo $row->ApellidoMaterno;?></td>
-        <td >
+    <td >
          <?php echo form_open_multipart('estudiante/modificar'); ?>
           <input type="hidden" name="IdEstudiante" value="<?php echo $row->IdEstudiante;?>">
           <input type="submit" name="buttonM" value="Modificar" class="btn btn-outline-secondary mb-2">
@@ -283,6 +286,51 @@ $indice ++;
 }
 ?>
 
+
+<div class="modal" id="miModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Encabezado</h5>
+                   <button class="btn btn-close" data-bs-dismiss="modal"></button> 
+            </div>
+            <div class="modal-body">
+   <?php echo form_open_multipart('estudiante/agregarbd'); ?>
+
+    <legend>Datos</legend>
+    <label>Nombres</label>
+    <input type="text" class="form-control" name="nombre" placeholder="Ingrese nombre de estudiante"><br>
+    <label>Primer Apellido:</label>
+    <input type="text" class="form-control" name="primerApellido" placeholder="Ingrese primer Apellido">
+    <label>Segundo Apellido:</label>
+    <input type="text" class="form-control"  name="segundoApellido" placeholder="Ingrese Segundo Apellido" value=" "><br>
+    <label>Edad:</label>
+    <input type="text" name="edad" class="form-control" placeholder="Ingrese edad de estudiante">
+    <label>Numero Celular:</label>
+    <input type="tel" class="form-control" name="nroCelular" placeholder="Ingrese numero celular">
+    <label>Curso:</label>
+    <input type="text" class="form-control" name="Curso" placeholder="Ingrese Curso"><br>
+     <label>Sexo:</label>
+        <select class="custom-select custom-select-sm" name="sexo">
+        <option>M</option>
+        <option>F</option>
+        <option>otro</option>
+    </select>
+
+    <div class="d-grid gap-2 my-4">
+<button type="submit" class="btn btn-info">Agregar estudiante</button>
+</div >
+    
+       <?php echo form_close(); ?>
+            </div> 
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+</div>
   </tbody>
 </table>
 	</div>

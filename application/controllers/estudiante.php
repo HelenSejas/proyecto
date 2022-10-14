@@ -12,12 +12,6 @@ class estudiante extends CI_Controller {
 		$this->load->view('lista', $data);
 		$this->load->view('include/fooder');
 	}
-public function agregar()
-	{
-		$this->load->view('include/header');
-		$this->load->view('formulario');
-		$this->load->view('include/fooder');
-	}
 	public function agregarbd()
 	{
 		$data['nombres'] =$_POST['nombre'];
@@ -74,4 +68,5 @@ public function deshabilitarbd()
 	$this->load->view('cobrarmensualidad',$data);
 	$this->load->view('include/fooder');
 	}
+
 }
