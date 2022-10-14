@@ -1,6 +1,4 @@
-</head>
-<body  >
-
+<link href="<?php echo base_url(); ?>plugins/sweetalerts/sweetalert.css" rel="stylesheet" type="text/css" />
      <?php echo form_open_multipart('estudiante/index'); ?>
            <button type="submit" class="btn btn-outline-warning">Atras</button>
            <?php echo form_close(); ?>
@@ -43,17 +41,24 @@ foreach ($infoestudiante->result() as $row) {
   <label>Fecha de Ingreso:</label>
     <input type="text" class="form-control" name="Curso" placeholder="Ingrese Curso" value="<?php echo $row->fechaInicio;?>"><br>
 	<div class="d-grid gap-2 my-4">
-  <button type="submit" class="btn btn-primary">Modificar estudiante</button>
-
+    <div class="widget-content widget-content-area text-center">
+  <button type="submit" class="mr-2 btn btn-primary">Modificar estudiante</button>
+</div>
 </div>
   <?php echo form_close();
 }
 ?>
 <div class="d-grid gap-2 my-4">
 <?php echo form_open_multipart('estudiante/deshabilitarbd'); ?>
-          <input type="hidden" name="IdEstudiante" value="<?php echo $row->IdEstudiante;?>">
-          <input type="submit" name="buttonE" value="Deshabilitar Estudiante" class="btn btn-danger">
-        <?php echo form_close(); ?></div>
+<div class="widget-content widget-content-area text-center">
+    <input type="hidden" name="IdEstudiante" value="<?php echo $row->IdEstudiante;?>">
+          <button class="mr-2 btn btn-danger success">Deshabilitar Estudiante</button>
+         
+        <?php echo form_close(); ?></div> 
+        <?php echo form_open_multipart('estudiante/seleccionado'); ?>
+         <input type="hidden" name="IdEstudiante"  value="<?php echo $row->IdEstudiante; ?>">
+           <button type="submit" class="btn btn-outline-warning">Cobrar Mensualidad</button>
+           <?php echo form_close(); ?>
 </div>
 </div>
 </div>
@@ -61,3 +66,5 @@ foreach ($infoestudiante->result() as $row) {
 
 </div>
 </div>
+  <script src="<?php echo base_url(); ?>plugins/sweetalerts/sweetalert2.min.js"></script>
+    <script src="<?php echo base_url(); ?>plugins/sweetalerts/custom-sweetalert.js"></script>

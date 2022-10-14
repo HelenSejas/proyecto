@@ -30,7 +30,7 @@ public function deshabilitarbd()
 		$IdEstudiante=$_POST['IdEstudiante'];
 		$data['estado']=0;
 		$this->estudiante_model->modificarestudiante($IdEstudiante,$data);
-		redirect('estudiante/index','refresh');
+		redirect('estudiante/index');
 	}
 	public function modificar()
 	{
@@ -52,7 +52,6 @@ public function deshabilitarbd()
     $data['Curso'] =$_POST['Curso'];
     $data['sexo'] =$_POST['sexo'];
     	$this->estudiante_model->modificarestudiante($IdEstudiante,$data);
-		redirect('estudiante/index','refresh');
 	}
 	public function buscar() {
     $this->estudiante_model->encontrarestudiante();  

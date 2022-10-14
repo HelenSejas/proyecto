@@ -223,10 +223,10 @@
             </nav>
                             
 </nav>
-<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#miModal">Agregar Estudiante</button>
- <div id="content" class="main-content">
-            <div class="layout-px-spacing">
 
+ <div id="content" class="main-content my-4">
+            <div class="layout-px-spacing">
+<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#miModal">Agregar Estudiante</button>
                 <div class="row layout-top-spacing">
                     <div class="col-xl-12 col-lg-12 col-md-12">
 
