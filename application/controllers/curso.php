@@ -13,6 +13,12 @@ class curso extends CI_Controller {
 		$this->load->view('listacurso', $data);
 		$this->load->view('include/fooder');
 	}
+	public function indexUniforme()
+	{
+		$this->load->view('include/header');
+		$this->load->view('uniformes');
+		$this->load->view('include/fooder');
+	}
 public function agregar()
 	{
 		$this->load->view('include/header');

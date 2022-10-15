@@ -1,7 +1,7 @@
 <link href="<?php echo base_url(); ?> assets/css/components/custom-modal.css" rel="stylesheet" type="text/css" />
  <link href="<?php echo base_url(); ?>assets/css/apps/notes.css" rel="stylesheet" type="text/css" />
  <link href="<?php echo base_url(); ?>assets/css/forms/theme-checkbox-radio.css" rel="stylesheet" type="text/css" />
-
+<link href="<?php echo base_url(); ?>plugins/pricing-table/css/component.css" rel="stylesheet" type="text/css" />
 <nav class="nav navbar-dark bg-dark ">
     <?php echo form_open_multipart('estudiante/index'); ?>
            <button type="submit" class="btn btn-outline-warning">Atras</button>
@@ -144,58 +144,102 @@
                 </ul>
             </nav>
 </nav>
+  <div class="main-container" id="container">
 
-<div class="container my-5">
-  <h1>Lista Curso</h1>
-    <?php echo form_open_multipart('curso/agregar'); ?>
+        <div class="overlay"></div>
+        <div class="search-overlay"></div>
 
-  <button type="submit" class="btn btn-warning">Agregar Curso</button>
-<?php echo form_close(); ?>
-<div class="row">
-  <div class="row app-notes layout-top-spacing" id="cancel-row">
-	<div class="col-xl-6 col-lg-7 col-md-6 col-sm-11 col-11 ">
-  <tbody>
-<?php
+
+        <!--  BEGIN CONTENT AREA  -->
+   
+                    <div class="col-lg-12 layout-spacing ">
+
+                        <div class="statbox widget box box-shadow my-5">
+                           
+                                <h4 class="text-left text-center">CURSOS</h4>
+                                <div class="container">   
+                                   <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#miModalC">Crear Nuevo Curso</button>                                 
+                                    <div id="pricingWrapper" class="row">
+                                        <?php
 foreach ($curso->result() as $row) {
 ?>
- <div class="app-hamburger-container">
-      <div class="app-container">
-<div class="app-note-container">
-<div class="note-container note-grid">
-  <div class="note-item all-notes note-social" style="max-width: 25rem;">
-    
-  <div class="note-inner-content my-4">Curso<br>
-<img src="<?php echo base_url(); ?>assets/img/muriel.jpg " width=180 >
-  </div>
-  <div class="note-content">
-   
-<h5 class="note-title" ><?php echo $row->curso;?></h5>
-<p class="note-title" >Cantidad: <?php echo $row->cantidad;?></p>
-    <br>
-      <p class="meta-time">Horario: <?php echo $row->horario;?></p>
-       <div class="note-description-content">
-            <p class="note-description"></p>
-                                                
-         <?php echo form_open_multipart('curso/modificar'); ?>
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="card stacked mt-5">
+                                                <div class="card-header pt-0">
+                                                    
+                                                    <h3 class="card-title mt-3 mb-1"><?php echo $row->curso;?></h3>
+                                                    <p>varones</p>
+                                                     <img src="<?php echo base_url(); ?>assets/img/muriel.jpg" width=110> 
+                                                </div>
+                                                <div class="card-body">
+                                                    <ul class="list-group list-group-minimal mb-3">
+                                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                        </li>
+                                                        <li class="list-group-item d-flex justify-content-between align-items-center">Cantidad: <?php echo $row->cantidad;?>
+                                                        </li>
+                                                        <li class="list-group-item d-flex justify-content-between align-items-center">Horario: <?php echo $row->horario;?>
+                                                        </li>
+                                                        <li class="list-group-item d-flex justify-content-between align-items-center"><?php echo $row->dia;?>
+                                                        </li>
+                                                        <?php echo form_open_multipart('curso/modificar'); ?>
           <input type="hidden" name="idCurso" value="<?php echo $row->idCurso; ?>">
-          <div class="d-grid gap-2 my-4">
+          <div class="d-grid gap-2 my-2">
           <input type="submit" name="buttonM" value="Modificar" class="btn btn-success"></div>
           <?php echo form_close(); ?>
        
           <?php echo form_open_multipart('curso/eliminarcursobd'); ?>
           <input type="hidden" name="idCurso" value="<?php echo $row->idCurso;?>">
-          <div class="d-grid gap-2 my-4">
+          <div class="d-grid gap-2 my-2">
           <input type="submit" name="buttonE" value="Eliminar" class="btn btn-danger"></div>
         <?php echo form_close(); ?>
-      </div>
-      </div>
-  </div>
-</div>
-</div>
-</div>
-</div>
-
-	<?php
+                                                    </ul>
+                                                   
+                                                </div>
+                                            </div>
+                                        </div> 
+                                            <?php
 }
-?>
+?>                         
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+<div class="modal" id="miModalC">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Nuevo</h5>
+                   <button class="btn btn-close" data-bs-dismiss="modal"></button> 
+            </div>
+            <div class="modal-body">
+
+ <?php echo form_open_multipart('curso/agregarbd'); ?>
+
+    <legend>Datos</legend>
+    <label>Curso</label>
+    <input type="text" name="curso" placeholder="Ingrese nombre de curso"><br>
+    <label>Cantidad: </label>
+    <input type="text" name="cantidad" placeholder="Ingrese cantidad"><br>
+    <label>Horario:</label>
+    <input type="meta-time" name="horario" placeholder="Ingrese Horario" value=" "><br>
+<label>dia:</label>
+    <input type="text" name="horario" placeholder="Ingrese Dia" value=" "><br>
+    <div class="d-grid gap-2">
+  <button type="submit" class="btn btn-primary">Agregar Curso</button>
+</div >
+    </div>
+       <?php echo form_close(); ?>
+            
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+            </div> 
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+
     <script src="<?php echo base_url(); ?> assets/js/libs/jquery-3.1.1.min.js"></script>
