@@ -56,8 +56,11 @@ public function agregar()
 
 		public function indexEquipo()
 	{
+		 $listaequipo=$this->curso_model->listaequipos();
+         $data['equipo']=$listaequipo;
+
 		$this->load->view('include/header');
-		$this->load->view('equipos');
+		$this->load->view('equipos',$data);
 		$this->load->view('include/fooder');
 	}
 }

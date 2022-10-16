@@ -39,5 +39,11 @@ class curso_model extends CI_Model {
 		$this->db->from('entrenador');
 		return $this->db->get();
 	}
+	public function listaequipos()
+	{
+		$this->db->select('*');
+		$this->db->from('equipo');
+		return $this->db->get();
+	}
 }
 ?>
