@@ -12,7 +12,7 @@ class estudiante extends CI_Controller {
 		$this->load->view('lista', $data);
 		$this->load->view('include/fooder');
 	}
-		public function deshabilidados()
+		public function inactivos()
 	{   
 	    $lista=$this->estudiante_model->listadeshabilitados();
          $data['estudiante']=$lista;
@@ -60,7 +60,9 @@ public function deshabilitarbd()
     $data['nroCelular'] =$_POST['nroCelular'];
     $data['Curso'] =$_POST['Curso'];
     $data['sexo'] =$_POST['sexo'];
+    $data['fechaInicio'] =$_POST['fechaInicio'];
     	$this->estudiante_model->modificarestudiante($IdEstudiante,$data);
+    	redirect('estudiante/index');
 	}
 	public function buscar() {
     $this->estudiante_model->encontrarestudiante();  

@@ -2,7 +2,7 @@
      <?php echo form_open_multipart('estudiante/index'); ?>
            <button type="submit" class="btn btn-outline-warning">Atras</button>
            <?php echo form_close(); ?>
-    <div class="helpdesk text-center">
+    <div class="helpdesk">
         <nav class="navbar navbar-expand ">
 <img src="<?php echo base_url(); ?>assets/img/logo1.jpg" width="110" >
 <h2 class="text-center text-black">Datos estudiante</h2>
@@ -41,15 +41,16 @@ foreach ($infoestudiante->result() as $row) {
 		<option value="<?php echo $row->sexo;?>">otro</option>
 	</select><br>
   <label>Fecha de Ingreso:</label>
-    <input type="text" class="form-control" name="Curso" placeholder="Ingrese Curso" value="<?php echo $row->fechaInicio;?>"><br>
+    <input type="date" class="form-control" name="fechaInicio" placeholder="Ingrese Fecha" value="<?php echo $row->fechaInicio;?>"><br>
 	<div class="d-grid gap-2 my-4">
     <div class="widget-content widget-content-area text-center">
   <button type="submit" class="mr-2 btn btn-primary">Modificar estudiante</button>
-</div>
-</div>
+
   <?php echo form_close();
 }
 ?>
+</div>
+</div>
 <div class="d-grid gap-2 my-4">
 <?php echo form_open_multipart('estudiante/deshabilitarbd'); ?>
 <div class="widget-content widget-content-area text-center">

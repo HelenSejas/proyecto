@@ -1,4 +1,4 @@
-
+ <link href="<?php echo base_url(); ?>plugins/pricing-table/css/component.css" rel="stylesheet" type="text/css" />
 <nav class="nav navbar-dark bg-dark ">
     <div class="main-container" id="container">
 
@@ -57,7 +57,14 @@
             <nav id="topbar">
 
                 <ul class="list-unstyled menu-categories" id="topAccordion">
-
+ <li class="menu single-menu">
+        
+                        
+                        <?php echo form_open_multipart('estudiante/index'); ?>
+                        <button type="submit" class="btn btn-outline-warning">atras</button>
+                        <?php echo form_close(); ?>
+                        
+                    </li>
                     <li class="menu single-menu">
                         <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle autodroprown">
                             <div class="">
@@ -144,50 +151,11 @@
                             <li>
                             <li class="sub-sub-submenu-list">
                                 <a href="#user-login" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> Login <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg> </a>
-                                <ul class="collapse list-unstyled sub-submenu" id="user-login" data-parent="#page"> 
-                                    <li>
-                                        <a href="auth_login.html"> Login </a>
-                                    </li>
-                                    <li>
-                                        <a href="auth_login_boxed.html"> Login Boxed </a>
-                                    </li>
-                                </ul>
+                               
                             </li>
-                            <li class="sub-sub-submenu-list">
-                                <a href="#user-register" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> Register <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg> </a>
-                                <ul class="collapse list-unstyled sub-submenu" id="user-register" data-parent="#page"> 
-                                    <li>
-                                        <a href="auth_register.html"> Register </a>
-                                    </li>
-                                    <li>
-                                        <a href="auth_register_boxed.html"> Register Boxed </a>
-                                    </li>
-                                </ul>
-                            </li>
+                          
 
-                            <li class="sub-sub-submenu-list">
-                                <a href="#user-passRecovery" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> Password Recovery <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg> </a>
-                                <ul class="collapse list-unstyled sub-submenu" id="user-passRecovery" data-parent="#page"> 
-                                    <li>
-                                        <a href="auth_pass_recovery.html"> Recover ID </a>
-                                    </li>
-                                    <li>
-                                        <a href="auth_pass_recovery_boxed.html"> Recover ID Boxed </a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li class="sub-sub-submenu-list">
-                                <a href="#user-lockscreen" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> Lockscreen <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg> </a>
-                                <ul class="collapse list-unstyled sub-submenu" id="user-lockscreen" data-parent="#page"> 
-                                    <li>
-                                        <a href="auth_lockscreen.html"> Unlock </a>
-                                    </li>
-                                    <li>
-                                        <a href="auth_lockscreen_boxed.html"> Unlock Boxed </a>
-                                    </li>
-                                </ul>
-                            </li>
+                          
                         </ul>
                     </li>
 
@@ -200,58 +168,91 @@
 
                         </ul>
                     </li>
+
                 </ul>
-            </nav>
+            
                             
 </nav>
 <br>
-<div class="row">
-         <div class="col-xl-6 col-lg-7 col-md-7 col-sm-11 col-11 mx-auto">
-         <div class="input-group mb-3">
-         <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></span>
-         </div>
-        <input type="text" class="form-control" name="primerApellido" placeholder="buscar entrenador" aria-label="Username" aria-describedby="basic-addon1">
-        </div></div></div>
 
-<div class="container my-3¿2 col-xl-6">
-<div class="row layout-spacing">
-	<div class="col-md-12">
-    <h1>Entrenador</h1>
-  <?php echo form_open_multipart('entrenador/agregar'); ?>
+<div class="main-container" id="container">
+
+        <div class="overlay"></div>
+        <div class="search-overlay"></div>
+
+      
+
+        <!--  BEGIN CONTENT AREA  -->
+        <div id="content" class="main-content">
+            <div class="layout-px-spacing">
+                
+                <div class="row" id="cancel-row">
+
+                    <div class="col-lg-12 layout-spacing layout-top-spacing">
+                        <div class="statbox widget box box-shadow">
+                           
+                            <div class="widget-content widget-content-area">
+
+                                <div class="container">
+                                    
+                     <h1>Entrenador</h1>
+                   
+                             <?php echo form_open_multipart('entrenador/agregar'); ?>
 
   <button type="submit" class="btn btn-danger">Agregar empleado</button>
 <?php echo form_close(); ?>
 <br>
-		<table class="table style-3  table-hover">
-  <tbody>
-<?php
+                            <div class="widget-content widget-content-area">
+                                <div class="container">
+                                    <section class="pricing-section bg-7 mt-3">
+                                        <div class="pricing pricing--norbu">
+                                            <?php
 $indice=1;
 foreach ($entrenador->result() as $row) {
 ?>
-	  <div class="card component-card_4 bg-info" style="max-width: 15rem;">
-   <img class="card-img-top" src="<?php echo base_url(); ?>assets/img/usuario.png" > 
-  <div class="card-header">Entrenador</div>
-  <div class="card-body">
-    <h5 class="card-title"> Nombres: <?php echo $row->nombres;?></h5>
-    <p class="card-text">Apellidos: <?php echo $row->primerApellido;?>  <?php echo $row->segundoApellido;?><br>
-     Sueldo: <?php echo $row->sueldo;?></p>
-
-         <?php echo form_open_multipart('entrenador/modificar'); ?>
+                                            <div class="pricing__item">
+                                                <h3 class="pricing__title">Nombres: <?php echo $row->nombres;?></h3>
+                                                <p class="pricing__sentence">Apellidos: <?php echo $row->primerApellido;?>  <?php echo $row->segundoApellido;?></p>
+                                         <img class="card-img" src="<?php echo base_url(); ?>assets/img/usuario.png" width="80"> 
+                                    <ul class="pricing__feature-list text-center">
+                                                   
+                                        <li class="pricing__feature">Sueldo: <?php echo $row->sueldo;?></li>
+                                        <li class="pricing__feature"> <?php echo form_open_multipart('entrenador/modificar'); ?>
           <input type="hidden" name="idEntrenador" value="<?php echo $row->idEntrenador;?>">
-          <input type="submit" name="buttonM" value="Modificar" class="btn btn-outline-secondary mb-2">
-          <?php echo form_close(); ?>
-        
-          <?php echo form_open_multipart('entrenador/deshabilitarbd'); ?>
+          <input type="submit" name="buttonM" value="Modificar" class="pricing__action mx-auto mb-4">
+          <?php echo form_close(); ?> </li>
+         <li class="pricing__feature">  <?php echo form_open_multipart('entrenador/deshabilitarbd'); ?>
           <input type="hidden" name="idEntrenador" value="<?php echo $row->idEntrenador;?>">
-          <input type="submit" name="buttonE" value="deshabilitar" class="btn btn-danger">
-        <?php echo form_close(); ?>
-        
-   
-	<?php
+          <input type="submit" name="buttonE" value="deshabilitar" class="pricing__action mx-auto mb-4">
+        <?php echo form_close(); ?></li>
+                                                </ul>
+                                                
+                                            </div>
+                                            <?php
 $indice ++;
 }
 ?>
+                                        </div>
+                                    </section>
+
+                                  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                </div>
+       
+        <!--  END CONTENT AREA  -->
+
+    </div>
+
+  <tbody>
+
+</div>
+</div>
 
   </tbody>
 </table>

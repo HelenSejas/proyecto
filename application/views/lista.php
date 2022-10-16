@@ -1,4 +1,5 @@
  <link href="<?php echo base_url(); ?>assets/css/apps/todolist.css" rel="stylesheet" type="text/css" />
+ <link href="<?php echo base_url(); ?>plugins/sweetalerts/sweetalert.css" rel="stylesheet" type="text/css" />
 <nav class="nav navbar-dark bg-dark ">
     <div class="main-container" id="container">
 
@@ -241,7 +242,7 @@
                                 <div class="row">
                                     <div class="col-md-12 col-sm-12 col-12 text-center">
                                     <img alt="logo" src="<?php echo base_url(); ?>assets/img/lista.png" width=90>
-                                        <h5 class="app-title m-3">Todo List</h5>
+                                        <h5 class="app-title m-3">Lista completa</h5>
 
                                     </div>
                          
@@ -359,9 +360,10 @@ $indice ++;
     </select>
 
     <div class="d-grid gap-2 my-4">
+        <div class="widget-content widget-content-area text-center">
 <button type="submit" class="btn btn-info">Agregar estudiante</button>
 </div >
-    
+    </div>
        <?php echo form_close(); ?>
             </div> 
             <div class="modal-footer">
