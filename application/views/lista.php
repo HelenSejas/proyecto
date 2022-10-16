@@ -109,7 +109,7 @@
                                 <a href="ui_alerts.html">Ver precios</a>
                             </li>
                             <li> <?php echo form_open_multipart('curso/indexUniforme'); ?>
-                        <button type="submit" class="btn btn-outline-warning">ver precios</button>
+                        <button type="submit" class="btn btn-outline-warning">ver</button>
                         <?php echo form_close(); ?></li>
                         </ul>
                     </li>
@@ -229,6 +229,7 @@
 
  <div id="content" class="main-content my-4">
             <div class="layout-px-spacing">
+                <h2 class="text-center">Estudiantes</h2>
 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#miModal">Agregar Estudiante</button>
                 <div class="row layout-top-spacing">
                     <div class="col-xl-12 col-lg-12 col-md-12">
@@ -239,25 +240,20 @@
                             <div class="tab-title">
                                 <div class="row">
                                     <div class="col-md-12 col-sm-12 col-12 text-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clipboard"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
-                                        <h5 class="app-title">Lista Completa</h5>
-                                    </div>
+                                    <img alt="logo" src="<?php echo base_url(); ?>assets/img/lista.png" width=90>
+                                        <h5 class="app-title m-3">Todo List</h5>
 
+                                    </div>
+                         
                                     <div class="todoList-sidebar-scroll">
                                         <div class="col-md-12 col-sm-12 col-12 mt-4 pl-0">
                                             <ul class="nav nav-pills d-block" id="pills-tab" role="tablist">
-                                                <li class="nav-item">
-                                                    <a class="nav-link list-actions active" id="all-list" data-toggle="pill" href="#pills-inbox" role="tab" aria-selected="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3" y2="6"></line><line x1="3" y1="12" x2="3" y2="12"></line><line x1="3" y1="18" x2="3" y2="18"></line></svg> Lista Completa <span class="todo-badge badge"></span></a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link list-actions" id="todo-task-done" data-toggle="pill" href="#pills-sentmail" role="tab" aria-selected="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-thumbs-up"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>Activos<span class="todo-badge badge"></span></a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link list-actions" id="todo-task-important" data-toggle="pill" href="#pills-important" role="tab" aria-selected="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><span class="todo-badge badge"></span>nuevos</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link list-actions" id="todo-task-trash" data-toggle="pill" href="#pills-trash" role="tab" aria-selected="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg> Deshabilidados</a>
-                                                </li>
+                         
+                    <div class="btn-group-vertical my-2" role="group" aria-label="Vertical button group">
+              <button type="button" class="btn btn-secondary">mostrar inhabilitados</button><br>
+              <button type="button" class="btn btn-secondary">mostrar nuevos alumnos</button><br>
+              <button type="button" class="btn btn-secondary">crear lista pdf</button>
+                   </div>
                                             </ul>
                                         </div>
                                     </div>
@@ -265,10 +261,7 @@
                             </div>
 
                             <div id="todo-inbox" class="accordion todo-inbox">
-                                <div class="search">
-                                    <input type="text" class="form-control input-search" placeholder="Search Here...">
-                                    
-                                </div>
+                            
                         
                                 <div class="todo-box">
                                     
@@ -339,7 +332,7 @@ $indice ++;
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Encabezado</h5>
+                <h5 class="modal-title">Nuevo Estudiante</h5>
                    <button class="btn btn-close" data-bs-dismiss="modal"></button> 
             </div>
             <div class="modal-body">

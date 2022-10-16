@@ -8,7 +8,14 @@ class estudiante_model extends CI_Model {
 	{
 		$this->db->select('*');
 		$this->db->from('estudiante');
-		
+		$this->db->where('estado',1);
+		return $this->db->get();
+	}
+	public function listadeshabilitados()
+	{
+		$this->db->select('*');
+		$this->db->from('estudiante');
+		$this->db->where('estado',0);
 		return $this->db->get();
 	}
 	public function agregarestudiante($data)

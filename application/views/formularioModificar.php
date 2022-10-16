@@ -2,17 +2,19 @@
      <?php echo form_open_multipart('estudiante/index'); ?>
            <button type="submit" class="btn btn-outline-warning">Atras</button>
            <?php echo form_close(); ?>
-<nav>
-	<div class="alert alert-info"> <img alt="logo" src="<?php echo base_url(); ?>assets/img/logo.jpg" width="110" > <h2 class="text-center text-black">Datos estudiante</h2></div>
+    <div class="helpdesk text-center">
+        <nav class="navbar navbar-expand ">
+<img src="<?php echo base_url(); ?>assets/img/logo1.jpg" width="110" >
+<h2 class="text-center text-black">Datos estudiante</h2>
 </nav>
-<div class="container my-5">
+<div class="container my-3">
 <div class="row">
  <div class="form-container ">
         <div class="form-form">
             <div class="form-wrap">
                 <div class="form-container">
                     <div class="form-content">
-	<div class="col-md-12 py-3 form-group">
+	<div class="col-md-12  form-group">
 		
 
 <?php
@@ -54,7 +56,9 @@ foreach ($infoestudiante->result() as $row) {
     <input type="hidden" name="IdEstudiante" value="<?php echo $row->IdEstudiante;?>">
           <button class="mr-2 btn btn-danger success">Deshabilitar Estudiante</button>
          
-        <?php echo form_close(); ?></div> 
+        <?php echo form_close(); ?>
+</div>
+
         <?php echo form_open_multipart('estudiante/seleccionado'); ?>
          <input type="hidden" name="IdEstudiante"  value="<?php echo $row->IdEstudiante; ?>">
            <button type="submit" class="btn btn-outline-warning">Cobrar Mensualidad</button>

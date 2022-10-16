@@ -10,6 +10,7 @@
            <button type="submit" class="btn btn-outline-warning">Inicio</button>
            <?php echo form_close(); ?>
 
+
            <div class="topbar-nav header navbar" role="banner">
             <nav id="topbar">
 
@@ -158,17 +159,21 @@
                            
                                 <h4 class="text-left text-center">CURSOS</h4>
                                 <div class="container">   
-                                   <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#miModalC">Crear Nuevo Curso</button>                                 
+                                   <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#miModalC">Crear Nuevo Curso</button>  
+                                   <div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-secondary ">Ver cursos eliminados</button>
+    <button type="button" class="btn btn-secondary ">Mostrar horarios</button>
+    <button type="button" class="btn btn-secondary">Crear lista</button>
+</div>                               
                                     <div id="pricingWrapper" class="row">
                                         <?php
 foreach ($curso->result() as $row) {
 ?>
                                         <div class="col-md-6 col-lg-4">
-                                            <div class="card stacked mt-5">
+                                            <div class="card stacked mt-2">
                                                 <div class="card-header pt-0">
                                                     
                                                     <h3 class="card-title mt-3 mb-1"><?php echo $row->curso;?></h3>
-                                                    <p>varones</p>
                                                      <img src="<?php echo base_url(); ?>assets/img/muriel.jpg" width=110> 
                                                 </div>
                                                 <div class="card-body">
@@ -209,34 +214,35 @@ foreach ($curso->result() as $row) {
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Nuevo</h5>
+                <h5 class="modal-title">Nuevo Curso</h5>
                    <button class="btn btn-close" data-bs-dismiss="modal"></button> 
             </div>
             <div class="modal-body">
-
- <?php echo form_open_multipart('curso/agregarbd'); ?>
+   <?php echo form_open_multipart('estudiante/agregarbd'); ?>
 
     <legend>Datos</legend>
-    <label>Curso</label>
-    <input type="text" name="curso" placeholder="Ingrese nombre de curso"><br>
-    <label>Cantidad: </label>
-    <input type="text" name="cantidad" placeholder="Ingrese cantidad"><br>
+    <label>Curso:</label>
+    <input type="text" class="form-control" name="nombre" placeholder="Ingrese nombre de estudiante"><br>
+    <label>Cantidad:</label>
+    <input type="text" class="form-control" name="primerApellido" placeholder="Ingrese primer Apellido">
     <label>Horario:</label>
-    <input type="meta-time" name="horario" placeholder="Ingrese Horario" value=" "><br>
-<label>dia:</label>
-    <input type="text" name="horario" placeholder="Ingrese Dia" value=" "><br>
-    <div class="d-grid gap-2">
-  <button type="submit" class="btn btn-primary">Agregar Curso</button>
+    <input type="text" class="form-control"  name="segundoApellido" placeholder="Ingrese Segundo Apellido" value=" "><br>
+    <label>Fecha Creacion:</label>
+    <input type="date" name="edad" class="form-control" placeholder="Ingrese edad de estudiante">
+    <label>Dia:</label>
+    <input type="tel" class="form-control" name="nroCelular" placeholder="Ingrese numero celular">
+    <div class="d-grid gap-2 my-4">
+<button type="submit" class="btn btn-info">Agregar Curso</button>
 </div >
-    </div>
+    
        <?php echo form_close(); ?>
-            
+            </div> 
             <div class="modal-footer">
                 <button class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
             </div>
-            </div> 
             </div>
         </div>
+    </div>
     </div>
 
 

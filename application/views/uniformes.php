@@ -1,5 +1,5 @@
 
-    <link href="<?php echo base_url(); ?>plugins/pricing-table/css/component.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo base_url(); ?>plugins/pricing-table/css/component.css" rel="stylesheet" type="text/css" />
     <div class="main-container" id="container">
 
         <div class="overlay"></div>
@@ -82,7 +82,7 @@
                                             <div class="card stacked mt-5">
                                                 <div class="card-header pt-0">
                                                     <span class="card-price">110bs</span>
-                                                    <h3 class="card-title mt-3 mb-1">Camiseta Arqueros</h3>
+                                                    <h3 class="card-title mt-3 mb-1">Camiseta Escuela</h3>
                                                     <p>Arqueros</p>
                                                 </div>
                                                 <div class="card-body">
