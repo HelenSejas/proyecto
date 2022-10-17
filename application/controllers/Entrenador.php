@@ -6,11 +6,21 @@ class entrenador extends CI_Controller {
 	
 	public function index()
 	{   
+		if ($this->session->userdata('usuario')) {
+			if ($this->session->userdata('tipo')==1){
 	    $lista=$this->curso_model->listaentrenador();
          $data['entrenador']=$lista;
 		$this->load->view('include/header');
 		$this->load->view('listaEntrenador', $data);
 		$this->load->view('include/fooder');
+	}else{
+		 $lista=$this->curso_model->entrenador();
+         $data['entrenador']=$lista;
+		$this->load->view('include/header');
+		$this->load->view('vistaentrenador', $data);
+		$this->load->view('include/fooder');
+	}
+}
 	}
 public function agregar()
 	{
@@ -38,8 +48,8 @@ public function deshabilitarbd()
 	}
 	public function modificar()
 	{
-    $IdEstudiante=$_POST['idEntrenador'];
-	$data['infoEntrenador']=$this->curso_model->recuperentrenador($idEntrenador);
+    $IdEntrenador=$_POST['idEntrenador'];
+	$data['infoEntrenador']=$this->curso_model->recuperarentrenador($idEntrenador);
 
 	$this->load->view('include/header');
 	$this->load->view('formularioME',$data);

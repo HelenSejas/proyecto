@@ -17,7 +17,7 @@ class estudiante extends CI_Controller {
 	    $lista=$this->estudiante_model->listadeshabilitados();
          $data['estudiante']=$lista;
 		$this->load->view('include/header');
-		$this->load->view('lista', $data);
+		$this->load->view('listadeshabilitados', $data);
 		$this->load->view('include/fooder');
 
 	}
@@ -38,6 +38,13 @@ public function deshabilitarbd()
 	{
 		$IdEstudiante=$_POST['IdEstudiante'];
 		$data['estado']=0;
+		$this->estudiante_model->modificarestudiante($IdEstudiante,$data);
+		redirect('estudiante/index');
+	}
+	public function habilitarbd()
+	{
+		$IdEstudiante=$_POST['IdEstudiante'];
+		$data['estado']=1;
 		$this->estudiante_model->modificarestudiante($IdEstudiante,$data);
 		redirect('estudiante/index');
 	}

@@ -191,9 +191,7 @@
 
                                 <div class="container" >
                                     
-                     <h1>Entrenador</h1>
-
-  <button type="submit"class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEntrenador">Agregar empleado</button>
+                     <h1>Mi Perfil</h1>
 
 <br>
                             <div class="widget-content widget-content-area" >
@@ -211,14 +209,7 @@ foreach ($entrenador->result() as $row) {
                                     <ul class="pricing__feature-list text-center">
                                                    
                                         <li class="pricing__feature">Sueldo: <?php echo $row->sueldo;?></li>
-                                        <li class="pricing__feature"> <?php echo form_open_multipart('entrenador/modificar'); ?>
-          <input type="hidden" name="idEntrenador" value="<?php echo $row->idEntrenador;?>">
-          <input type="submit" name="buttonM" value="Modificar" class="pricing__action mx-auto mb-4">
-          <?php echo form_close(); ?> </li>
-         <li class="pricing__feature">  <?php echo form_open_multipart('entrenador/deshabilitarbd'); ?>
-          <input type="hidden" name="idEntrenador" value="<?php echo $row->idEntrenador;?>">
-          <input type="submit" name="buttonE" value="deshabilitar" class="pricing__action mx-auto mb-4">
-        <?php echo form_close(); ?></li>
+                <li class="pricing__feature">Fecha Ingreso: <?php echo $row->fechaIngreso;?></li>
                                                 </ul>
                                                 
                                             </div>

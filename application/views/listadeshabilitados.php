@@ -231,8 +231,6 @@
  <div id="content" class="main-content my-4">
             <div class="layout-px-spacing">
                 <h2 class="text-center">Estudiantes</h2>
-<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#miModal">Agregar Estudiante</button>
-
                 <div class="row layout-top-spacing">
                     <div class="col-xl-12 col-lg-12 col-md-12">
 
@@ -252,12 +250,10 @@
                                             <ul class="nav nav-pills d-block" id="pills-tab" role="tablist">
                          
                     <div class="btn-group-vertical my-2" role="group" aria-label="Vertical button group">
-                  <?php echo form_open_multipart('estudiante/inactivos'); ?>
-<button class="btn btn-secondary">Mostrar estudiantes deshabilitados</button>
+             <?php echo form_open_multipart('estudiante/index'); ?>
+<button class="btn btn-secondary">Mostrar Estudiantes activos</button>
              <?php echo form_close(); ?><br>
-               <?php echo form_open_multipart('estudiante/inactivos'); ?>
               <button type="button" class="btn btn-secondary">mostrar nuevos alumnos</button><br>
-              <?php echo form_close(); ?>
               <button type="button" class="btn btn-secondary">crear lista pdf</button>
                    </div>
                                             </ul>
@@ -302,9 +298,9 @@ foreach ($estudiante->result() as $row) {
       <td><?php echo $row->ApellidoPaterno;?></td>
       <td><?php echo $row->ApellidoMaterno;?></td>
     <td >
-         <?php echo form_open_multipart('estudiante/modificar'); ?>
+         <?php echo form_open_multipart('estudiante/habilitarbd'); ?>
           <input type="hidden" name="IdEstudiante" value="<?php echo $row->IdEstudiante;?>">
-          <input type="submit" name="buttonM" value="Ver" class="btn btn-outline-secondary mb-2">
+          <input type="submit" name="buttonM" value="habilitar" class="btn btn-outline-secondary mb-2">
           <?php echo form_close(); ?>
         </td> 
     </tr>

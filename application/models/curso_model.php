@@ -11,6 +11,13 @@ class curso_model extends CI_Model {
 		$this->db->where('estado',1);
 		return $this->db->get();
 	}
+	public function listacursoinactivos()
+	{
+		$this->db->select('*');
+		$this->db->from('curso');
+		$this->db->where('estado',0);
+		return $this->db->get();
+	}
 	public function agregarcurso ($data)
 	{
 		$this->db->insert('curso',$data);
@@ -35,6 +42,14 @@ class curso_model extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('entrenador');
 		$this->db->where('estado',1);
+		return $this->db->get();
+	}
+		public function entrenador()
+	{
+		$this->db->select('*');
+		$this->db->from('entrenador');
+		$usuario=$this->session->userdata('usuario'); 
+		$this->db->where('usuario',$usuario);
 		return $this->db->get();
 	}
 	public function agregarentrenador ($data)

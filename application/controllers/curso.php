@@ -5,15 +5,36 @@ class curso extends CI_Controller {
 
 	
 	public function index()
-	{
-      $lista=$this->curso_model->listacurso();
+	{ 
+		if ($this->session->userdata('usuario')) {
+			if ($this->session->userdata('tipo')==1){
+				$lista=$this->curso_model->listacurso();
       $data['curso']=$lista;
 
 		$this->load->view('include/header');
 		$this->load->view('listacurso', $data);
 		$this->load->view('include/fooder');
+			}
+			else{
+		$lista=$this->curso_model->listacurso();
+      $data['curso']=$lista;
+
+		$this->load->view('include/header');
+		$this->load->view('vistacurso', $data);
+		$this->load->view('include/fooder');	
+			}
+		}
+      
 	}
-	
+	public function inactivos()
+	{ 
+	$lista=$this->curso_model->listacursoinactivos();
+      $data['curso']=$lista;
+		$this->load->view('include/header');
+		$this->load->view('listacursodeshabilitados', $data);
+		$this->load->view('include/fooder');
+      
+	}
 public function agregar()
 	{
 		$this->load->view('include/header');
@@ -55,15 +76,33 @@ public function agregar()
 		$this->curso_model->modificarcurso($idCurso,$data);
 		redirect('curso/index');
 	}
+	public function habilitarcursobd()
+	{
+		$idCurso=$_POST['idCurso'];
+		$data['estado']=0;
+		$this->curso_model->modificarcurso($idCurso,$data);
+		redirect('curso/index');
+	}
 //controlador equipo
 		public function indexEquipo()
 	{
+			if ($this->session->userdata('usuario')) {
+			if ($this->session->userdata('tipo')==1){
 		 $listaequipo=$this->curso_model->listaequipos();
          $data['equipo']=$listaequipo;
 
 		$this->load->view('include/header');
 		$this->load->view('equipos',$data);
 		$this->load->view('include/fooder');
+	}else{
+		$listaequipo=$this->curso_model->listaequipos();
+         $data['equipo']=$listaequipo;
+
+		$this->load->view('include/header');
+		$this->load->view('vistaequipo',$data);
+		$this->load->view('include/fooder');
+	}
+}
 	}
 	public function agregarequipo()
 	{
@@ -85,6 +124,13 @@ public function modificarequipobd()
     redirect('curso/indexEquipo','refresh');	
 	}
 public function deshabilitarequipo()
+	{
+		$idEquipo=$_POST['idEquipo'];
+		$data['estado']=0;
+		$this->curso_model->modificarequipo($idEquipo,$data);
+		redirect('curso/indexEquipo');
+	}
+	public function habilitarequipo()
 	{
 		$idEquipo=$_POST['idEquipo'];
 		$data['estado']=0;

@@ -141,20 +141,18 @@
         <div class="overlay"></div>
         <div class="search-overlay"></div>
 
+
         <!--  BEGIN CONTENT AREA  -->
    
                     <div class="col-lg-12 layout-spacing ">
-          
+
                         <div class="statbox widget box box-shadow my-5">
                            
                                 <h4 class="text-left text-center">CURSOS</h4>
                                 <div class="container">   
-                                   <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#miModalC">Crear Nuevo Curso</button>  
+                                  
                                    <div class="btn-group" role="group" aria-label="Basic example">
-                                    <div>  <?php echo form_open_multipart('curso/inactivos'); ?>
-          <button type="button" class="btn btn-secondary ">Ver cursos eliminados</button>
-        <?php echo form_close(); ?></div>                  
-   
+    <button type="button" class="btn btn-secondary ">Ver cursos eliminados</button>
     <button type="button" class="btn btn-secondary ">Mostrar horarios</button>
     <button type="button" class="btn btn-secondary">Crear lista</button>
 </div>                               
@@ -179,18 +177,7 @@ foreach ($curso->result() as $row) {
                                                         </li>
                                                         <li class="list-group-item d-flex justify-content-between align-items-center"><?php echo $row->dia;?>
                                                         </li>
-                                                        <?php echo form_open_multipart('curso/modificar'); ?>
-          <input type="hidden" name="idCurso" value="<?php echo $row->idCurso; ?>">
-          <div class="d-grid gap-2 my-2">
-          <input type="submit" name="buttonM" value="Modificar" class="btn btn-info"></div>
-          <?php echo form_close(); ?>
-          <div class="d-grid gap-2 my-2">
-          <?php echo form_open_multipart('curso/deshabilitarbd'); ?>
-          <input type="hidden" name="idCurso" value="<?php echo $row->idCurso;?>">
-  </div>
-             <button class="mr-2 btn btn-info">Eliminar</button>
-         
-        <?php echo form_close(); ?>
+                                                        
         <?php echo form_open_multipart('curso/lista'); ?>
           <input type="hidden" name="idCurso" value="<?php echo $row->idCurso;?>">
   <div class="d-grid gap-2 my-2">
@@ -210,42 +197,6 @@ foreach ($curso->result() as $row) {
                                 </div>
                             </div>
                         </div>
-<div class="modal" id="miModalC" style="background:url(<?php echo base_url(); ?>assets/img/adorno.jfif);">
-    <div class="modal-dialog">
-        <div class="modal-content" >
-            <div class="modal-header">
-                <h5 class="modal-title">Nuevo Curso</h5>
-                   <button class="btn btn-close" data-bs-dismiss="modal"></button> 
-            </div>
-            <div class="modal-body">
-   <?php echo form_open_multipart('estudiante/agregarbd'); ?>
-
-    <legend>Datos</legend>
-    <label>Curso:</label>
-    <input type="text" class="form-control" name="nombre" placeholder="Ingrese nombre de estudiante"><br>
-    <label>Cantidad:</label>
-    <input type="text" class="form-control" name="primerApellido" placeholder="Ingrese primer Apellido">
-    <label>Horario:</label>
-    <input type="text" class="form-control"  name="segundoApellido" placeholder="Ingrese Segundo Apellido" value=" "><br>
-    <label>Fecha Creacion:</label>
-    <input type="date" name="edad" class="form-control" placeholder="Ingrese edad de estudiante">
-    <label>Dia:</label>
-    <input type="tel" class="form-control" name="nroCelular" placeholder="Ingrese numero celular">
-    <div class="d-grid gap-2 my-4">
-<button type="submit" class="btn btn-info">Agregar Curso</button>
-</div >
-    
-       <?php echo form_close(); ?>
-            </div> 
-            <div class="modal-footer">
-                <button class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-            </div>
-        </div>
-    </div>
-    </div>
-
-
                     </div>
 
     <script src="<?php echo base_url(); ?> assets/js/libs/jquery-3.1.1.min.js"></script>
