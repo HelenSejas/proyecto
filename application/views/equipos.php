@@ -2,9 +2,9 @@
   <link href="<?php echo base_url(); ?>assets/css/apps/notes.css" rel="stylesheet" type="text/css" />
 
     <!-- BEGIN LOADER -->
-    <div id="load_screen"> <div class="loader"> <div class="loader-content">
-        <div class="spinner-grow align-self-center"></div>
-    </div></div></div>
+    <div id="load_screen"> <div class="loader-content">
+       
+    </div>
     <!--  END LOADER -->
     <div class="main-container" id="container">
 
@@ -54,7 +54,7 @@
                                         <div class="app-hamburger-container">
                                 
                                         <div class="app-container">
-                                            
+                                           
                                             <div class="app-note-container">
                     
                                                 <div class="app-note-overlay"></div>
@@ -67,7 +67,7 @@
                                                               <img src="<?php echo base_url(); ?>assets/img/balon.png" width=180>
                                                                 <li class="nav-item my-2">
                                                                     <button class="btn btn-secondary mb-4 mr-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>Lista de equipos</button>
-                                                                    
+                                                                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#agregarEquipo">Crear Equipo</button>
                                                                 </li>
                                                             </ul>
                                 
@@ -92,8 +92,14 @@
                                                                     <img src="<?php echo $row->imagen;?>" width=50>
                                                                 </div>
                                                                 <div class="my-2">
+                                                                     <?php echo form_open_multipart('curso/modificarequipobd'); ?>
+                                                                     <input type="hidden" name="idEquipo" value="<?php echo $row->idEquipo;?>">
                                                                 <button class="btn-rounded btn-warning">Modificar</button>
+                                                                 <?php echo form_close(); ?>
+                                                                   <?php echo form_open_multipart('curso/deshabilitarequipo'); ?>
+                                                                   <input type="hidden" name="idEquipo" value="<?php echo $row->idEquipo;?>">
                                                                 <button class="btn-rounded btn-warning">Eliminar</button>
+                                                                 <?php echo form_close(); ?>
                                                             </div>
                                                             </div>
                                                             
@@ -116,6 +122,35 @@
             </div>
         </div>
         <!--  END CONTENT AREA  -->
+<div class="modal" id="agregarEquipo">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background:url(<?php echo base_url(); ?>assets/img/fondo.webp);">
+            <div class="modal-header">
+                <h5 class="modal-title">Nuevo Equipo</h5>
+                   <button class="btn btn-close" data-bs-dismiss="modal"></button> 
+            </div>
+            <div class="modal-body">
+   <?php echo form_open_multipart('curso/agregaequipo'); ?>
 
+    <legend>Datos</legend>
+    <label>Nombre</label>
+    <input type="text" class="form-control" name="nombre" placeholder="Ingrese nombre de equipo"><br>
+    <label>Cantidad:</label>
+    <input type="text" class="form-control" name="cantidad" placeholder="Ingrese cantidad de jugadores">
+    <label>Fecha Creacion:</label>
+    <input type="date" class="form-control"  name="fechaRegistro" >
+    <div class="d-grid gap-2 my-4">
+        <div class="widget-content widget-content-area text-center">
+<button type="submit" class="btn btn-info">Agregar estudiante</button>
+</div >
+    </div>
+       <?php echo form_close(); ?>
+            </div> 
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+            </div>
+        </div>
+    </div>
     </div>
 </body>

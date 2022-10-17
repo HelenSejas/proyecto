@@ -278,9 +278,9 @@ $indice ++;
     <label>Segundo Apellido:</label>
     <input type="text" class="form-control"  name="segundoApellido" placeholder="Ingrese Segundo Apellido" value=" ">
     <label>Sueldo:</label>
-   <input type="text" class="form-control" name="Sueldo" placeholder="Ingrese sueldo">
+   <input type="text" class="form-control" name="sueldo" placeholder="Ingrese sueldo">
     <label>Fecha Ingreso:</label>
-    <input type="date" class="form-control" name="fechaInicio">
+    <input type="date" class="form-control" name="fechaIngreso">
     <div class="d-grid gap-2 my-2">
         <div class="widget-content widget-content-area text-center">
 <button type="submit" class="btn btn-info">Agregar entrenador</button>

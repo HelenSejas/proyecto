@@ -28,7 +28,7 @@
         <!--  BEGIN CONTENT AREA  -->
    
                     <div class="col-lg-12 layout-spacing " >
-                        <div class="statbox widget box box-shadow my-5">
+                        <div class="statbox widget box box-shadow my-3">
                            
                                 <h4 class="text-left text-center">MODELOS</h4>
                                 <div class="container">                                    

@@ -136,7 +136,7 @@
                 </ul>
             </nav>
 </nav>
-  <div class="main-container" id="container" style="background:url(<?php echo base_url(); ?>assets/img/fondo.webp);">
+  <div class="main-container" id="container" >
 
         <div class="overlay"></div>
         <div class="search-overlay"></div>
@@ -161,7 +161,7 @@
 foreach ($curso->result() as $row) {
 ?>
                                         <div class="col-md-6 col-lg-4">
-                                            <div class="card stacked mt-2">
+                                            <div class="card stacked mt-2" style="background:url(<?php echo base_url(); ?>assets/img/adorno.jfif);">
                                                 <div class="card-header pt-0">
                                                     
                                                     <h3 class="card-title mt-3 mb-1"><?php echo $row->curso;?></h3>
@@ -180,19 +180,19 @@ foreach ($curso->result() as $row) {
                                                         <?php echo form_open_multipart('curso/modificar'); ?>
           <input type="hidden" name="idCurso" value="<?php echo $row->idCurso; ?>">
           <div class="d-grid gap-2 my-2">
-          <input type="submit" name="buttonM" value="Modificar" class="btn btn-success"></div>
+          <input type="submit" name="buttonM" value="Modificar" class="btn btn-info"></div>
           <?php echo form_close(); ?>
           <div class="d-grid gap-2 my-2">
           <?php echo form_open_multipart('curso/deshabilitarbd'); ?>
           <input type="hidden" name="idCurso" value="<?php echo $row->idCurso;?>">
   </div>
-             <button class="mr-2 btn btn-danger success">Eliminar</button>
+             <button class="mr-2 btn btn-info">Eliminar</button>
          
         <?php echo form_close(); ?>
         <?php echo form_open_multipart('curso/lista'); ?>
           <input type="hidden" name="idCurso" value="<?php echo $row->idCurso;?>">
   <div class="d-grid gap-2 my-2">
-             <button class="mr-2 btn btn-outline-warning">Ver lista</button>
+             <button class="mr-2 btn btn-warning">Ver lista</button>
          
         <?php echo form_close(); ?></div>
                                                     </ul>

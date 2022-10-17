@@ -13,12 +13,7 @@ class curso extends CI_Controller {
 		$this->load->view('listacurso', $data);
 		$this->load->view('include/fooder');
 	}
-	public function indexUniforme()
-	{
-		$this->load->view('include/header');
-		$this->load->view('uniformes');
-		$this->load->view('include/fooder');
-	}
+	
 public function agregar()
 	{
 		$this->load->view('include/header');
@@ -60,7 +55,7 @@ public function agregar()
 		$this->curso_model->modificarcurso($idCurso,$data);
 		redirect('curso/index');
 	}
-
+//controlador equipo
 		public function indexEquipo()
 	{
 		 $listaequipo=$this->curso_model->listaequipos();
@@ -68,6 +63,39 @@ public function agregar()
 
 		$this->load->view('include/header');
 		$this->load->view('equipos',$data);
+		$this->load->view('include/fooder');
+	}
+	public function agregarequipo()
+	{
+		$data['nombre'] =$_POST['nombre'];
+        $data['cantidad'] =$_POST['cantidad'];
+        $data['fechaRegistro'] =$_POST['fechaRegistro'];
+       
+	  $lista=$this->curso_model->agregarequipo($data);
+     redirect('curso/indexEquipo','refresh');
+}
+public function modificarequipobd()
+	{
+    $idEquipo=$_POST['idEquipo'];
+	$data['nombre'] =$_POST['nombre'];
+    $data['cantidad'] =$_POST['cantidad'];
+    $data['fechaRegistro'] =$_POST['fechaRegistro'];
+
+    $this->curso_model->modificarequipo($idEquipo,$data);
+    redirect('curso/indexEquipo','refresh');	
+	}
+public function deshabilitarequipo()
+	{
+		$idEquipo=$_POST['idEquipo'];
+		$data['estado']=0;
+		$this->curso_model->modificarequipo($idEquipo,$data);
+		redirect('curso/indexEquipo');
+	}
+	//controlador uniforme
+	public function indexUniforme()
+	{
+		$this->load->view('include/header');
+		$this->load->view('uniformes');
 		$this->load->view('include/fooder');
 	}
 }

@@ -1,6 +1,6 @@
          <link href="<?php echo base_url(); ?> assets/css/authentication/form-2.css" rel="stylesheet" type="text/css" />
          </head>
-<body style="background:url(<?php echo base_url(); ?>assets/img/fondo2.jfif);">
+<body >
 <?php  
 switch ($msg) {
     case 1:
@@ -24,7 +24,7 @@ switch ($msg) {
         <div class="form-form">
             <div class="form-form-wrap">
                 <div class="form-container">
-                    <div class="form-content"  >
+                    <div class="form-content" style="background:url(<?php echo base_url(); ?>assets/img/fondo2.jfif);" >
                         <h1 class="">LOGIN</h1>
                       <a class="navbar-brand" href="index.html"><img src="<?php echo base_url(); ?>assets/img/usuario.png" width="80"></a>
                         <form class="text-left">

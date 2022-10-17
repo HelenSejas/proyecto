@@ -276,9 +276,9 @@
                                                 <div class="todo-content">
                                                    <div class="row">
         
-        <table class="table style-3  table-hover">
+        <table class="table style-3  table-hover" style="background:url(<?php echo base_url(); ?>assets/img/fff.jfif);">
   <thead>
-    <tr>
+    <tr class="text-white">
       <th scope="col">Nro</th>
       <th scope="col">Nombres</th>
       <th scope="col">Primer Apellido</th>

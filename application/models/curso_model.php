@@ -29,17 +29,55 @@ class curso_model extends CI_Model {
 		$this->db->where('idCurso',$idCurso);
 	    $this->db->update('curso',$data);
 	}
+	//model_entrenador
 	public function listaentrenador()
 	{
 		$this->db->select('*');
 		$this->db->from('entrenador');
+		$this->db->where('estado',1);
 		return $this->db->get();
 	}
+	public function agregarentrenador ($data)
+	{
+		$this->db->insert('entrenador',$data);
+	
+	}
+		public function recuperarentrenador($idEntrenador)
+	{
+		$this->db->select('*');
+		$this->db->from('entrenador');
+		$this->db->where('idEntrenador',$idEntrenador);
+		return $this->db->get();
+	}
+	public function modificarentrenador($idEntrenador,$data)
+	{
+		$this->db->where('idEntrenador',$idEntrenador);
+	    $this->db->update('entrenador',$data);
+	}
+	//model_equipos
 	public function listaequipos()
 	{
 		$this->db->select('*');
 		$this->db->from('equipo');
+		$this->db->where('estado',1);
 		return $this->db->get();
+	}
+	public function agregarequipo ($data)
+	{
+		$this->db->insert('equipo',$data);
+	
+	}
+		public function recuperarequipo($idEquipo)
+	{
+		$this->db->select('*');
+		$this->db->from('equipo');
+		$this->db->where('idEquipo',$idEquipo);
+		return $this->db->get();
+	}
+	public function modificarequipo($idEquipo,$data)
+	{
+		$this->db->where('idEquipo',$idEquipo);
+	    $this->db->update('equipo',$data);
 	}
 }
 ?>
