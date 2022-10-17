@@ -44,7 +44,7 @@ foreach ($infoestudiante->result() as $row) {
     <input type="date" class="form-control" name="fechaInicio" placeholder="Ingrese Fecha" value="<?php echo $row->fechaInicio;?>"><br>
 	<div class="d-grid gap-2 my-4">
     <div class="widget-content widget-content-area text-center">
-  <button type="submit" class="mr-2 btn btn-primary">Modificar estudiante</button>
+  <button type="submit" class="mr-2 btn btn-primary success">Modificar estudiante</button>
 
   <?php echo form_close();
 }

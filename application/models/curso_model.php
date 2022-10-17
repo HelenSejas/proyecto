@@ -8,6 +8,7 @@ class curso_model extends CI_Model {
 	{
 		$this->db->select('*');
 		$this->db->from('curso');
+		$this->db->where('estado',1);
 		return $this->db->get();
 	}
 	public function agregarcurso ($data)
@@ -16,11 +17,6 @@ class curso_model extends CI_Model {
 	
 	}
 	
-	public function eliminarcurso($idCurso)
-	{
-		$this->db->where('idCurso',$idCurso);
-	    $this->db->update('curso',);
-	}
 		public function recuperarcurso($idCurso)
 	{
 		$this->db->select('*');

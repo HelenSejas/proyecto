@@ -53,6 +53,13 @@ public function agregar()
     $this->curso_model->modificarcurso($idCurso,$data);
     redirect('curso/index','refresh');	
 	}
+	public function deshabilitarbd()
+	{
+		$idCurso=$_POST['idCurso'];
+		$data['estado']=0;
+		$this->curso_model->modificarcurso($idCurso,$data);
+		redirect('curso/index');
+	}
 
 		public function indexEquipo()
 	{

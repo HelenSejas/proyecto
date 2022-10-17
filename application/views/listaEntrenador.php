@@ -1,4 +1,5 @@
  <link href="<?php echo base_url(); ?>plugins/pricing-table/css/component.css" rel="stylesheet" type="text/css" />
+ <link href="<?php echo base_url(); ?>assets/css/apps/todolist.css" rel="stylesheet" type="text/css" />
 <nav class="nav navbar-dark bg-dark ">
     <div class="main-container" id="container">
 
@@ -196,11 +197,9 @@
                                 <div class="container">
                                     
                      <h1>Entrenador</h1>
-                   
-                             <?php echo form_open_multipart('entrenador/agregar'); ?>
 
-  <button type="submit" class="btn btn-danger">Agregar empleado</button>
-<?php echo form_close(); ?>
+  <button type="submit"class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEntrenador">Agregar empleado</button>
+
 <br>
                             <div class="widget-content widget-content-area">
                                 <div class="container">
@@ -254,8 +253,44 @@ $indice ++;
 </div>
 </div>
 
+
+
   </tbody>
 </table>
 	</div>
 </div>
 </div>
+<div class="modal" id="modalEntrenador">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Nuevo Entrenador</h5>
+                   <button class="btn btn-close" data-bs-dismiss="modal"></button> 
+            </div>
+            <div class="modal-body">
+   <?php echo form_open_multipart('entrenador/agregarbd'); ?>
+
+    <legend>Datos</legend>
+    <label>Nombres</label>
+    <input type="text" class="form-control" name="nombres" placeholder="Ingrese nombre de estudiante">
+    <label>Primer Apellido:</label>
+    <input type="text" class="form-control" name="primerApellido" placeholder="Ingrese primer Apellido">
+    <label>Segundo Apellido:</label>
+    <input type="text" class="form-control"  name="segundoApellido" placeholder="Ingrese Segundo Apellido" value=" ">
+    <label>Sueldo:</label>
+    <input type="numero" name="edad" class="sueldo" placeholder="Ingrese edad de estudiante">
+    <label>Fecha Ingreso:</label>
+    <input type="date" class="form-control" name="fechaInicio" placeholder="Ingrese numero celular">
+    <div class="d-grid gap-2 my-2">
+        <div class="widget-content widget-content-area text-center">
+<button type="submit" class="btn btn-info">Agregar entrenador</button>
+</div >
+    </div>
+       <?php echo form_close(); ?>
+            </div> 
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+            </div>
+        </div>
+    </div>

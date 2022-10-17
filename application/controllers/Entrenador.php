@@ -14,11 +14,9 @@ class entrenador extends CI_Controller {
 	}
 public function agregar()
 	{
-		if ($this->session->userdata('tipo')==1){
 		$this->load->view('include/header');
 		$this->load->view('formulario');
 		$this->load->view('include/fooder');
-		}
 	}
 	public function agregarbd()
 	{
@@ -31,7 +29,6 @@ public function agregar()
         $data['sexo'] =$_POST['sexo'];
        
 	  $lista=$this->entrenador_model->agregarestudiante($data);
-	  print_r('Nuevo Entrenador agregado exitosamente');
      redirect('entrenador/index','refresh');
 }
 public function deshabilitarbd()
@@ -43,26 +40,22 @@ public function deshabilitarbd()
 	}
 	public function modificar()
 	{
-		if ($this->session->userdata('tipo')==1){
     $IdEstudiante=$_POST['idEntrenador'];
 	$data['infoEntrenador']=$this->entrenador_model->recuperentrenador($idEntrenador);
 
 	$this->load->view('include/header');
 	$this->load->view('formularioME',$data);
 	$this->load->view('include/fooder');
-}
 	}
 	public function modificarbd()
 	{
     $idEntrenador=$_POST['idEntrenador'];
-	$data['nombres'] =$_POST['nombre'];
+	$data['nombres'] =$_POST['nombres'];
     $data['primerApellido'] =$_POST['primerApellido'];
     $data['segundoApellido'] =$_POST['segundoApellido'];
-    $data['Edad'] =$_POST['edad'];
-    $data['nroCelular'] =$_POST['nroCelular'];
-    $data['Curso'] =$_POST['Curso'];
-    $data['sexo'] =$_POST['sexo'];
-    	$this->entrenador_model->modificarEntrenador($idEntrenador,$data);
-		redirect('entrenador/index','refresh');
+    $data['sueldo'] =$_POST['sueldo'];
+    $data['fechaIngreso'] =$_POST['fechaIngreso'];
+    $this->entrenador_model->modificarEntrenador($idEntrenador,$data);
+	redirect('entrenador/index','refresh');
 	}
 }

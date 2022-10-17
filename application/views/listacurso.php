@@ -1,6 +1,7 @@
 <link href="<?php echo base_url(); ?> assets/css/components/custom-modal.css" rel="stylesheet" type="text/css" />
  <link href="<?php echo base_url(); ?>assets/css/apps/notes.css" rel="stylesheet" type="text/css" />
  <link href="<?php echo base_url(); ?>assets/css/forms/theme-checkbox-radio.css" rel="stylesheet" type="text/css" />
+ <link href="<?php echo base_url(); ?>plugins/sweetalerts/sweetalert.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo base_url(); ?>plugins/pricing-table/css/component.css" rel="stylesheet" type="text/css" />
 <nav class="nav navbar-dark bg-dark ">
     <?php echo form_open_multipart('estudiante/index'); ?>
@@ -191,12 +192,13 @@ foreach ($curso->result() as $row) {
           <div class="d-grid gap-2 my-2">
           <input type="submit" name="buttonM" value="Modificar" class="btn btn-success"></div>
           <?php echo form_close(); ?>
-       
-          <?php echo form_open_multipart('curso/eliminarcursobd'); ?>
+          <div class="widget-content widget-content-area text-center">
+          <?php echo form_open_multipart('curso/deshabilitarbd'); ?>
           <input type="hidden" name="idCurso" value="<?php echo $row->idCurso;?>">
-          <div class="d-grid gap-2 my-2">
-          <input type="submit" name="buttonE" value="Eliminar" class="btn btn-danger"></div>
-        <?php echo form_close(); ?>
+  
+             <button class="mr-2 btn btn-danger success">Eliminar</button>
+         
+        <?php echo form_close(); ?></div>
                                                     </ul>
                                                    
                                                 </div>
