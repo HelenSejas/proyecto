@@ -1,5 +1,5 @@
 
-    <div class="main-container" id="container">
+    <div class="main-container" id="container" style="background:url(<?php echo base_url(); ?>assets/img/adorno.jfif);">
 
         <div class="overlay"></div>
         <div class="search-overlay"></div>
@@ -14,11 +14,11 @@
            <?php echo form_close(); ?>
 </nav>
 
-    <div class="helpdesk container">
+    <div class="helpdesk container" >
         <nav class="navbar navbar-expand navbar-light">
         </nav>
 
-        <div class="helpdesk layout-spacing">
+        <div class="helpdesk layout-spacing" >
 
             <div class="hd-header-wrapper text-center" id="">
                
@@ -27,15 +27,15 @@
                 </div>
             </div>
 
-        </div>
+        
    
-      <div class="col-xl-6 col-lg-7 col-md-7 col-sm-11 col-11 mx-auto">
+      <div class="col-xl-6 col-lg-7 col-md-7 col-sm-11 col-11 mx-auto" >
 <div class="row">
     <?php
 foreach ($infoestudiante->result() as $row) {
     ?>
     <div class="form-group ">   
-     <legend>Datos</legend>
+     <legend class="text-center">Datos</legend>
     <label>Nombres</label>
  <input type="hidden" name="IdEstudiante"  value="<?php echo $row->IdEstudiante; ?>">
     <input type="text" class="form-control" name="nombre" placeholder="Ingrese nombre" value="<?php echo $row->nombres;?>"><br>
@@ -108,3 +108,4 @@ foreach ($infoestudiante->result() as $row) {
             </div>
         </div>
     </div> 
+    </div>

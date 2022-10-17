@@ -1,11 +1,11 @@
 
-    <div class="main-container" id="container">
+    <div class="main-container" id="container"  style="background:url(<?php echo base_url(); ?>assets/img/adorno.jfif);">
 
         <div class="overlay"></div>
         <div class="search-overlay"></div>
 
 
-    <nav class="nav navbar-dark bg-dark ">
+    <nav class="nav navbar-dark bg-dark " s>
     <?php echo form_open_multipart('estudiante/index'); ?>
            <button type="submit" class="btn btn-outline-warning btn-rounded">Atras</button>
            <?php echo form_close(); ?>

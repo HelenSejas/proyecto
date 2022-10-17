@@ -12,26 +12,21 @@
         <div class="search-overlay"></div>
 
         <!--  BEGIN SIDEBAR  -->
-        <div class="sidebar-wrapper sidebar-theme">
+      
 
-         
-
-           <nav class="nav navbar-dark bg-dark ">
-                <a href="index.html">
-                    <img src="<?php echo base_url(); ?>assets/img/logo.jpg" class="navbar-logo" alt="logo" width=50>
-                    <span class="admin-logo">VICTOR MURIEL</span> 
-            </div> 
-
-    <?php echo form_open_multipart('estudiante/index'); ?>
+           <nav class="nav "style="background:url(<?php echo base_url(); ?>assets/img/cancha.jpg);">
+             <img src="<?php echo base_url(); ?>assets/img/logo.jpg" class="navbar-logo" alt="logo" width=50>
+            <h4 class="admin-logo">VICTOR MURIEL</h4>
+            <div class="mx-5"> <?php echo form_open_multipart('estudiante/index'); ?>
            <button type="submit" class="btn btn-outline-warning">Atras</button>
-           <?php echo form_close(); ?>
-         </nav>
+           <?php echo form_close(); ?></div> 
+            </div> 
 
         </div>
         <!--  END SIDEBAR  -->
 
         <!--  BEGIN CONTENT AREA  -->
-        <div id="content" class="main-content">
+        <div id="content" class="main-content" style="background:url(<?php echo base_url(); ?>assets/img/fondo2.jfif);">
             <div class="layout-px-spacing">
 
                 <div class="content-container">

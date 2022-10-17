@@ -3,36 +3,26 @@
  <link href="<?php echo base_url(); ?>assets/css/forms/theme-checkbox-radio.css" rel="stylesheet" type="text/css" />
  <link href="<?php echo base_url(); ?>plugins/sweetalerts/sweetalert.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo base_url(); ?>plugins/pricing-table/css/component.css" rel="stylesheet" type="text/css" />
-<nav class="nav navbar-dark bg-dark ">
-    <?php echo form_open_multipart('estudiante/index'); ?>
-           <button type="submit" class="btn btn-outline-warning">Atras</button>
-           <?php echo form_close(); ?>
-          <?php echo form_open_multipart('inicio/index'); ?>
-           <button type="submit" class="btn btn-outline-warning">Inicio</button>
-           <?php echo form_close(); ?>
-
-
+<nav >
+   
            <div class="topbar-nav header navbar" role="banner">
-            <nav id="topbar">
+            <nav id="topbar" style="background:url(<?php echo base_url(); ?>assets/img/fondo2.jfif);">
 
                 <ul class="list-unstyled menu-categories" id="topAccordion">
 
                     <li class="menu single-menu">
-                        <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle autodroprown">
-                            <div class="">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-                                <span>Cursos</span>
-                            </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                        </a>
-                        <ul class="collapse submenu list-unstyled" id="dashboard" data-parent="#topAccordion">
-                        <li>
-                        <?php echo form_open_multipart('curso/index'); ?>
-                        <button type="submit" class="btn btn-outline-warning">ver Curso</button>
-                        <?php echo form_close(); ?>
-                        </li>
-                        </ul>
-                    </li>
+                    <div> <?php echo form_open_multipart('estudiante/index'); ?>
+           <button type="submit" class="btn btn-outline-warning">Atras</button>
+           <?php echo form_close(); ?>
+
+</div></li><li class="menu single-menu">
+                            <div class="mx-2">
+                                
+                                 <?php echo form_open_multipart('inicio/index'); ?>
+           <button type="submit" class="btn btn-outline-warning">Inicio</button>
+           <?php echo form_close(); ?>
+                            </div></li>
+                            
 
                     <li class="menu single-menu active">
                         <a href="#app" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">
@@ -146,7 +136,7 @@
                 </ul>
             </nav>
 </nav>
-  <div class="main-container" id="container">
+  <div class="main-container" id="container" style="background:url(<?php echo base_url(); ?>assets/img/fondo.webp);">
 
         <div class="overlay"></div>
         <div class="search-overlay"></div>
@@ -192,11 +182,17 @@ foreach ($curso->result() as $row) {
           <div class="d-grid gap-2 my-2">
           <input type="submit" name="buttonM" value="Modificar" class="btn btn-success"></div>
           <?php echo form_close(); ?>
-          <div class="widget-content widget-content-area text-center">
+          <div class="d-grid gap-2 my-2">
           <?php echo form_open_multipart('curso/deshabilitarbd'); ?>
           <input type="hidden" name="idCurso" value="<?php echo $row->idCurso;?>">
-  
+  </div>
              <button class="mr-2 btn btn-danger success">Eliminar</button>
+         
+        <?php echo form_close(); ?>
+        <?php echo form_open_multipart('curso/lista'); ?>
+          <input type="hidden" name="idCurso" value="<?php echo $row->idCurso;?>">
+  <div class="d-grid gap-2 my-2">
+             <button class="mr-2 btn btn-outline-warning">Ver lista</button>
          
         <?php echo form_close(); ?></div>
                                                     </ul>
@@ -212,9 +208,9 @@ foreach ($curso->result() as $row) {
                                 </div>
                             </div>
                         </div>
-<div class="modal" id="miModalC">
+<div class="modal" id="miModalC" style="background:url(<?php echo base_url(); ?>assets/img/adorno.jfif);">
     <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content" >
             <div class="modal-header">
                 <h5 class="modal-title">Nuevo Curso</h5>
                    <button class="btn btn-close" data-bs-dismiss="modal"></button> 

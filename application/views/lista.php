@@ -1,6 +1,6 @@
  <link href="<?php echo base_url(); ?>assets/css/apps/todolist.css" rel="stylesheet" type="text/css" />
  <link href="<?php echo base_url(); ?>plugins/sweetalerts/sweetalert.css" rel="stylesheet" type="text/css" />
-<nav class="nav navbar-dark bg-dark ">
+<nav class="nav navbar-dark bg-dark " >
     <div class="main-container" id="container">
 
         <div class="overlay"></div>
@@ -34,7 +34,7 @@
 
 <!--  BEGIN TOPBAR  -->
         <div class="topbar-nav header navbar" role="banner">
-            <nav id="topbar">
+            <nav id="topbar" style="background:url(<?php echo base_url(); ?>assets/img/fondo2.jfif);">
 
                 <ul class="list-unstyled menu-categories" id="topAccordion">
 
@@ -331,7 +331,7 @@ $indice ++;
 
 <div class="modal" id="miModal">
     <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content" style="background:url(<?php echo base_url(); ?>assets/img/fondo.webp);">
             <div class="modal-header">
                 <h5 class="modal-title">Nuevo Estudiante</h5>
                    <button class="btn btn-close" data-bs-dismiss="modal"></button> 

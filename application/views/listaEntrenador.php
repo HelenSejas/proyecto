@@ -1,7 +1,7 @@
  <link href="<?php echo base_url(); ?>plugins/pricing-table/css/component.css" rel="stylesheet" type="text/css" />
  <link href="<?php echo base_url(); ?>assets/css/apps/todolist.css" rel="stylesheet" type="text/css" />
 <nav class="nav navbar-dark bg-dark ">
-    <div class="main-container" id="container">
+    <div class="main-container" id="container"  style="background:url(<?php echo base_url(); ?>assets/img/fondonegro.jfif);">
 
         <div class="overlay"></div>
         <div class="search-overlay"></div>
@@ -176,7 +176,7 @@
 </nav>
 <br>
 
-<div class="main-container" id="container">
+<div class="main-container" id="container" >
 
         <div class="overlay"></div>
         <div class="search-overlay"></div>
@@ -184,32 +184,32 @@
       
 
         <!--  BEGIN CONTENT AREA  -->
-        <div id="content" class="main-content">
+        <div id="content" class="main-content" >
             <div class="layout-px-spacing">
                 
                 <div class="row" id="cancel-row">
 
-                    <div class="col-lg-12 layout-spacing layout-top-spacing">
+                    <div class="col-lg-12 layout-spacing layout-top-spacing" >
                         <div class="statbox widget box box-shadow">
                            
                             <div class="widget-content widget-content-area">
 
-                                <div class="container">
+                                <div class="container" >
                                     
                      <h1>Entrenador</h1>
 
   <button type="submit"class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEntrenador">Agregar empleado</button>
 
 <br>
-                            <div class="widget-content widget-content-area">
+                            <div class="widget-content widget-content-area" >
                                 <div class="container">
-                                    <section class="pricing-section bg-7 mt-3">
-                                        <div class="pricing pricing--norbu">
+                                    
+                                        <div class="pricing pricing--norbu" >
                                             <?php
 $indice=1;
 foreach ($entrenador->result() as $row) {
 ?>
-                                            <div class="pricing__item">
+                                            <div class="pricing__item"  style="background:url(<?php echo base_url(); ?>assets/img/fondonegro.jfif);"> 
                                                 <h3 class="pricing__title">Nombres: <?php echo $row->nombres;?></h3>
                                                 <p class="pricing__sentence">Apellidos: <?php echo $row->primerApellido;?>  <?php echo $row->segundoApellido;?></p>
                                          <img class="card-img" src="<?php echo base_url(); ?>assets/img/usuario.png" width="80"> 
@@ -272,15 +272,15 @@ $indice ++;
 
     <legend>Datos</legend>
     <label>Nombres</label>
-    <input type="text" class="form-control" name="nombres" placeholder="Ingrese nombre de estudiante">
+    <input type="text" class="form-control" name="nombres" placeholder="Ingrese nombres">
     <label>Primer Apellido:</label>
     <input type="text" class="form-control" name="primerApellido" placeholder="Ingrese primer Apellido">
     <label>Segundo Apellido:</label>
     <input type="text" class="form-control"  name="segundoApellido" placeholder="Ingrese Segundo Apellido" value=" ">
     <label>Sueldo:</label>
-    <input type="numero" name="edad" class="sueldo" placeholder="Ingrese edad de estudiante">
+   <input type="text" class="form-control" name="Sueldo" placeholder="Ingrese sueldo">
     <label>Fecha Ingreso:</label>
-    <input type="date" class="form-control" name="fechaInicio" placeholder="Ingrese numero celular">
+    <input type="date" class="form-control" name="fechaInicio">
     <div class="d-grid gap-2 my-2">
         <div class="widget-content widget-content-area text-center">
 <button type="submit" class="btn btn-info">Agregar entrenador</button>

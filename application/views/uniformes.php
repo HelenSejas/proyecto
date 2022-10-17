@@ -1,17 +1,17 @@
 
 <link href="<?php echo base_url(); ?>plugins/pricing-table/css/component.css" rel="stylesheet" type="text/css" />
-    <div class="main-container" id="container">
+    <div class="main-container" id="container"  style="background:url(<?php echo base_url(); ?>assets/img/fondonegro.jfif);"> 
 
-        <div class="overlay"></div>
+        <div class="overlay" ></div>
         <div class="search-overlay"></div>
 
 
-    <nav class="nav navbar-dark bg-dark ">
+    <nav class="nav navbar-dark "  style="background:url(<?php echo base_url(); ?>assets/img/adorno2.jfif);">
     <?php echo form_open_multipart('estudiante/index'); ?>
-           <button type="submit" class="btn btn-outline-warning">Atras</button>
+           <button type="submit" class="btn btn-secondary">Atras</button>
            <?php echo form_close(); ?>
           <?php echo form_open_multipart('inicio/index'); ?>
-           <button type="submit" class="btn btn-outline-warning">Inicio</button>
+           <button type="submit" class="btn btn-secondary">Inicio</button>
            <?php echo form_close(); ?>
 </nav>
 
@@ -27,14 +27,14 @@
 
         <!--  BEGIN CONTENT AREA  -->
    
-                    <div class="col-lg-12 layout-spacing ">
+                    <div class="col-lg-12 layout-spacing " >
                         <div class="statbox widget box box-shadow my-5">
                            
                                 <h4 class="text-left text-center">MODELOS</h4>
                                 <div class="container">                                    
                                     <div id="pricingWrapper" class="row">
-                                        <div class="col-md-6 col-lg-4">
-                                            <div class="card stacked mt-5">
+                                        <div class="col-md-6 col-lg-4" >
+                                            <div class="card stacked mt-5" style="background:url(<?php echo base_url(); ?>assets/img/adorno.jfif);">
                                                 <div class="card-header pt-0">
                                                     <span class="card-price">150bs</span>
                                                     <h3 class="card-title mt-3 mb-1">Camiseta titular</h3>
@@ -56,7 +56,7 @@
                                             </div>
                                         </div>                              
                                         <div class="col-md-6 col-lg-4">
-                                            <div class="card stacked mt-5">
+                                            <div class="card stacked mt-5" style="background:url(<?php echo base_url(); ?>assets/img/adorno.jfif);">
                                                 <div class="card-header pt-0">
                                                     <span class="card-price">100bs</span>
                                                     <h3 class="card-title mt-3 mb-1">Camiseta</h3>
@@ -79,7 +79,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-lg-4">
-                                            <div class="card stacked mt-5">
+                                            <div class="card stacked mt-5" style="background:url(<?php echo base_url(); ?>assets/img/adorno.jfif);">
                                                 <div class="card-header pt-0">
                                                     <span class="card-price">110bs</span>
                                                     <h3 class="card-title mt-3 mb-1">Camiseta Escuela</h3>
@@ -101,8 +101,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                         <div class="col-md-6 col-lg-4">
-                                            <div class="card stacked mt-5">
+                                         <div class="col-md-6 col-lg-4" >
+                                            <div class="card stacked mt-5" style="background:url(<?php echo base_url(); ?>assets/img/adorno.jfif);">
                                                 <div class="card-header pt-0">
                                                     <span class="card-price">170bs</span>
                                                     <h3 class="card-title mt-3 mb-1">Camiseta Arqueros</h3>

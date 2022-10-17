@@ -1,6 +1,6 @@
          <link href="<?php echo base_url(); ?> assets/css/authentication/form-2.css" rel="stylesheet" type="text/css" />
          </head>
-<body >
+<body style="background:url(<?php echo base_url(); ?>assets/img/fondo2.jfif);">
 <?php  
 switch ($msg) {
     case 1:
@@ -20,11 +20,11 @@ switch ($msg) {
              <?php echo form_open_multipart('usuarios/validar',array ('id'=> 'form1', 'class'=>'form-control'))
               ?>
 
-    <div class="form-container ">
+    <div class="form-container">
         <div class="form-form">
             <div class="form-form-wrap">
                 <div class="form-container">
-                    <div class="form-content">
+                    <div class="form-content"  >
                         <h1 class="">LOGIN</h1>
                       <a class="navbar-brand" href="index.html"><img src="<?php echo base_url(); ?>assets/img/usuario.png" width="80"></a>
                         <form class="text-left">
@@ -51,7 +51,7 @@ switch ($msg) {
                                
                                </div>
                                </div>
-                                <div class="field-wrapper my-5">
+                                <div class="field-wrapper my-3">
                                     <a href="auth_pass_recovery.html" class="forgot-pass-link">Olvido su Contraseña?</a>
                     </div>
                         </form>                        
