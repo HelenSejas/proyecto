@@ -42,9 +42,13 @@ class estudiante extends CI_Controller {
         $data['nroCelular'] =$_POST['nroCelular'];
         $data['Curso'] =$_POST['Curso'];
         $data['sexo'] =$_POST['sexo'];
+        $data['estado'] =1;
+        $data['fechaInicio'] =$_POST['fechaInicio'];
+        $data['idPadre'] =1;
+         $data['idEquipo'] =1;
        
 	  $lista=$this->estudiante_model->agregarestudiante($data);
-     redirect('estudiante/index','refresh');
+     redirect('estudiante/indexEstudiante','refresh');
 }
 public function deshabilitarbd()
 	{
@@ -58,7 +62,7 @@ public function deshabilitarbd()
 		$IdEstudiante=$_POST['IdEstudiante'];
 		$data['estado']=1;
 		$this->estudiante_model->modificarestudiante($IdEstudiante,$data);
-		redirect('estudiante/index');
+		redirect('estudiante/indexEstudiante');
 	}
 	public function modificar()
 	{
@@ -81,7 +85,7 @@ public function deshabilitarbd()
     $data['sexo'] =$_POST['sexo'];
     $data['fechaInicio'] =$_POST['fechaInicio'];
     	$this->estudiante_model->modificarestudiante($IdEstudiante,$data);
-    	redirect('estudiante/index');
+    	redirect('estudiante/indexEstudiante');
 	}
 	public function buscar() {
     $this->estudiante_model->encontrarestudiante();    

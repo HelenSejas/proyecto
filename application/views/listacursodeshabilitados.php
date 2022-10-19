@@ -11,7 +11,7 @@
                 <ul class="list-unstyled menu-categories" id="topAccordion">
 
                     <li class="menu single-menu">
-                    <div> <?php echo form_open_multipart('estudiante/index'); ?>
+                    <div> <?php echo form_open_multipart('estudiante/indexEstudiante'); ?>
            <button type="submit" class="btn btn-outline-warning">Atras</button>
            <?php echo form_close(); ?>
 

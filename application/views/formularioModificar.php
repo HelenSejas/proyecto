@@ -1,5 +1,5 @@
 <link href="<?php echo base_url(); ?>plugins/sweetalerts/sweetalert.css" rel="stylesheet" type="text/css" />
-     <?php echo form_open_multipart('estudiante/index'); ?>
+     <?php echo form_open_multipart('estudiante/indexEstudiante'); ?>
            <button type="submit" class="btn btn-outline-warning">Atras</button>
            <?php echo form_close(); ?>
     <div class="helpdesk">

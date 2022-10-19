@@ -46,7 +46,11 @@ public function agregar()
 		$data['curso'] =$_POST['curso'];
         $data['cantidad'] =$_POST['cantidad'];
         $data['horario'] =$_POST['horario'];
-       
+       $data['estado'] =1;
+        $data['fechaCreacion'] =$_POST['fechaCreacion'];
+        $data['dia'] =$_POST['dia'];
+        $data['idEntrenador'] =1;
+        $data['imagen'] ='';
 	  $lista=$this->curso_model->agregarcurso($data);
      redirect('curso/index','refresh');
 }

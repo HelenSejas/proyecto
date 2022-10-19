@@ -225,9 +225,9 @@ foreach ($curso->result() as $row) {
     <label>Horario:</label>
     <input type="text" class="form-control"  name="segundoApellido" placeholder="Ingrese Segundo Apellido" value=" "><br>
     <label>Fecha Creacion:</label>
-    <input type="date" name="edad" class="form-control" placeholder="Ingrese edad de estudiante">
+    <input type="date" name="fechaCreacion" class="form-control" placeholder="Ingrese edad de estudiante">
     <label>Dia:</label>
-    <input type="tel" class="form-control" name="nroCelular" placeholder="Ingrese dia">
+    <input type="text" class="form-control" name="dia" placeholder="Ingrese dia">
     <div class="d-grid gap-2 my-4">
 <button type="submit" class="btn btn-info">Agregar Curso</button>
 </div >

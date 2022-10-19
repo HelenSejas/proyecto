@@ -357,8 +357,9 @@ $indice ++;
         <option>M</option>
         <option>F</option>
         <option>otro</option>
-    </select>
-
+    </select><br>
+ <label>fecha Registro:</label>
+    <input type="date" class="form-control" name="fechaInicio" placeholder="Ingrese fecha"><br>
     <div class="d-grid gap-2 my-4">
         <div class="widget-content widget-content-area text-center">
 <button type="submit" class="btn btn-info">Agregar estudiante</button>
