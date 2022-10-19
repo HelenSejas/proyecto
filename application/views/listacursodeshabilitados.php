@@ -151,7 +151,9 @@
                                 <h4 class="text-left text-center">CURSOS</h4>
                                 <div class="container">     
                                    <div class="btn-group" role="group" aria-label="Basic example">
-    <button type="button" class="btn btn-secondary ">Ver cursos eliminados</button>
+                                    <?php echo form_open_multipart('curso/habilitarcursobd'); ?>
+    <button class="btn btn-secondary ">Ver cursos habilitados</button>
+     <?php echo form_close(); ?>
     <button type="button" class="btn btn-secondary ">Mostrar horarios</button>
     <button type="button" class="btn btn-secondary">Crear lista</button>
 </div>                               
@@ -177,18 +179,12 @@ foreach ($curso->result() as $row) {
                                                         <li class="list-group-item d-flex justify-content-between align-items-center"><?php echo $row->dia;?>
                                                         </li>
           <div class="d-grid gap-2 my-2">
-          <?php echo form_open_multipart('curso/deshabilitarbd'); ?>
+          <?php echo form_open_multipart('curso/habilitarcursobd'); ?>
           <input type="hidden" name="idCurso" value="<?php echo $row->idCurso;?>">
   </div>
-             <button class="mr-2 btn btn-info">Eliminar</button>
+             <button class="mr-2 btn btn-info">habilitar</button>
          
         <?php echo form_close(); ?>
-        <?php echo form_open_multipart('curso/lista'); ?>
-          <input type="hidden" name="idCurso" value="<?php echo $row->idCurso;?>">
-  <div class="d-grid gap-2 my-2">
-             <button class="mr-2 btn btn-warning">Ver lista</button>
-         
-        <?php echo form_close(); ?></div>
                                                     </ul>
                                                    
                                                 </div>

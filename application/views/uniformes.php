@@ -7,7 +7,7 @@
 
 
     <nav class="nav navbar-dark "  style="background:url(<?php echo base_url(); ?>assets/img/adorno2.jfif);">
-    <?php echo form_open_multipart('estudiante/index'); ?>
+    <?php echo form_open_multipart('estudiante/indexEstudiante'); ?>
            <button type="submit" class="btn btn-secondary">Atras</button>
            <?php echo form_close(); ?>
           <?php echo form_open_multipart('inicio/index'); ?>

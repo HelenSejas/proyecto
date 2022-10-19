@@ -11,7 +11,7 @@
                 <ul class="list-unstyled menu-categories" id="topAccordion">
 
                     <li class="menu single-menu">
-                    <div> <?php echo form_open_multipart('estudiante/index'); ?>
+                    <div> <?php echo form_open_multipart('estudiante/indexEstudiante'); ?>
            <button type="submit" class="btn btn-outline-warning">Atras</button>
            <?php echo form_close(); ?>
 
@@ -55,11 +55,6 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </a>
                         <ul class="collapse submenu list-unstyled" id="components" data-parent="#topAccordion">
-                            <li>
-                                 <?php echo form_open_multipart('usuarios/index'); ?>
-                        <button type="submit" class="btn btn-outline-warning">login</button>
-                        <?php echo form_close(); ?>
-                            </li>
                             <li>  <?php echo form_open_multipart('curso/indexEquipo'); ?>
                         <button type="submit" class="btn btn-outline-warning">ver Equipo</button>
                         <?php echo form_close(); ?></li>
@@ -151,9 +146,9 @@
                                 <div class="container">   
                                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#miModalC">Crear Nuevo Curso</button>  
                                    <div class="btn-group" role="group" aria-label="Basic example">
-                                    <div>  <?php echo form_open_multipart('curso/inactivos'); ?>
-          <button type="button" class="btn btn-secondary ">Ver cursos eliminados</button>
-        <?php echo form_close(); ?></div>                  
+                                    <?php echo form_open_multipart('curso/inactivos'); ?>
+          <button class="btn btn-secondary ">Ver cursos eliminados</button>
+        <?php echo form_close(); ?>                  
    
     <button type="button" class="btn btn-secondary ">Mostrar horarios</button>
     <button type="button" class="btn btn-secondary">Crear lista</button>
@@ -196,7 +191,9 @@ foreach ($curso->result() as $row) {
   <div class="d-grid gap-2 my-2">
              <button class="mr-2 btn btn-warning">Ver lista</button>
          
-        <?php echo form_close(); ?></div>
+        <?php echo form_close(); ?>
+        <button class="btn btn-primary">crear pdf lista</button>
+    </div>
                                                     </ul>
                                                    
                                                 </div>
@@ -230,7 +227,7 @@ foreach ($curso->result() as $row) {
     <label>Fecha Creacion:</label>
     <input type="date" name="edad" class="form-control" placeholder="Ingrese edad de estudiante">
     <label>Dia:</label>
-    <input type="tel" class="form-control" name="nroCelular" placeholder="Ingrese numero celular">
+    <input type="tel" class="form-control" name="nroCelular" placeholder="Ingrese dia">
     <div class="d-grid gap-2 my-4">
 <button type="submit" class="btn btn-info">Agregar Curso</button>
 </div >

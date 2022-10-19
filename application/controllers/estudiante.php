@@ -3,8 +3,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class estudiante extends CI_Controller {
 
-	
 	public function index()
+	{
+		 $data['msg']=$this->uri->segment(3);
+		if($this->session->userdata('login')){
+			redirect ('usuarios/panel',' refresh');
+		}
+		else{
+		$this->load->view('include/header');
+		$this->load->view('login',$data);
+		$this->load->view('include/fooder');
+		}
+		
+	}
+	public function indexEstudiante()
 	{   
 	    $lista=$this->estudiante_model->listaestudiantes();
          $data['estudiante']=$lista;
@@ -72,10 +84,7 @@ public function deshabilitarbd()
     	redirect('estudiante/index');
 	}
 	public function buscar() {
-    $this->estudiante_model->encontrarestudiante();  
-    $this->load->view('include/header');
-	$this->load->view('inicio',$data);
-	$this->load->view('include/fooder');   
+    $this->estudiante_model->encontrarestudiante();    
 	}
 	public function seleccionado()
 	{

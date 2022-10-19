@@ -79,7 +79,7 @@ public function agregar()
 	public function habilitarcursobd()
 	{
 		$idCurso=$_POST['idCurso'];
-		$data['estado']=0;
+		$data['estado']=1;
 		$this->curso_model->modificarcurso($idCurso,$data);
 		redirect('curso/index');
 	}

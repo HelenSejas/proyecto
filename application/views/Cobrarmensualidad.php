@@ -1,5 +1,5 @@
 
-    <div class="main-container" id="container" style="background:url(<?php echo base_url(); ?>assets/img/adorno.jfif);">
+    <div class="main-container" >
 
         <div class="overlay"></div>
         <div class="search-overlay"></div>
@@ -45,9 +45,8 @@ foreach ($infoestudiante->result() as $row) {
     <input type="text" class="form-control"  name="segundoApellido" placeholder="Ingrese Segundo Apellido" value="<?php echo $row->ApellidoMaterno;?> "><br>
     <label>Curso:</label>
     <input type="text" class="form-control" name="Curso" placeholder="curso" value="<?php echo $row->Curso;?>"><br>
-<br>
      <label>cantidad:</label>
-        <select  name="cantidad" id="cantidad"> 
+        <select name="cantidad" id="cantidad"> 
         <option value="150">1</option>
         <option value="300">2</option>
         <option value="450">3</option>
@@ -55,7 +54,8 @@ foreach ($infoestudiante->result() as $row) {
         <option value=750>5</option>
         <option value="900">6</option>
     </select><br>
-
+<label>Monto:</label>
+    <input class="form-control" name="monto"  value="">
 <label for="result"> cantidad a cancelar: </label>
 <input type="text" name="result" id="result">
 <div id="capaResultado">...</div>

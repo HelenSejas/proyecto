@@ -1,12 +1,12 @@
 
-    <div class="main-container" id="container"  style="background:url(<?php echo base_url(); ?>assets/img/adorno.jfif);">
+    <div class="main-container" id="container" >
 
         <div class="overlay"></div>
         <div class="search-overlay"></div>
 
 
     <nav class="nav navbar-dark bg-dark " s>
-    <?php echo form_open_multipart('estudiante/index'); ?>
+    <?php echo form_open_multipart('estudiante/indexEstudiante'); ?>
            <button type="submit" class="btn btn-outline-warning btn-rounded">Atras</button>
            <?php echo form_close(); ?>
           <?php echo form_open_multipart('inicio/index'); ?>
@@ -68,7 +68,6 @@ foreach ($estudiante->result() as $row) {
                                                 <th><?php echo $row->ApellidoMaterno;?> :</th> 
                                                 <th><?php echo $row->Curso;?></th>
                                                 <th> <?php echo form_open_multipart('estudiante/seleccionado'); ?>
-                                               
                                           <input type="hidden" name="IdEstudiante" value="<?php echo $row->IdEstudiante;?>">
                                            <input type="submit" name="buttonM" value="seleccionar" class="btn btn-secondary mb-2">
                                              <?php echo form_close(); ?></th>

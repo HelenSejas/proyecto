@@ -54,7 +54,7 @@ public function panel()
 	{
 		if($this->session->userdata('usuario'))
 		{
-			redirect ('estudiante/index', 'refresh');
+			redirect ('estudiante/indexEstudiante', 'refresh');
 		}
 		else
 	{

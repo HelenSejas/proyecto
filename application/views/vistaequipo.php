@@ -17,7 +17,7 @@
            <nav class="nav "style="background:url(<?php echo base_url(); ?>assets/img/cancha.jpg);">
              <img src="<?php echo base_url(); ?>assets/img/logo.jpg" class="navbar-logo" alt="logo" width=50>
             <h4 class="admin-logo">VICTOR MURIEL</h4>
-            <div class="mx-5"> <?php echo form_open_multipart('estudiante/index'); ?>
+            <div class="mx-5"> <?php echo form_open_multipart('estudiante/indexEstudiante'); ?>
            <button type="submit" class="btn btn-outline-warning">Atras</button>
            <?php echo form_close(); ?></div> 
             </div> 
@@ -88,6 +88,7 @@
                                                                 <div class="note-description-content">
                                                                     <p class="note-description" data-noteDescription="Curabitur facilisis vel elit sed dapibus sodales purus rhoncus.">Integrantes: <?php echo $row->cantidad;?></p>
                                                                     <button class="btn btn-outline-success">ver Integrantes</button>
+                                                                    <button class="btn btn-outline-success">crear pdf lista</button>
                                                                     <img src="<?php echo $row->imagen;?>" width=50>
                                                                 </div>
                                                             </div>

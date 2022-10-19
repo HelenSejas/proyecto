@@ -86,11 +86,6 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </a>
                         <ul class="collapse submenu list-unstyled" id="components" data-parent="#topAccordion">
-                            <li>
-                                 <?php echo form_open_multipart('usuarios/index'); ?>
-                        <button type="submit" class="btn btn-outline-warning">login</button>
-                        <?php echo form_close(); ?>
-                            </li>
                             <li>  <?php echo form_open_multipart('curso/indexEquipo'); ?>
                         <button type="submit" class="btn btn-outline-warning">ver Equipo</button>
                         <?php echo form_close(); ?></li>
@@ -125,7 +120,7 @@
                         </a>
                         <ul class="collapse submenu list-unstyled" id="tables"  data-parent="#topAccordion">
                             <li>
-                          <?php echo form_open_multipart('estudiante/index'); ?>
+                          <?php echo form_open_multipart('estudiante/indexEstudiante'); ?>
                         <button type="submit" class="btn btn-outline-warning">Ver Estudiantes</button>
                         <?php echo form_close(); ?>
                             </li>

@@ -219,6 +219,7 @@ foreach ($entrenador->result() as $row) {
           <input type="hidden" name="idEntrenador" value="<?php echo $row->idEntrenador;?>">
           <input type="submit" name="buttonE" value="deshabilitar" class="pricing__action mx-auto mb-4">
         <?php echo form_close(); ?></li>
+        <li><button class="btn btn-secondary">reporte de cobros</button></li>
                                                 </ul>
                                                 
                                             </div>
@@ -255,14 +256,14 @@ $indice ++;
 	</div>
 </div>
 </div>
-<div class="modal" id="modalEntrenador">
+<div class="modal" id="modalEntrenador" >
     <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content"style="background:url(<?php echo base_url(); ?>assets/img/fondo2.jfif);">
             <div class="modal-header">
                 <h5 class="modal-title">Nuevo Entrenador</h5>
                    <button class="btn btn-close" data-bs-dismiss="modal"></button> 
             </div>
-            <div class="modal-body">
+            <div class="modal-body" >
    <?php echo form_open_multipart('entrenador/agregarbd'); ?>
 
     <legend>Datos</legend>

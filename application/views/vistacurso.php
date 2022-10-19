@@ -11,7 +11,7 @@
                 <ul class="list-unstyled menu-categories" id="topAccordion">
 
                     <li class="menu single-menu">
-                    <div> <?php echo form_open_multipart('estudiante/index'); ?>
+                    <div> <?php echo form_open_multipart('estudiante/indexEstudiante'); ?>
            <button type="submit" class="btn btn-outline-warning">Atras</button>
            <?php echo form_close(); ?>
 
@@ -152,7 +152,9 @@
                                 <div class="container">   
                                   
                                    <div class="btn-group" role="group" aria-label="Basic example">
-    <button type="button" class="btn btn-secondary ">Ver cursos eliminados</button>
+                                     <?php echo form_open_multipart('curso/inactivos'); ?>
+          <button class="btn btn-secondary ">Ver cursos eliminados</button>
+        <?php echo form_close(); ?> 
     <button type="button" class="btn btn-secondary ">Mostrar horarios</button>
     <button type="button" class="btn btn-secondary">Crear lista</button>
 </div>                               
@@ -182,7 +184,7 @@ foreach ($curso->result() as $row) {
           <input type="hidden" name="idCurso" value="<?php echo $row->idCurso;?>">
   <div class="d-grid gap-2 my-2">
              <button class="mr-2 btn btn-warning">Ver lista</button>
-         
+         <button class="btn btn-primary">crear pdf lista</button>
         <?php echo form_close(); ?></div>
                                                     </ul>
                                                    
