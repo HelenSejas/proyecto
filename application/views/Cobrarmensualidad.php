@@ -42,7 +42,9 @@ foreach ($infoestudiante->result() as $row) {
     <label>Primer Apellido:</label>
     <input type="text" class="form-control" name="primerApellido" placeholder="Ingrese primer Apellido" value="<?php echo $row->ApellidoPaterno;?>">
     <label>Segundo Apellido:</label>
-    <input type="text" class="form-control"  name="segundoApellido" placeholder="Ingrese Segundo Apellido" value="<?php echo $row->ApellidoMaterno;?> "><br>
+    <input type="text" class="form-control" name="primerApellido" placeholder="Ingrese primer Apellido" value="<?php echo $row->ApellidoMaterno;?>">
+    <label>Pagante:</label>
+    <input type="text" class="form-control"  name="pagante" placeholder="Ingrese Segundo Apellido" value=" "><br>
     <label>Curso:</label>
     <input type="text" class="form-control" name="Curso" placeholder="curso" value="<?php echo $row->Curso;?>"><br>
      <label>cantidad:</label>
@@ -56,12 +58,10 @@ foreach ($infoestudiante->result() as $row) {
     </select><br>
 <label>Monto:</label>
     <input class="form-control" name="monto"  value="">
-<label for="result"> cantidad a cancelar: </label>
-<input type="text" name="result" id="result">
-<div id="capaResultado">...</div>
     <div class="d-grid gap-2 my-4">
-<button type="submit" class="btn btn-info">Cancelar mensualidad</button>
-
+<button class="btn btn-info">Cobrar mensualidad</button>
+ <a target="_blank" href="<?php echo base_url(); ?>index.php/estudiante/mensualidadpdf">
+           <button  class="btn btn-outline-warning">Generar Comprobante</button></a>
 </div >
    <?php }
     ?>
@@ -108,4 +108,20 @@ foreach ($infoestudiante->result() as $row) {
             </div>
         </div>
     </div> 
+
+    <div class="modal" id="modalComprobante" >
+    <div class="modal-dialog">
+        <div class="modal-content" >
+            <div class="modal-header">
+                <h5 class="modal-title">COBRO EXITOSO</h5>
+                   <button class="btn btn-close" data-bs-dismiss="modal"></button> 
+            </div>
+             <a target="_blank" href="<?php echo base_url(); ?>index.php/estudiante/mensualidadpdf">
+           <button  class="btn btn-outline-warning">Generar Comprobante</button></a>
+            </div> 
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+            </div>
+        </div>
     </div>

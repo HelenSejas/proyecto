@@ -64,6 +64,7 @@ foreach ($infoestudiante->result() as $row) {
          <input type="hidden" name="IdEstudiante"  value="<?php echo $row->IdEstudiante; ?>">
            <button type="submit" class="btn btn-outline-warning">Cobrar Mensualidad</button>
            <?php echo form_close(); ?>
+           
 </div>
 </div>
 </div>

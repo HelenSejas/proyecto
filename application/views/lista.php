@@ -253,7 +253,8 @@
                <?php echo form_open_multipart('estudiante/inactivos'); ?>
               <button type="button" class="btn btn-secondary">mostrar nuevos alumnos</button><br>
               <?php echo form_close(); ?>
-              <button type="button" class="btn btn-secondary">crear lista pdf</button>
+              <a target="_blank" href="<?php echo base_url(); ?>index.php/estudiante/listapdf">
+              <button class="btn btn-secondary">crear lista pdf</button></a>
                    </div>
                                             </ul>
                                         </div>
