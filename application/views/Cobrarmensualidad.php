@@ -39,25 +39,37 @@ foreach ($infoestudiante->result() as $row) {
     <label>Estudiante:</label>
  <input type="hidden" name="IdEstudiante"  value="<?php echo $row->IdEstudiante; ?>">
    <h5><?php echo $row->nombres;?> <?php echo $row->primerApellido;?> <?php echo $row->segundoApellido;?></h5>
-    <div class="" id="pagante"><legend class="text-center">Pagante</legend>
-      <label>Nombre:</label>
+   <label>Curso:</label>
+    <h5><?php echo $row->curso;?></h3>
+    <legend class="text-center">Pagante</legend>
+    <input type="radio" name="lang" value="hide" onclick="hideShowDiv(1)">estudiante
+    <input type="radio" name="lang" value="hide" onclick="hideShowDiv(2)">Padre
+      <div class="" id="div">
+    <label>Nombre:</label>
     <input type="text" class="form-control"  name="pagante" placeholder="Ingrese nombre de pagante" value=" ">
     <label>Apellido:</label>
     <input type="text" class="form-control"  name="pagante" placeholder="Ingrese apellido de pagante" value=" ">
     </div>
-    <label>Curso:</label>
-    <h5><?php echo $row->curso;?></h3>
-     <label>cantidad:</label>
-        <select name="cantidad" id="cantidad"> 
-        <option value="150">1</option>
-        <option value="300">2</option>
-        <option value="450">3</option>
-        <option value="600">4</option>
-        <option value=750>5</option>
-        <option value="900">6</option>
-    </select><br>
-<label>Monto:</label>
-    <input class="form-control" name="monto"  value="">
+    <div><div class="">
+        <label>Mes:</label><br>
+        <input type="checkbox" name="1" value="ENERO">Enero
+        <input type="checkbox" name="2" value="FEBRERO">Febrero
+        <input type="checkbox" name="3" value="MARZO">Marzo
+        <input type="checkbox" name="4" value="ABRIL">Abril
+        <input type="checkbox" name="5" value="MAYO">Mayo
+        <input type="checkbox" name="6" value="JUNIO">Junio<br>
+        <input type="checkbox" name="7" value="JULIO">Julio
+        <input type="checkbox" name="8" value="AGOSTO">Agosto
+        <input type="checkbox" name="9" value="SEPTIEMBRE">Septiembre
+        <input type="checkbox" name="10" value="OCTUBRE">Octubre
+        <input type="checkbox" name="11" value="NOVIEMBRE">Noviembre
+        <input type="checkbox" name="12" value="DICIEMBRE">Diciembre
+        <br>
+        </div>
+        <label>Cantidad de meses a pagar:</label>
+    <textarea name="cantidad" onkeyup="mostrar(this.value)" id="" cols="2" rows="1"></textarea>
+</div>
+<label>Monto a Pagar:</label><h3 class="monto" id="resultado"></h3><h6>Bs.</h6>
     <div class="d-grid gap-2 my-4">
    <button class="btn btn-info">Cobrar mensualidad</button>
  <a target="_blank" href="<?php echo base_url(); ?>index.php/estudiante/mensualidadpdf">
@@ -70,23 +82,19 @@ foreach ($infoestudiante->result() as $row) {
 </div>
 
 <script >
-    const cantidad=document.querySelector('#cantidad');
-    console.log(cantidad)
-    cantidad.addEventListener('change',() => {
-        let valorOption =cantidad.value;
-        console.log(valorOption);
-
-        var opcionSeleccionar=cantidad.options[cantidad.selectedIndex];
-
-        console.log("Option:",opcionSeleccionar.text);
-        console.log("Valor:",opcionSeleccionar.value);
-
-        let inputResult=document.querySelector('#result').value(opcionSeleccionar.text+' -- '+opcionSeleccionar.value);
-        const capa = document.querySelector('#capaResultado');
-        capa.textContent=`mi cantidad es: ${valorOption}`;
-    });
+   function mostrar(valor){
+    valor=valor*150;
+document.getElementById("resultado").innerHTML=valor;
+   }
+   function hideShowDiv(val){ 
+    if(val==1){
+        document.getElementById('div').style.display='none';
+    }
+     if(val==2){
+        document.getElementById('div').style.display='block';
+    }
+   }
 </script>
-
     <div id="miniFooterWrapper" class="">
         <div class="container">
             <div class="row">

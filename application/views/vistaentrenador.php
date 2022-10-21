@@ -208,7 +208,7 @@ foreach ($entrenador->result() as $row) {
                                          <img class="card-img" src="<?php echo base_url(); ?>assets/img/usuario.png" width="80"> 
                                     <ul class="pricing__feature-list text-center">
                                                    
-                                        <li class="pricing__feature">Sueldo: <?php echo $row->sueldo;?></li>
+                                        <li class="pricing__feature">Sueldo: <?php echo $row->sueldo;?> Bs.</li>
                 <li class="pricing__feature">Fecha Ingreso: <?php echo $row->fechaIngreso;?></li>
                                                 </ul>
                                                 
