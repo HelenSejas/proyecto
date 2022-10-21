@@ -48,9 +48,7 @@
                         </a>
                         <ul class="collapse submenu list-unstyled" id="dashboard" data-parent="#topAccordion">
                         <li>
-                        <?php echo form_open_multipart('curso/index'); ?>
-                        <button type="submit" class="btn btn-outline-warning">ver Curso</button>
-                        <?php echo form_close(); ?>
+                        <a href="<?php echo base_url(); ?>index.php/curso/index">Ver Cursos</a>
                         </li>
                         </ul>
                     </li>
@@ -64,15 +62,10 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </a>
                         <ul class="collapse submenu list-unstyled" id="app" data-parent="#topAccordion">
-                            <li>
-                                 <?php echo form_open_multipart('usuarios/indexInicio'); ?>
-                                 <button type="submit" class="btn btn-outline-warning">Mesualidades</button>
-                                 <?php echo form_close(); ?>
+                            <li><a href="<?php echo base_url(); ?>index.php/usuarios/indexInicio">Mensualidad</a>
                             </li>
                             <li>
-                                   <?php echo form_open_multipart('usuarios/indexSesion'); ?>
-                                 <button type="submit" class="btn btn-outline-warning">Pago por sesion</button>
-                                 <?php echo form_close(); ?>
+                                   <a href="<?php echo base_url(); ?>index.php/usuarios/indexSesion">pago por sesion</a>
                             </li>
                         </ul>
                     </li>
@@ -86,9 +79,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </a>
                         <ul class="collapse submenu list-unstyled" id="components" data-parent="#topAccordion">
-                            <li>  <?php echo form_open_multipart('curso/indexEquipo'); ?>
-                        <button type="submit" class="btn btn-outline-warning">ver Equipo</button>
-                        <?php echo form_close(); ?></li>
+                            <li>  <a href="<?php echo base_url(); ?>index.php/curso/indexEquipo">Ver Equipos</a></li>
                         </ul>
                     </li>
 
@@ -104,9 +95,7 @@
                             <li>
                                 <a href="ui_alerts.html">Ver precios</a>
                             </li>
-                            <li> <?php echo form_open_multipart('curso/indexUniforme'); ?>
-                        <button type="submit" class="btn btn-outline-warning">ver</button>
-                        <?php echo form_close(); ?></li>
+                            <li><a href="<?php echo base_url(); ?>index.php/curso/indexUniforme">Ver Uniformes</a></li>
                         </ul>
                     </li>
 
@@ -120,9 +109,7 @@
                         </a>
                         <ul class="collapse submenu list-unstyled" id="tables"  data-parent="#topAccordion">
                             <li>
-                          <?php echo form_open_multipart('estudiante/indexEstudiante'); ?>
-                        <button type="submit" class="btn btn-outline-warning">Ver Estudiantes</button>
-                        <?php echo form_close(); ?>
+                           <a href="<?php echo base_url(); ?>index.php/estudiante/indexEstudiante">Ver Estudiantes</a>
                             </li>
                         </ul>
                     </li>
@@ -137,49 +124,12 @@
                         </a>
                         <ul class="collapse submenu list-unstyled" id="page"  data-parent="#topAccordion">
                             <li>
-                               <?php echo form_open_multipart('entrenador/index'); ?>
-                        <button type="submit" class="btn btn-outline-warning">ver</button>
-                        <?php echo form_close(); ?>
+                                <a href="<?php echo base_url(); ?>index.php/entrenador/index">ver</a>
                             </li>
                             <li>
-                                <a href="pages_contact_us.html"> Contact Form </a>
+                               <a href="<?php echo base_url(); ?>index.php/curso/index">Reportes</a>
                             </li>
                             <li>
-                            <li class="sub-sub-submenu-list">
-                                <a href="#user-login" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> Login <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg> </a>
-                                <ul class="collapse list-unstyled sub-submenu" id="user-login" data-parent="#page"> 
-                                    <li>
-                                        <a href="auth_login.html"> Login </a>
-                                    </li>
-                                    <li>
-                                        <a href="auth_login_boxed.html"> Login Boxed </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="sub-sub-submenu-list">
-                                <a href="#user-register" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> Register <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg> </a>
-                                <ul class="collapse list-unstyled sub-submenu" id="user-register" data-parent="#page"> 
-                                    <li>
-                                        <a href="auth_register.html"> Register </a>
-                                    </li>
-                                    <li>
-                                        <a href="auth_register_boxed.html"> Register Boxed </a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li class="sub-sub-submenu-list">
-                                <a href="#user-passRecovery" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> Password Recovery <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg> </a>
-                                <ul class="collapse list-unstyled sub-submenu" id="user-passRecovery" data-parent="#page"> 
-                                    <li>
-                                        <a href="auth_pass_recovery.html"> Recover ID </a>
-                                    </li>
-                                    <li>
-                                        <a href="auth_pass_recovery_boxed.html"> Recover ID Boxed </a>
-                                    </li>
-                                </ul>
-                            </li>
-
                         </ul>
                     </li>
 
@@ -295,8 +245,8 @@ foreach ($estudiante->result() as $row) {
         <tr>
       <th class="checkbox-column text-center" scope="row"><?php echo $indice;?></th>
       <td><?php echo $row->nombres;?></td>
-      <td><?php echo $row->ApellidoPaterno;?></td>
-      <td><?php echo $row->ApellidoMaterno;?></td>
+      <td><?php echo $row->primerApellido;?></td>
+      <td><?php echo $row->segundoApellido;?></td>
     <td >
          <?php echo form_open_multipart('estudiante/modificar'); ?>
           <input type="hidden" name="IdEstudiante" value="<?php echo $row->IdEstudiante;?>">

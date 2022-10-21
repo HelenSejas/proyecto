@@ -43,7 +43,6 @@ class estudiante extends CI_Controller {
 	$this->pdf->Cell(40,5,'NOMBRE','TBLR',0,'L',0);
 	$this->pdf->Cell(70,5,'APELLIDOS','TBLR',0,'L',0);
 	$this->pdf->Cell(15,5,'EDAD','TBLR',0,'L',0);
-	$this->pdf->Cell(30,5,'CURSO','TBLR',0,'L',0);
 	$this->pdf->Cell(15,5,'SEXO','TBLR',0,'L',0);
 	$this->pdf->Ln(5);
 	$this->pdf->SetFont('Arial','',9);
@@ -51,17 +50,15 @@ class estudiante extends CI_Controller {
 	foreach($lista as $row)
 	{
 		$nombre=$row->nombres;
-		$ApellidoPaterno=$row->ApellidoPaterno;
-		$ApellidoMaterno=$row->ApellidoMaterno;
+		$primerApellido=$row->primerApellido;
+		$segundoApellido=$row->segundoApellido;
 		$edad=$row->Edad;
-		$curso=$row->Curso;
 		$sexo=$row->sexo;
 		$this->pdf->Cell(10,5,$num,'TBLR',0,'L',0);
 		$this->pdf->Cell(40,5,$nombre,'TBLR',0,'L',0);
-		$this->pdf->Cell(35,5,$ApellidoPaterno,'TBLR',0,'L',0);
-		$this->pdf->Cell(35,5,$ApellidoMaterno,'TBLR',0,'L',0);
+		$this->pdf->Cell(35,5,$primerApellido,'TBLR',0,'L',0);
+		$this->pdf->Cell(35,5,$segundoApellido,'TBLR',0,'L',0);
 		$this->pdf->Cell(15,5,$edad,'TBLR',0,'L',0);
-		$this->pdf->Cell(30,5,$curso,'TBLR',0,'L',0);
 		$this->pdf->Cell(15,5,$sexo,'TBLR',0,'L',0);
 		$num++;
 		$this->pdf->Ln(5);
@@ -141,7 +138,6 @@ class estudiante extends CI_Controller {
         $data['ApellidoMaterno'] =$_POST['segundoApellido'];
         $data['Edad'] =$_POST['edad'];
         $data['nroCelular'] =$_POST['nroCelular'];
-        $data['Curso'] =$_POST['Curso'];
         $data['sexo'] =$_POST['sexo'];
         $data['estado'] =1;
         $data['fechaInicio'] =$_POST['fechaInicio'];
@@ -179,11 +175,10 @@ public function deshabilitarbd()
 	{
     $IdEstudiante=$_POST['IdEstudiante'];
 	$data['nombres'] =$_POST['nombre'];
-    $data['ApellidoPaterno'] =$_POST['primerApellido'];
-    $data['ApellidoMaterno'] =$_POST['segundoApellido'];
+    $data['primerApellido'] =$_POST['primerApellido'];
+    $data['segundoApellido'] =$_POST['segundoApellido'];
     $data['Edad'] =$_POST['edad'];
     $data['nroCelular'] =$_POST['nroCelular'];
-    $data['Curso'] =$_POST['Curso'];
     $data['sexo'] =$_POST['sexo'];
     $data['fechaInicio'] =$_POST['fechaInicio'];
     	$this->estudiante_model->modificarestudiante($IdEstudiante,$data);

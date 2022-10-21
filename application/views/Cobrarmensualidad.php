@@ -45,8 +45,6 @@ foreach ($infoestudiante->result() as $row) {
     <input type="text" class="form-control" name="primerApellido" placeholder="Ingrese primer Apellido" value="<?php echo $row->ApellidoMaterno;?>">
     <label>Pagante:</label>
     <input type="text" class="form-control"  name="pagante" placeholder="Ingrese Segundo Apellido" value=" "><br>
-    <label>Curso:</label>
-    <input type="text" class="form-control" name="Curso" placeholder="curso" value="<?php echo $row->Curso;?>"><br>
      <label>cantidad:</label>
         <select name="cantidad" id="cantidad"> 
         <option value="150">1</option>

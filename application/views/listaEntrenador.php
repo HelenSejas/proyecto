@@ -15,39 +15,18 @@
                 <a class="navbar-brand" href="index.html"><img alt="logo" src="<?php echo base_url(); ?>assets/img/logo.jpg" > <span class="navbar-brand-name">VICTOR MURIEL</span></a>
             </div>
 
-            <ul class="navbar-item flex-row mr-auto">
-              
-            </ul>
-
             <ul class="navbar-item flex-row nav-dropdowns">
 
                 <li class="nav-item dropdown user-profile-dropdown order-lg-0 order-1">
                     <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="user-profile-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="media">
                             <img src="<?php echo base_url(); ?>assets/img/usuario.png" class="img-fluid" alt="admin-profile">
-                            <div class="media-body align-self-center">
-                                <h6><span>Hi,</span> Usuario</h6>
+                            <div class="media-body align-self">
+                                <h6><span>Hi,</span>Usuario <?php echo $this->session->userdata('usuario'); ?> </h6>
                             </div>
                         </div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                     
                     </a>
-                    <div class="dropdown-menu position-absolute animated fadeInUp" aria-labelledby="user-profile-dropdown">
-                        <div class="">
-                            <div class="dropdown-item">
-                                <a class="" href="user_profile.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> My Profile</a>
-                            </div>
-                            <div class="dropdown-item">
-                                <a class="" href="apps_mailbox.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-inbox"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path></svg> Inbox</a>
-                            </div>
-                            <div class="dropdown-item">
-                                <a class="" href="auth_lockscreen.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> Lock Screen</a>
-                            </div>
-                            <div class="dropdown-item">
-                                <a class="" href="auth_login.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg> Sign Out</a>
-                            </div>
-                        </div>
-                    </div>
-
                 </li>
             </ul>
         </header>
@@ -55,17 +34,12 @@
 
 <!--  BEGIN TOPBAR  -->
         <div class="topbar-nav header navbar" role="banner">
-            <nav id="topbar">
+            <nav id="topbar" style="background:url(<?php echo base_url(); ?>assets/img/fondo2.jfif);">
 
                 <ul class="list-unstyled menu-categories" id="topAccordion">
- <li class="menu single-menu">
-        
-                        
-                        <?php echo form_open_multipart('estudiante/indexEstudiante'); ?>
-                        <button type="submit" class="btn btn-outline-warning">atras</button>
-                        <?php echo form_close(); ?>
-                        
-                    </li>
+<li class="menu single-menu"> <?php echo form_open_multipart('estudiante/indexEstudiante'); ?>
+           <button type="submit" class="btn btn-outline-warning">Atras</button>
+           <?php echo form_close(); ?></li>
                     <li class="menu single-menu">
                         <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle autodroprown">
                             <div class="">
@@ -76,9 +50,7 @@
                         </a>
                         <ul class="collapse submenu list-unstyled" id="dashboard" data-parent="#topAccordion">
                         <li>
-                        <?php echo form_open_multipart('curso/index'); ?>
-                        <button type="submit" class="btn btn-outline-warning">curso</button>
-                        <?php echo form_close(); ?>
+                        <a href="<?php echo base_url(); ?>index.php/curso/index">Ver Cursos</a>
                         </li>
                         </ul>
                     </li>
@@ -86,16 +58,17 @@
                     <li class="menu single-menu active">
                         <a href="#app" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">
                             <div class="">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-cpu"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+                              
                                 <span>Pagos</span>
                             </div>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </a>
                         <ul class="collapse submenu list-unstyled" id="app" data-parent="#topAccordion">
-                            <li>
-                                <a href="apps_chat.html">mensualidades</a>
+                            <li><a href="<?php echo base_url(); ?>index.php/usuarios/indexInicio">Mensualidad</a>
                             </li>
-                           
+                            <li>
+                                   <a href="<?php echo base_url(); ?>index.php/usuarios/indexSesion">pago por sesion</a>
+                            </li>
                         </ul>
                     </li>
                     
@@ -108,9 +81,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </a>
                         <ul class="collapse submenu list-unstyled" id="components" data-parent="#topAccordion">
-                            <li>
-                                <a href="component_tabs.html"> Ver Equipos </a>
-                            </li>
+                            <li>  <a href="<?php echo base_url(); ?>index.php/curso/indexEquipo">Ver Equipos</a></li>
                         </ul>
                     </li>
 
@@ -126,6 +97,22 @@
                             <li>
                                 <a href="ui_alerts.html">Ver precios</a>
                             </li>
+                            <li><a href="<?php echo base_url(); ?>index.php/curso/indexUniforme">Ver Uniformes</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="menu single-menu">
+                        <a href="#tables" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                            <div class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layout"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                                <span>Estudiantes</span>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </a>
+                        <ul class="collapse submenu list-unstyled" id="tables"  data-parent="#topAccordion">
+                            <li>
+                           <a href="<?php echo base_url(); ?>index.php/estudiante/indexEstudiante">Ver Estudiantes</a>
+                            </li>
                         </ul>
                     </li>
 
@@ -139,19 +126,12 @@
                         </a>
                         <ul class="collapse submenu list-unstyled" id="page"  data-parent="#topAccordion">
                             <li>
-                                <a href="pages_helpdesk.html"> Helpdesk </a>
+                                <a href="<?php echo base_url(); ?>index.php/entrenador/index">ver</a>
                             </li>
                             <li>
-                                <a href="pages_contact_us.html"> Contact Form </a>
+                               <a href="<?php echo base_url(); ?>index.php/curso/index">Reportes</a>
                             </li>
                             <li>
-                            <li class="sub-sub-submenu-list">
-                                <a href="#user-login" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> Login <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg> </a>
-                               
-                            </li>
-                          
-
-                          
                         </ul>
                     </li>
 
@@ -159,17 +139,41 @@
                         <a href="#more" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                             <div class="">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
-                                <span>reportes</span>
+                                <span>Inscribir</span>
                             </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </a>
+                        <ul class="collapse submenu list-unstyled" id="more" data-parent="#topAccordion">
+                            <li>
+                                <a href="dragndrop_dragula.html"> Inscribir Nuevo Alumno</a>
+                            </li>
 
+                         
                         </ul>
                     </li>
 
+
+                    <li class="menu single-menu">
+                        <a href="#more" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                            <div class="">
+                                <span>sesion</span>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </a>
+                        <ul class="collapse submenu list-unstyled" id="more" data-parent="#topAccordion">
+                            <li>
+                        <?php echo form_open_multipart('usuarios/logout'); ?>
+                        <button type="submit" class="btn btn-outline-warning">Cerrar sesion</button>
+                        <?php echo form_close(); ?>
+                            </li>
+
+                         
+                        </ul>
+                    </li>
                 </ul>
-            
+            </nav>
                             
 </nav>
-<br>
 
 <div class="main-container" id="container" >
 

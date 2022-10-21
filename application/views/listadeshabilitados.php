@@ -287,8 +287,8 @@ foreach ($estudiante->result() as $row) {
         <tr>
       <th class="checkbox-column text-center" scope="row"><?php echo $indice;?></th>
       <td><?php echo $row->nombres;?></td>
-      <td><?php echo $row->ApellidoPaterno;?></td>
-      <td><?php echo $row->ApellidoMaterno;?></td>
+      <td><?php echo $row->primerApellido;?></td>
+      <td><?php echo $row->segundoApellido;?></td>
     <td >
          <?php echo form_open_multipart('estudiante/habilitarbd'); ?>
           <input type="hidden" name="IdEstudiante" value="<?php echo $row->IdEstudiante;?>">

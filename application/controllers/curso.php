@@ -35,6 +35,45 @@ class curso extends CI_Controller {
 		$this->load->view('include/fooder');
       
 	}
+	public function listapdf()
+	{   
+	   $lista=$this->curso_model->listacurso();
+        $lista=$lista->result();
+	$this->pdf=new pdf;
+	$this->pdf->AddPage();
+	$this->pdf->SetTitle("Lista Cursos");
+	$this->pdf->SetLeftMargin(15);
+	$this->pdf->SetRightMargin(15);
+	$this->pdf->SetFillColor(210,210,210);
+	$this->pdf->SetFont('Arial','B',11);
+	$this->pdf->Cell(30);
+	$this->pdf->Cell(120,10,'LISTA DE CURSOS','LTBR',0,'C',1);
+	$this->pdf->Ln(20);
+
+	$this->pdf->Cell(10,5,'Nro','TBLR',0,'L',0);
+	$this->pdf->Cell(40,5,'CURSO','TBLR',0,'L',0);
+	$this->pdf->Cell(35,5,'CUPOS TOTALES','TBLR',0,'L',0);
+	$this->pdf->Cell(35,5,'HORARIO','TBLR',0,'L',0);
+	$this->pdf->Cell(40,5,'DIA','TBLR',0,'L',0);
+	$this->pdf->Ln(5);
+	$this->pdf->SetFont('Arial','',9);
+	$num=1;
+	foreach($lista as $row)
+	{
+		$curso=$row->curso;
+		$cantidad=$row->cantidad;
+		$horario=$row->horario;
+		$dia=$row->dia;
+		$this->pdf->Cell(10,5,$num,'TBLR',0,'L',0);
+		$this->pdf->Cell(40,5,$curso,'TBLR',0,'L',0);
+		$this->pdf->Cell(35,5,$cantidad,'TBLR',0,'L',0);
+		$this->pdf->Cell(35,5,$horario,'TBLR',0,'L',0);
+		$this->pdf->Cell(40,5,$dia,'TBLR',0,'L',0);
+		$num++;
+		$this->pdf->Ln(5);
+        }
+	$this->pdf->Output("listacurso.pdf",'I');
+	}
 public function agregar()
 	{
 		$this->load->view('include/header');

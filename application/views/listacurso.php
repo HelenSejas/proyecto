@@ -151,7 +151,8 @@
         <?php echo form_close(); ?>                  
    
     <button type="button" class="btn btn-secondary ">Mostrar horarios</button>
-    <button type="button" class="btn btn-secondary">Crear lista</button>
+    <a target="_blank" href="<?php echo base_url(); ?>index.php/curso/listapdf">
+              <button class="btn btn-secondary">crear lista pdf</button></a>
 </div>                               
                                     <div id="pricingWrapper" class="row">
                                         <?php
