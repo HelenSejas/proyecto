@@ -5,7 +5,7 @@
         <div class="search-overlay"></div>
 
 
-    <nav class="nav navbar-dark bg-dark " s>
+    <nav class="nav navbar-dark bg-dark " >
     <?php echo form_open_multipart('estudiante/indexEstudiante'); ?>
            <button type="submit" class="btn btn-outline-warning btn-rounded">Atras</button>
            <?php echo form_close(); ?>
@@ -54,18 +54,18 @@
                                         </div>
                                         <div class="col-lg-12">
 
-                                            <div class="searchable-container">
+                                            <div class="searchable-container" >
                                                 <div class="row">
                                                     <div class="col-md-12">  
                                                         <div class="searchable-items">
 <?php
 foreach ($estudiante->result() as $row) {
 ?>
-                                            <div class="items">
+                                            <div class="items" style="background:url(<?php echo base_url(); ?>assets/img/esmeralda.jpg);">
                                                 <tr>
                                                 <th><?php echo $row->nombres;?></th>
-                                                <th><?php echo $row->ApellidoPaterno;?></th>
-                                                <th><?php echo $row->ApellidoMaterno;?> :</th> 
+                                                <th><?php echo $row->primerApellido;?></th>
+                                                <th><?php echo $row->segundoApellido;?> </th> 
                                                 <th> <?php echo form_open_multipart('estudiante/seleccionado'); ?>
                                           <input type="hidden" name="IdEstudiante" value="<?php echo $row->IdEstudiante;?>">
                                            <input type="submit" name="buttonM" value="seleccionar" class="btn btn-secondary mb-2">

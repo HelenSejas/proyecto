@@ -40,9 +40,9 @@ foreach ($infoestudiante->result() as $row) {
  <input type="hidden" name="IdEstudiante"  value="<?php echo $row->IdEstudiante; ?>">
     <input type="text" class="form-control" name="nombre" placeholder="Ingrese nombre" value="<?php echo $row->nombres;?>"><br>
     <label>Primer Apellido:</label>
-    <input type="text" class="form-control" name="primerApellido" placeholder="Ingrese primer Apellido" value="<?php echo $row->ApellidoPaterno;?>">
+    <input type="text" class="form-control" name="primerApellido" placeholder="Ingrese primer Apellido" value="<?php echo $row->primerApellido;?>">
     <label>Segundo Apellido:</label>
-    <input type="text" class="form-control" name="primerApellido" placeholder="Ingrese primer Apellido" value="<?php echo $row->ApellidoMaterno;?>">
+    <input type="text" class="form-control" name="primerApellido" placeholder="Ingrese primer Apellido" value="<?php echo $row->segundoApellido;?>">
     <label>Pagante:</label>
     <input type="text" class="form-control"  name="pagante" placeholder="Ingrese Segundo Apellido" value=" "><br>
      <label>cantidad:</label>
@@ -57,8 +57,9 @@ foreach ($infoestudiante->result() as $row) {
 <label>Monto:</label>
     <input class="form-control" name="monto"  value="">
     <div class="d-grid gap-2 my-4">
-<button class="btn btn-info">Cobrar mensualidad</button>
+
  <a target="_blank" href="<?php echo base_url(); ?>index.php/estudiante/mensualidadpdf">
+    <button class="btn btn-info">Cobrar mensualidad</button>
            <button  class="btn btn-outline-warning">Generar Comprobante</button></a>
 </div >
    <?php }

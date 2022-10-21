@@ -24,6 +24,12 @@ class estudiante extends CI_Controller {
 		$this->load->view('lista', $data);
 		$this->load->view('include/fooder');
 	}
+	public function inscribir()
+	{   
+		$this->load->view('include/header');
+		$this->load->view('inscripcion');
+		$this->load->view('include/fooder');
+	}
 		public function listapdf()
 	{   
 	   $lista=$this->estudiante_model->listaestudiantes();

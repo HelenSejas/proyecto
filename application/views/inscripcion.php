@@ -1,5 +1,6 @@
  <link href="<?php echo base_url(); ?>assets/css/apps/todolist.css" rel="stylesheet" type="text/css" />
  <link href="<?php echo base_url(); ?>plugins/sweetalerts/sweetalert.css" rel="stylesheet" type="text/css" />
+ <link href="<?php echo base_url(); ?>assets/css/apps/scrumboard.css" rel="stylesheet" type="text/css" />
 <nav class="nav navbar-dark bg-dark " >
     <div class="main-container" id="container">
 
@@ -92,9 +93,6 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </a>
                         <ul class="collapse submenu list-unstyled" id="uiKit" data-parent="#topAccordion">
-                            <li>
-                                <a href="ui_alerts.html">Ver precios</a>
-                            </li>
                             <li><a href="<?php echo base_url(); ?>index.php/curso/indexUniforme">Ver Uniformes</a></li>
                         </ul>
                     </li>
@@ -143,7 +141,7 @@
                         </a>
                         <ul class="collapse submenu list-unstyled" id="more" data-parent="#topAccordion">
                             <li>
-                                <a href="<?php echo base_url(); ?>index.php/estudiante/inscribir">Inscribir Alumno</a>
+                                <a href="dragndrop_dragula.html"> Inscribir Nuevo Alumno</a>
                             </li>
 
                          
@@ -173,161 +171,103 @@
                             
 </nav>
 
- <div id="content" class="main-content my-4">
+ <div class="main-container my-5" id="container">
+
+        <div class="overlay"></div>
+        <div class="search-overlay"></div>
+
+        <!--  BEGIN CONTENT AREA  -->
+        <div id="content" class="main-content">
             <div class="layout-px-spacing">
-                <h2 class="text-center">Estudiantes</h2>
-<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#miModal">Agregar Estudiante</button>
+               
 
-                <div class="row layout-top-spacing">
-                    <div class="col-xl-12 col-lg-12 col-md-12">
+                <div class="row scrumboard" id="cancel-row">
+                    <div class="col-lg-14 layout-spacing">
 
-                        <div class="mail-box-container">
-                            <div class="mail-overlay"></div>
+                                        <div data-draggable="true" class="card task-text-progress" style="">
+                                            <div class="card-body">
 
-                            <div class="tab-title">
-                                <div class="row">
-                                    <div class="col-md-12 col-sm-12 col-12 text-center">
-                                    <img alt="logo" src="<?php echo base_url(); ?>assets/img/lista.png" width=90>
-                                        <h5 class="app-title m-3">Lista completa</h5>
+                                                <div class="task-header">
+                        <div class="task-list-section">
 
+                            <div data-section="s-new" class="task-list-container" data-connect="sorting">
+                                <div class="connect-sorting">
+                                    <div class="task-container-header">
+                                        <h6 class="s-heading" data-listTitle="In Progress">Curso</h6>
+                                        
                                     </div>
-                         
-                                    <div class="todoList-sidebar-scroll">
-                                        <div class="col-md-12 col-sm-12 col-12 mt-4 pl-0">
-                                            <ul class="nav nav-pills d-block" id="pills-tab" role="tablist">
-                         
-                    <div class="btn-group-vertical my-2" role="group" aria-label="Vertical button group">
-                  <?php echo form_open_multipart('estudiante/inactivos'); ?>
-<button class="btn btn-secondary">Mostrar estudiantes deshabilitados</button>
-             <?php echo form_close(); ?><br>
-               <?php echo form_open_multipart('estudiante/inactivos'); ?>
-              <button type="button" class="btn btn-secondary">mostrar nuevos alumnos</button><br>
-              <?php echo form_close(); ?>
-              <a target="_blank" href="<?php echo base_url(); ?>index.php/estudiante/listapdf">
-              <button class="btn btn-secondary">crear lista pdf</button></a>
-                   </div>
-                                            </ul>
+
+                                    <div class="connect-sorting-content" data-sortable="true">
+
+                                        <div data-draggable="true" class="card img-task" style="">
+                                            <div class="card-body">
+
+
+                                                <div class="task-body">
+                                                    
+                                                </div>
+                                            </div>
                                         </div>
+
+                                        <div data-draggable="true" class="card simple-title-task" style="">
+                                            <div class="card-body">
+
+                                                <div class="task-header">                                                    
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
                                     </div>
+
+                                    <div class="add-s-task">
+                                        <a class="addTask"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg> Add Task</a>
+                                    </div>
+
                                 </div>
                             </div>
 
-                            <div id="todo-inbox" class="accordion todo-inbox">
-                            
-                        
-                                <div class="todo-box">
-                                    
-                                    <div id="ct" class="todo-box-scroll">
-                                        <div class="todo-item all-list">
-                                            <div class="todo-item-inner">
-                                                <div class="n-chk text-center">
+                            <div data-section="s-in-progress" class="task-list-container" data-connect="sorting">
+                                <div class="connect-sorting">
+                                    <div class="task-container-header">
+                                        <h6 class="s-heading" data-listTitle="Complete">Mensualidad</h6>
+                                        
+                                    </div>
+
+                                    <div class="connect-sorting-content" data-sortable="true">
+                                        <div data-draggable="true" class="card simple-title-task ui-sortable-handle" style="">
+                                           
+                                        </div>
+
                                                     
+                                                    <div class="">
+                                                        <h4 class="" >Datos Estudiante </h4>
+                                                    </div>
+                                                 
                                                 </div>
 
-                                                <div class="todo-content">
-                                                   <div class="row">
-        
-        <table class="table style-3  table-hover" style="background:url(<?php echo base_url(); ?>assets/img/fff.jfif);">
-  <thead>
-    <tr class="text-white">
-      <th scope="col">Nro</th>
-      <th scope="col">Nombres</th>
-      <th scope="col">Primer Apellido</th>
-      <th scope="col">segundo Apellido</th>  
-      
-    </tr>
-  </thead>
-  <tbody>
-<?php
-$indice=1;
-foreach ($estudiante->result() as $row) {
-?>
-        <tr>
-      <th class="checkbox-column text-center" scope="row"><?php echo $indice;?></th>
-      <td><?php echo $row->nombres;?></td>
-      <td><?php echo $row->primerApellido;?></td>
-      <td><?php echo $row->segundoApellido;?></td>
-    <td >
-         <?php echo form_open_multipart('estudiante/modificar'); ?>
-          <input type="hidden" name="IdEstudiante" value="<?php echo $row->IdEstudiante;?>">
-          <input type="submit" name="buttonM" value="Ver" class="btn btn-outline-secondary mb-2">
-          <?php echo form_close(); ?>
-        </td> 
-    </tr>
-    <?php
-$indice ++;
-}
-?>
+                                            </div>
+                                        </div>
 
-                             </div>
+                                    </div>
 
+
+                                </div>
                             </div>
-                         </div>
- 
+
+
                         </div>
-
                     </div>
+                </div>
 
-                </div>                                    
-            </div>
-
-                    
-            </div>
-         </div>
-
-         </div>
-     
-        </div>
-
-
-<div class="modal" id="miModal">
-    <div class="modal-dialog">
-        <div class="modal-content" style="background:url(<?php echo base_url(); ?>assets/img/fondo.webp);">
-            <div class="modal-header">
-                <h5 class="modal-title">Nuevo Estudiante</h5>
-                   <button class="btn btn-close" data-bs-dismiss="modal"></button> 
-            </div>
-            <div class="modal-body">
-   <?php echo form_open_multipart('estudiante/agregarbd'); ?>
-
-    <legend>Datos</legend>
-    <label>Nombres</label>
-    <input type="text" class="form-control" name="nombre" placeholder="Ingrese nombre de estudiante"><br>
-    <label>Primer Apellido:</label>
-    <input type="text" class="form-control" name="primerApellido" placeholder="Ingrese primer Apellido">
-    <label>Segundo Apellido:</label>
-    <input type="text" class="form-control"  name="segundoApellido" placeholder="Ingrese Segundo Apellido" value=" "><br>
-    <label>Edad:</label>
-    <input type="text" name="edad" class="form-control" placeholder="Ingrese edad de estudiante">
-    <label>Numero Celular:</label>
-    <input type="tel" class="form-control" name="nroCelular" placeholder="Ingrese numero celular">
-    <label>Curso:</label>
-    <input type="text" class="form-control" name="Curso" placeholder="Ingrese Curso"><br>
-     <label>Sexo:</label>
-        <select class="custom-select custom-select-sm" name="sexo">
-        <option>M</option>
-        <option>F</option>
-        <option>otro</option>
-    </select><br>
- <label>fecha Registro:</label>
-    <input type="date" class="form-control" name="fechaInicio" placeholder="Ingrese fecha"><br>
-    <div class="d-grid gap-2 my-4">
-        <div class="widget-content widget-content-area text-center">
-<button type="submit" class="btn btn-info">Agregar estudiante</button>
-</div >
-    </div>
-       <?php echo form_close(); ?>
-            </div> 
-            <div class="modal-footer">
-                <button class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
+                </div>
+        <div class="footer-wrapper">
+                <div class="footer-section f-section-1">
+                    <p class="">Cochabamba 2022 VICTOR MURIEL</p>
+                </div>
+                <div class="footer-section f-section-2">
+                    <p class="">JhesicaHelenSejasQuispe <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></p>
+                </div>
             </div>
         </div>
-    </div>
-
-</div>
-  </tbody>
-</table>
-	</div>
-</div>
-</div>

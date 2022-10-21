@@ -65,7 +65,7 @@ class curso extends CI_Controller {
 		$horario=$row->horario;
 		$dia=$row->dia;
 		$this->pdf->Cell(10,5,$num,'TBLR',0,'L',0);
-		$this->pdf->Cell(40,5,$curso,'TBLR',0,'L',0);
+		$this->pdf->Cell(40,5,utf8_decode($curso),'TBLR',0,'L',0);
 		$this->pdf->Cell(35,5,$cantidad,'TBLR',0,'L',0);
 		$this->pdf->Cell(35,5,$horario,'TBLR',0,'L',0);
 		$this->pdf->Cell(40,5,$dia,'TBLR',0,'L',0);
