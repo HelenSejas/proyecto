@@ -25,15 +25,13 @@ foreach ($infoestudiante->result() as $row) {
 	<label>Nombres</label>
 	<input type="text" name="nombre" class="form-control" placeholder="Ingrese nombre de estudiante" value="<?php echo $row->nombres;?>"><br>
 	<label>Primer Apellido:</label>
-    <input type="text" class="form-control" name="primerApellido" placeholder="Ingrese primer Apellido" value="<?php echo $row->ApellidoPaterno;?>"><br>
+    <input type="text" class="form-control" name="primerApellido" placeholder="Ingrese primer Apellido" value="<?php echo $row->primerApellido;?>"><br>
     <label>Segundo Apellido:</label>
-    <input type="text" class="form-control" name="segundoApellido" placeholder="Ingrese Segundo Apellido" value="<?php echo $row->ApellidoMaterno;?>"><br>
+    <input type="text" class="form-control" name="segundoApellido" placeholder="Ingrese Segundo Apellido" value="<?php echo $row->segundoApellido;?>"><br>
     <label>Edad:</label>
     <input type="text" class="form-control" name="edad" placeholder="Ingrese edad de estudiante" value="<?php echo $row->Edad;?>"><br>
     <label>Numero Celular:</label>
     <input type="tel" class="form-control" name="nroCelular" placeholder="Ingrese numero celular" value="<?php echo $row->nroCelular;?>"><br>
-    <label>Curso:</label>
-    <input type="text" class="form-control" name="Curso" placeholder="Ingrese Curso" value="<?php echo $row->Curso;?>"><br>
     <label>Sexo:</label>
 		<select class="custom-select custom-select-sm"  name="sexo">
 		<option value="<?php echo $row->sexo;?>">M</option>
@@ -42,6 +40,8 @@ foreach ($infoestudiante->result() as $row) {
 	</select><br>
   <label>Fecha de Ingreso:</label>
     <input type="date" class="form-control" name="fechaInicio" placeholder="Ingrese Fecha" value="<?php echo $row->fechaInicio;?>"><br>
+    <label>Curso:</label>
+    <input type="text" class="form-control" name="edad" placeholder="Ingrese edad de estudiante" value="<?php echo $row->curso;?>"><br>
 	<div class="d-grid gap-2 my-4">
     <div class="widget-content widget-content-area text-center">
   <button type="submit" class="mr-2 btn btn-primary success">Modificar estudiante</button>

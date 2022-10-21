@@ -18,7 +18,7 @@ class estudiante extends CI_Controller {
 	}
 	public function indexEstudiante()
 	{   
-	    $lista=$this->estudiante_model->listaestudiantes();
+	    $lista=$this->estudiante_model->recuperar();
          $data['estudiante']=$lista;
 		$this->load->view('include/header');
 		$this->load->view('lista', $data);

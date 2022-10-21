@@ -31,12 +31,12 @@ class estudiante_model extends CI_Model {
 		$this->db->where('estado',1);
 		return $this->db->get();
 	}
-		public function recuperardias($dias)
+	
+		public function recuperar()
 	{
-		$this->db->select('monto');
-		$this->db->from('mensualidad');
-		$this->db->where('dias',$dias);
-		$this->db->where('estado',1);
+		$this->db->select('*');
+		$this->db->from('estudiante');
+		$this->db->join('curso','estudiante.idCurso=curso.idCurso');
 		return $this->db->get();
 	}
 	public function modificarestudiante($IdEstudiante,$data)

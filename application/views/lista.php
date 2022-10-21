@@ -234,7 +234,7 @@
       <th scope="col">Nombres</th>
       <th scope="col">Primer Apellido</th>
       <th scope="col">segundo Apellido</th>  
-      
+      <th scope="col">Curso</th> 
     </tr>
   </thead>
   <tbody>
@@ -247,6 +247,7 @@ foreach ($estudiante->result() as $row) {
       <td><?php echo $row->nombres;?></td>
       <td><?php echo $row->primerApellido;?></td>
       <td><?php echo $row->segundoApellido;?></td>
+      <td><?php echo $row->curso;?></td>
     <td >
          <?php echo form_open_multipart('estudiante/modificar'); ?>
           <input type="hidden" name="IdEstudiante" value="<?php echo $row->IdEstudiante;?>">
