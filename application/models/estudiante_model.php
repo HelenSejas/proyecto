@@ -8,7 +8,8 @@ class estudiante_model extends CI_Model {
 	{
 		$this->db->select('*');
 		$this->db->from('estudiante');
-		$this->db->where('estado',1);
+	    $this->db->join('curso','estudiante.idCurso=curso.idCurso');
+		$this->db->where('estudiante.estado',1);
 		return $this->db->get();
 	}
 	public function listadeshabilitados()
@@ -27,18 +28,13 @@ class estudiante_model extends CI_Model {
 	{
 		$this->db->select('*');
 		$this->db->from('estudiante');
-		$this->db->where('IdEstudiante',$IdEstudiante);
-		$this->db->where('estado',1);
-		return $this->db->get();
-	}
-	
-		public function recuperar()
-	{
-		$this->db->select('*');
-		$this->db->from('estudiante');
 		$this->db->join('curso','estudiante.idCurso=curso.idCurso');
+		$this->db->where('estudiante.IdEstudiante',$IdEstudiante);
+		$this->db->where('estudiante.estado',1);
 		return $this->db->get();
 	}
+
+	
 	public function modificarestudiante($IdEstudiante,$data)
 	{
 		$this->db->where('IdEstudiante',$IdEstudiante);

@@ -36,15 +36,17 @@ foreach ($infoestudiante->result() as $row) {
     ?>
     <div class="form-group ">   
      <legend class="text-center">Datos</legend>
-    <label>Nombres</label>
+    <label>Estudiante:</label>
  <input type="hidden" name="IdEstudiante"  value="<?php echo $row->IdEstudiante; ?>">
-    <input type="text" class="form-control" name="nombre" placeholder="Ingrese nombre" value="<?php echo $row->nombres;?>"><br>
-    <label>Primer Apellido:</label>
-    <input type="text" class="form-control" name="primerApellido" placeholder="Ingrese primer Apellido" value="<?php echo $row->primerApellido;?>">
-    <label>Segundo Apellido:</label>
-    <input type="text" class="form-control" name="primerApellido" placeholder="Ingrese primer Apellido" value="<?php echo $row->segundoApellido;?>">
-    <label>Pagante:</label>
-    <input type="text" class="form-control"  name="pagante" placeholder="Ingrese Segundo Apellido" value=" "><br>
+   <h5><?php echo $row->nombres;?> <?php echo $row->primerApellido;?> <?php echo $row->segundoApellido;?></h5>
+    <div class="" id="pagante"><legend class="text-center">Pagante</legend>
+      <label>Nombre:</label>
+    <input type="text" class="form-control"  name="pagante" placeholder="Ingrese nombre de pagante" value=" ">
+    <label>Apellido:</label>
+    <input type="text" class="form-control"  name="pagante" placeholder="Ingrese apellido de pagante" value=" ">
+    </div>
+    <label>Curso:</label>
+    <h5><?php echo $row->curso;?></h3>
      <label>cantidad:</label>
         <select name="cantidad" id="cantidad"> 
         <option value="150">1</option>
@@ -57,9 +59,8 @@ foreach ($infoestudiante->result() as $row) {
 <label>Monto:</label>
     <input class="form-control" name="monto"  value="">
     <div class="d-grid gap-2 my-4">
-
+   <button class="btn btn-info">Cobrar mensualidad</button>
  <a target="_blank" href="<?php echo base_url(); ?>index.php/estudiante/mensualidadpdf">
-    <button class="btn btn-info">Cobrar mensualidad</button>
            <button  class="btn btn-outline-warning">Generar Comprobante</button></a>
 </div >
    <?php }

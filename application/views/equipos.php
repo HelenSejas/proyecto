@@ -93,11 +93,11 @@
                                                                     <img src="<?php echo $row->imagen;?>" width=50>
                                                                 </div>
                                                                 <div class="my-2">
-                                                                     <?php echo form_open_multipart('curso/modificarequipobd'); ?>
+                                                                     <?php echo form_open_multipart('equipo/modificarequipobd'); ?>
                                                                      <input type="hidden" name="idEquipo" value="<?php echo $row->idEquipo;?>">
                                                                 <button class="btn-rounded btn-warning">Modificar</button>
                                                                  <?php echo form_close(); ?>
-                                                                   <?php echo form_open_multipart('curso/deshabilitarequipo'); ?>
+                                                                   <?php echo form_open_multipart('equipo/deshabilitarequipo'); ?>
                                                                    <input type="hidden" name="idEquipo" value="<?php echo $row->idEquipo;?>">
                                                                 <button class="btn-rounded btn-warning">Eliminar</button>
                                                                  <?php echo form_close(); ?>
@@ -132,7 +132,7 @@
                    <button class="btn btn-close" data-bs-dismiss="modal"></button> 
             </div>
             <div class="modal-body">
-   <?php echo form_open_multipart('curso/agregaequipo'); ?>
+   <?php echo form_open_multipart('equipo/agregaequipo'); ?>
 
     <legend>Datos</legend>
     <label>Nombre</label>

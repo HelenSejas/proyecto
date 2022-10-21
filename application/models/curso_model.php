@@ -11,6 +11,14 @@ class curso_model extends CI_Model {
 		$this->db->where('estado',1);
 		return $this->db->get();
 	}
+		public function listaestudiantes($idCurso)
+	{
+		$this->db->select('*');
+		$this->db->from('estudiante');
+		$this->db->join('curso','estudiante.idCurso=curso.idCurso');
+		$this->db->where('curso.idCurso',$idCurso);
+		return $this->db->get();
+	}
 	public function listacursoinactivos()
 	{
 		$this->db->select('*');
@@ -23,7 +31,6 @@ class curso_model extends CI_Model {
 		$this->db->insert('curso',$data);
 	
 	}
-	
 		public function recuperarcurso($idCurso)
 	{
 		$this->db->select('*');
