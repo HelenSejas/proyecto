@@ -49,5 +49,21 @@ class estudiante_model extends CI_Model {
 		$this->db->where('password',$password);
 		return $this->db->get();
 	}
+		public function inscribir($data,$idCurso,$idEntrenador)
+	{
+		$this->db->trans_strict();
+			$this->db->insert('estudiante',$data);
+			$IdEstudiante->$this->db->insert_id();
+			$data2['idCurso'] =$idCurso;
+			$data2['idEntrenador'] =$idEntrenador;
+            $data2['IdEstudiante'] =$IdEstudiante;
+
+            $this->db->insert('inscripcion',$data2);
+		$this->db->trans_complete();
+
+	if ($this->db->_trans_status()===FALSE) {
+		return FALSE;
+	}
+	}
 }
 ?>

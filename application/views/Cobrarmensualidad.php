@@ -73,6 +73,7 @@ foreach ($infoestudiante->result() as $row) {
 <label>Monto a Pagar:</label><h3 class="monto" id="resultado"></h3><h6>Bs.</h6>
     <div class="d-grid gap-2 my-4">
    <button class="btn btn-info">Cobrar mensualidad</button>
+   <input type="hidden" name="IdEstudiante" value="<?php echo $row->IdEstudiante;?>">
  <a target="_blank" href="<?php echo base_url(); ?>index.php/estudiante/mensualidadpdf">
            <button  class="btn btn-outline-warning">Generar Comprobante</button></a>
 </div >

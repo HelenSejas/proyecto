@@ -179,7 +179,6 @@
         <!--  BEGIN CONTENT AREA  -->
         <div id="content" class="main-content">
             <div class="layout-px-spacing">
-               
 
                 <div class="row scrumboard" id="cancel-row">
                     <div class="col-lg-14 layout-spacing">
@@ -190,8 +189,6 @@
                                                 <div class="task-header" style="background:url(<?php echo base_url(); ?>assets/img/fondonegro.jfif);">
                         <div class="task-list-section">
 
-                            
-
                             <div data-section="s-in-progress" class="task-list-container" data-connect="sorting" >
                                 <div class="connect-sorting" style="background:url(<?php echo base_url(); ?>assets/img/fondo.webp);">
 
@@ -199,7 +196,7 @@
                                         <div class="">
                                                         <h4 class="" >Datos Estudiante </h4>
                                                                  <div class="text-center">
-   <?php echo form_open_multipart('estudiante/agregarbd'); ?>
+   <?php echo form_open_multipart('estudiante/inscribirbd'); ?>
     <label>Nombres</label>
     <input type="text" class="form-control" name="nombre" placeholder="Ingrese nombre de estudiante"><br>
     <label>Primer Apellido:</label>
@@ -219,9 +216,9 @@
  <label>fecha Registro:</label>
     <input type="date" class="form-control" name="fechaInicio" placeholder="Ingrese fecha"><br>
     <div class="d-grid gap-2 my-2">
-<button type="submit" class="btn btn-info">Guardar</button>
+<button type="submit" class="btn btn-info">Inscribir</button>
     </div>
-       <?php echo form_close(); ?>
+     
             </div> 
                                                     </div>
                                                  
@@ -244,16 +241,15 @@
                                         <div data-draggable="true" class="card img-task" style="">
                                             <div class="card-body">
                                                 <div class="task-body">
-         <select class="custom-select"><?php
+         <select name="idCurso" class="form-control from-select from-select-lg" required>
+            <option value=" " disabled selected>Elija un curso</option><?php
 foreach ($curso->result() as $row) {
 ?>    
-
-    <option><?php echo $row->curso;?></option>
-
-
+    <option name="idCurso" value="<?php echo $row->idCurso;?>"><?php echo $row->curso;?></option>
 <?php
 }
 ?>
+   <input type="hidden" name="idEntrenador"  value="<?php echo $this->session->userdata('idEntrenador'); ?>">
 </select>  <br>
 <legend class="text-center">Pagante</legend>
     <input type="radio" name="lang" value="hide" onclick="hideShowDiv(1)">estudiante
@@ -280,7 +276,7 @@ foreach ($curso->result() as $row) {
                                             </div>
                                         </div> <div class="d-grid gap-2 my-2">
 <button type="submit" class="btn btn-info">Inscribir</button>
-</div>
+</div>  <?php echo form_close(); ?>
                                     </div>
                                 </div>
                             </div>

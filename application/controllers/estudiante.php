@@ -58,6 +58,23 @@ class estudiante extends CI_Controller {
 	  $lista=$this->estudiante_model->agregarestudiante($data);
      redirect('estudiante/indexEstudiante','refresh');
 }
+public function inscribirbd()
+	{
+		$data['nombres'] =$_POST['nombre'];
+        $data['primerApellido'] =$_POST['primerApellido'];
+        $data['segundoApellido'] =$_POST['segundoApellido'];
+        $data['Edad'] =$_POST['edad'];
+        $data['nroCelular'] =$_POST['nroCelular'];
+        $data['sexo'] =$_POST['sexo'];
+        $data['estado'] =1;
+        $data['fechaInicio'] =$_POST['fechaInicio'];
+        $data['idPadre'] =1;
+         $data['idEquipo'] =21;
+         $idCurso=$_POST['idCurso'];
+       $idEntrenador=$_POST['idEntrenador'];
+	  $lista=$this->estudiante_model->inscribir($data,$idCurso,$idEntrenador);
+     redirect('estudiante/indexEstudiante','refresh');
+}
 
 public function deshabilitarbd()
 	{
@@ -91,8 +108,8 @@ public function deshabilitarbd()
     $data['Edad'] =$_POST['edad'];
     $data['nroCelular'] =$_POST['nroCelular'];
     $data['sexo'] =$_POST['sexo'];
-    $data['fechaInicio'] =$_POST['fechaInicio'];
-    	$this->estudiante_model->modificarestudiante($IdEstudiante,$data);
+    $data['fechaActualizacion'] =$_POST['fechaActualizacion'];
+    $this->estudiante_model->modificarestudiante($IdEstudiante,$data);
     	redirect('estudiante/indexEstudiante');
 	}
 	public function buscar() {
