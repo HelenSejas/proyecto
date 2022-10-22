@@ -26,8 +26,10 @@ class estudiante extends CI_Controller {
 	}
 	public function inscribir()
 	{   
+	$lista=$this->curso_model->listacurso();
+      $data['curso']=$lista;
 		$this->load->view('include/header');
-		$this->load->view('inscripcion');
+		$this->load->view('inscripcion',$data);
 		$this->load->view('include/fooder');
 	}
 

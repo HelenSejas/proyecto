@@ -30,7 +30,7 @@
         
    
       <div class="col-xl-6 col-lg-7 col-md-7 col-sm-11 col-11 mx-auto" >
-<div class="row">
+<div class="row" >
     <?php
 foreach ($infoestudiante->result() as $row) {
     ?>
@@ -44,14 +44,15 @@ foreach ($infoestudiante->result() as $row) {
     <legend class="text-center">Pagante</legend>
     <input type="radio" name="lang" value="hide" onclick="hideShowDiv(1)">estudiante
     <input type="radio" name="lang" value="hide" onclick="hideShowDiv(2)">Padre
-      <div class="" id="div">
+      <div class="" id="div" >
     <label>Nombre:</label>
     <input type="text" class="form-control"  name="pagante" placeholder="Ingrese nombre de pagante" value=" ">
     <label>Apellido:</label>
     <input type="text" class="form-control"  name="pagante" placeholder="Ingrese apellido de pagante" value=" ">
     </div>
-    <div><div class="">
-        <label>Mes:</label><br>
+    <div>
+        <div class="text-black" style="background:url(<?php echo base_url(); ?>assets/img/fff.jfif);">
+        <label class="text-black">Mes:</label><br>
         <input type="checkbox" name="1" value="ENERO">Enero
         <input type="checkbox" name="2" value="FEBRERO">Febrero
         <input type="checkbox" name="3" value="MARZO">Marzo

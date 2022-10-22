@@ -183,66 +183,46 @@
 
                 <div class="row scrumboard" id="cancel-row">
                     <div class="col-lg-14 layout-spacing">
-
+<h3 class="text-center">Inscripcion</h3>
                                         <div data-draggable="true" class="card task-text-progress" style="">
                                             <div class="card-body">
 
-                                                <div class="task-header">
+                                                <div class="task-header" style="background:url(<?php echo base_url(); ?>assets/img/fondonegro.jfif);">
                         <div class="task-list-section">
 
-                            <div data-section="s-new" class="task-list-container" data-connect="sorting">
-                                <div class="connect-sorting">
-                                    <div class="task-container-header">
-                                        <h6 class="s-heading" data-listTitle="In Progress">Curso</h6>
-                                        
-                                    </div>
+                            
+
+                            <div data-section="s-in-progress" class="task-list-container" data-connect="sorting" >
+                                <div class="connect-sorting" style="background:url(<?php echo base_url(); ?>assets/img/fondo.webp);">
 
                                     <div class="connect-sorting-content" data-sortable="true">
-
-                                        <div data-draggable="true" class="card img-task" style="">
-                                            <div class="card-body">
-
-
-                                                <div class="task-body">
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div data-draggable="true" class="card simple-title-task" style="">
-                                            <div class="card-body">
-
-                                                <div class="task-header">                                                    
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-
-                                    </div>
-
-                                    <div class="add-s-task">
-                                        <a class="addTask"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg> Add Task</a>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div data-section="s-in-progress" class="task-list-container" data-connect="sorting">
-                                <div class="connect-sorting">
-                                    <div class="task-container-header">
-                                        <h6 class="s-heading" data-listTitle="Complete">Mensualidad</h6>
-                                        
-                                    </div>
-
-                                    <div class="connect-sorting-content" data-sortable="true">
-                                        <div data-draggable="true" class="card simple-title-task ui-sortable-handle" style="">
-                                           
-                                        </div>
-
-                                                    
-                                                    <div class="">
+                                        <div class="">
                                                         <h4 class="" >Datos Estudiante </h4>
+                                                                 <div class="text-center">
+   <?php echo form_open_multipart('estudiante/agregarbd'); ?>
+    <label>Nombres</label>
+    <input type="text" class="form-control" name="nombre" placeholder="Ingrese nombre de estudiante"><br>
+    <label>Primer Apellido:</label>
+    <input type="text" class="form-control" name="primerApellido" placeholder="Ingrese primer Apellido">
+    <label>Segundo Apellido:</label>
+    <input type="text" class="form-control"  name="segundoApellido" placeholder="Ingrese Segundo Apellido" value=" ">
+    <label>Edad:</label>
+    <input type="text" name="edad" class="form-control" placeholder="Ingrese edad de estudiante">
+    <label>Numero Celular:</label>
+    <input type="tel" class="form-control" name="nroCelular" value=" ">
+     <label>Sexo:</label>
+        <select class="custom-select custom-select-sm" name="sexo">
+        <option>M</option>
+        <option>F</option>
+        <option>otro</option>
+    </select><br>
+ <label>fecha Registro:</label>
+    <input type="date" class="form-control" name="fechaInicio" placeholder="Ingrese fecha"><br>
+    <div class="d-grid gap-2 my-2">
+<button type="submit" class="btn btn-info">Guardar</button>
+    </div>
+       <?php echo form_close(); ?>
+            </div> 
                                                     </div>
                                                  
                                                 </div>
@@ -252,7 +232,58 @@
 
                                     </div>
 
+<div data-section="s-new" class="task-list-container" data-connect="sorting">
+                                <div class="connect-sorting" style="background:url(<?php echo base_url(); ?>assets/img/fondo.webp);">
+                                    <div class="task-container-header">
+                                        <h6 class="s-heading" data-listTitle="In Progress">Curso</h6>
+                                        
+                                    </div>
 
+                                    <div class="connect-sorting-content" data-sortable="true">
+
+                                        <div data-draggable="true" class="card img-task" style="">
+                                            <div class="card-body">
+                                                <div class="task-body">
+         <select class="custom-select"><?php
+foreach ($curso->result() as $row) {
+?>    
+
+    <option><?php echo $row->curso;?></option>
+
+
+<?php
+}
+?>
+</select>  <br>
+<legend class="text-center">Pagante</legend>
+    <input type="radio" name="lang" value="hide" onclick="hideShowDiv(1)">estudiante
+    <input type="radio" name="lang" value="hide" onclick="hideShowDiv(2)">Padre
+      <div class="" id="div" >
+    <label>Nombre:</label>
+    <input type="text" class="form-control"  name="pagante" placeholder="Ingrese nombre de pagante" value=" ">
+    <label>Apellido:</label>
+    <input type="text" class="form-control"  name="pagante" placeholder="Ingrese apellido de pagante" value=" ">
+    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div data-draggable="true" class="card simple-title-task" style="">
+                                            <div class="card-body">
+                                                <div class="task-header">
+                                                <h4>Cantidad de meses a pagar:</h4>
+    <textarea  name="cantidad" onkeyup="mostrar(this.value)" id="" cols="2" rows="1"></textarea>
+</div>
+<label> Monto a Pagar:</label><h3 class="monto" id="resultado"></h3><h6>   Bs.</h6>                                               
+                                                </div>
+
+                                            </div>
+                                        </div> <div class="d-grid gap-2 my-2">
+<button type="submit" class="btn btn-info">Inscribir</button>
+</div>
+                                    </div>
+                                </div>
+                            </div>
                                 </div>
                             </div>
 
@@ -270,4 +301,19 @@
                     <p class="">JhesicaHelenSejasQuispe <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></p>
                 </div>
             </div>
+    </div>
         </div>
+        <script>
+   function mostrar(valor){
+    valor=valor*150;
+document.getElementById("resultado").innerHTML=valor;
+   }
+   function hideShowDiv(val){ 
+    if(val==1){
+        document.getElementById('div').style.display='none';
+    }
+     if(val==2){
+        document.getElementById('div').style.display='block';
+    }
+   }
+</script>

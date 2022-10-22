@@ -190,6 +190,7 @@ foreach ($curso->result() as $row) {
         <?php echo form_open_multipart('curso/lista'); ?>
           <input type="hidden" name="idCurso" value="<?php echo $row->idCurso;?>">
   <div class="d-grid gap-2 my-2">
+     <?php echo form_open_multipart('curso/inactivos'); ?>
              <button class="mr-2 btn btn-warning">Ver lista</button>
          
         <?php echo form_close(); ?>
