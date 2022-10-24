@@ -213,6 +213,8 @@
         <option>F</option>
         <option>otro</option>
     </select><br>
+    <label>fecha Nacimiento:</label>
+    <input type="date" class="form-control" name="fechaNacimiento" placeholder="Ingrese fecha"><br>
  <label>fecha Registro:</label>
     <input type="date" class="form-control" name="fechaInicio" placeholder="Ingrese fecha"><br>
     <div class="d-grid gap-2 my-2">
@@ -245,20 +247,23 @@
             <option value=" " disabled selected>Elija un curso</option><?php
 foreach ($curso->result() as $row) {
 ?>    
-    <option name="idCurso" value="<?php echo $row->idCurso;?>"><?php echo $row->curso;?></option>
+    <option value="<?php echo $row->idCurso;?>"><?php echo $row->curso;?></option>
 <?php
 }
 ?>
-   <input type="hidden" name="idEntrenador"  value="<?php echo $this->session->userdata('idEntrenador'); ?>">
-</select>  <br>
+  
+</select>
+ <input type="hidden" name="idEntrenador"  value="<?php echo $this->session->userdata('idEntrenador'); ?>">  <br>
 <legend class="text-center">Pagante</legend>
     <input type="radio" name="lang" value="hide" onclick="hideShowDiv(1)">estudiante
     <input type="radio" name="lang" value="hide" onclick="hideShowDiv(2)">Padre
       <div class="" id="div" >
     <label>Nombre:</label>
-    <input type="text" class="form-control"  name="pagante" placeholder="Ingrese nombre de pagante" value=" ">
+    <input type="text" class="form-control"  name="nombres" placeholder="Ingrese nombre de pagante" value=" ">
     <label>Apellido:</label>
-    <input type="text" class="form-control"  name="pagante" placeholder="Ingrese apellido de pagante" value=" ">
+    <input type="text" class="form-control"  name="apellidos" placeholder="Ingrese apellido de pagante" value=" ">
+    <label>Nro Celular:</label>
+    <input type="text" class="form-control"  name="nroCelular" placeholder="Ingrese apellido de pagante" value=" ">
     </div>
                                                 </div>
                                             </div>

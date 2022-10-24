@@ -34,7 +34,18 @@ class estudiante_model extends CI_Model {
 		return $this->db->get();
 	}
 
-	
+		public function datoscomprobante($IdEstudiante)
+	{
+		$this->db->select('*');
+		$this->db->from('estudiante');
+		$this->db->join('inscripcion','estudiante.IdEstudiante=inscripcion.IdEstudiante');
+		$this->db->join('mensualidad','mensualidad.idInscripcion=inscripcion.idInscripcion');
+		$this->db->join('curso','curso.idCurso=estudiante.idCurso');
+		$this->db->join('padre','padre.idPadre=estudiante.idPadre');
+		$this->db->where('estudiante.IdEstudiante',$IdEstudiante);
+		$this->db->where('estudiante.estado',1);
+		return $this->db->get();
+	}
 	public function modificarestudiante($IdEstudiante,$data)
 	{
 		$this->db->where('IdEstudiante',$IdEstudiante);
@@ -64,6 +75,10 @@ class estudiante_model extends CI_Model {
 	if ($this->db->_trans_status()===FALSE) {
 		return FALSE;
 	}
+	}
+		public function mensualidad($data)
+	{
+			$this->db->insert('mensualidad',$data);
 	}
 }
 ?>

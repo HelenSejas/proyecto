@@ -28,7 +28,7 @@
             </div>
 
         
-   
+  
       <div class="col-xl-6 col-lg-7 col-md-7 col-sm-11 col-11 mx-auto" >
 <div class="row" >
     <?php
@@ -51,28 +51,34 @@ foreach ($infoestudiante->result() as $row) {
     <input type="text" class="form-control"  name="pagante" placeholder="Ingrese apellido de pagante" value=" ">
     </div>
     <div>
-        <div class="text-black" style="background:url(<?php echo base_url(); ?>assets/img/fff.jfif);">
-        <label class="text-black">Mes:</label><br>
-        <input type="checkbox" name="1" value="ENERO">Enero
-        <input type="checkbox" name="2" value="FEBRERO">Febrero
-        <input type="checkbox" name="3" value="MARZO">Marzo
-        <input type="checkbox" name="4" value="ABRIL">Abril
-        <input type="checkbox" name="5" value="MAYO">Mayo
-        <input type="checkbox" name="6" value="JUNIO">Junio<br>
-        <input type="checkbox" name="7" value="JULIO">Julio
-        <input type="checkbox" name="8" value="AGOSTO">Agosto
-        <input type="checkbox" name="9" value="SEPTIEMBRE">Septiembre
-        <input type="checkbox" name="10" value="OCTUBRE">Octubre
-        <input type="checkbox" name="11" value="NOVIEMBRE">Noviembre
-        <input type="checkbox" name="12" value="DICIEMBRE">Diciembre
-        <br>
+        <div class="text-black">
+            <label>Escojer mes:</label>
+        <select class="form-control from-select from-select-lg" name="mes">
+        <option value="ENERO">Enero</option> 
+        <option value="FEBRERO">Febrero</option>
+        <option value="MARZO">Marzo</option>
+        <option value="ABRIL">Abril</option>
+        <option value="MAYO">Mayo</option>
+        <option value="JUNIO">Junio</option>
+        <option  value="JULIO">Julio</option>
+        <option  value="AGOSTO">Agosto</option>
+        <option value="SEPTIEMBRE">Septiembre</option>
+        <option  value="OCTUBRE">Octubre</option>
+        <option value="NOVIEMBRE">Noviembre</option>
+        <option value="DICIEMBRE">Diciembre</option>
+        <br></select>
         </div>
         <label>Cantidad de meses a pagar:</label>
     <textarea name="cantidad" onkeyup="mostrar(this.value)" id="" cols="2" rows="1"></textarea>
 </div>
-<label>Monto a Pagar:</label><h3 class="monto" id="resultado"></h3><h6>Bs.</h6>
+<label>Monto a Pagar:</label><h3 name="monto" id="resultado"></h3><h6>Bs.</h6>
     <div class="d-grid gap-2 my-4">
-   <button class="btn btn-info">Cobrar mensualidad</button>
+         <?php echo form_open_multipart('estudiante/mensualidadpdf'); ?>
+          <input type="hidden" name="IdEstudiante" value="<?php echo $row->IdEstudiante;?>">
+            <button class="btn btn-info">Cobrar mensualidad</button>
+           <?php echo form_close(); ?>
+  
+   
    <input type="hidden" name="IdEstudiante" value="<?php echo $row->IdEstudiante;?>">
  <a target="_blank" href="<?php echo base_url(); ?>index.php/estudiante/mensualidadpdf">
            <button  class="btn btn-outline-warning">Generar Comprobante</button></a>

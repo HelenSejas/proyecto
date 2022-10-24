@@ -66,13 +66,25 @@ public function inscribirbd()
         $data['Edad'] =$_POST['edad'];
         $data['nroCelular'] =$_POST['nroCelular'];
         $data['sexo'] =$_POST['sexo'];
+        $data['fechaNacimiento'] =$_POST['fechaNacimiento'];
         $data['estado'] =1;
         $data['fechaInicio'] =$_POST['fechaInicio'];
         $data['idPadre'] =1;
-         $data['idEquipo'] =21;
-         $idCurso=$_POST['idCurso'];
+        $data['idEquipo'] =21;
+        $idCurso=67;
        $idEntrenador=$_POST['idEntrenador'];
 	  $lista=$this->estudiante_model->inscribir($data,$idCurso,$idEntrenador);
+     redirect('estudiante/indexEstudiante','refresh');
+}
+public function mensualidadbd()
+	{
+	   $data['monto'] =$_POST['monto'];
+	   $data['cantidad'] =$_POST['cantidad'];
+	   $data['mes'] =$_POST['mes'];
+	   $data['estado'] =1;
+	   $data['idInscripcion']=2;
+       $data['IdEstudiante']=$_POST['IdEstudiante'];
+	  $lista=$this->estudiante_model->mensualidad($data);
      redirect('estudiante/indexEstudiante','refresh');
 }
 
@@ -143,7 +155,7 @@ public function deshabilitarbd()
 	$this->pdf->Cell(70,5,'APELLIDOS','TBLR',0,'L',0);
 	$this->pdf->Cell(15,5,'EDAD','TBLR',0,'L',0);
 	$this->pdf->Cell(15,5,'SEXO','TBLR',0,'L',0);
-	$this->pdf->Cell(2,5,'CURSO','TBLR',0,'L',0);
+	$this->pdf->Cell(28,5,'CURSO','TBLR',0,'L',0);
 	$this->pdf->Ln(5);
 	$this->pdf->SetFont('Arial','',9);
 	$num=1;
@@ -169,12 +181,32 @@ public function deshabilitarbd()
 	}
 		public function mensualidadpdf()
 	{   
+		$IdEstudiante=$_POST['IdEstudiante'];
+		$idEntrenador=$this->session->userdata('idEntrenador');
+		 $lista=$this->estudiante_model->datoscomprobante($IdEstudiante);
+         $lista=$lista->result();
+         $lista2=$this->curso_model->recuperarentrenador($idEntrenador);
+         $lista2=$lista2->result();
 	 $num=1;
+	 foreach($lista as $row)
+	{
+		$nombre=$row->nombres;
+		$primerApellido=$row->primerApellido;
+		$segundoApellido=$row->segundoApellido;
+		$monto=$row->monto;
+		$cantidad=$row->cantidad;
+		$curso=$row->curso;
+        $mes=$row->mes;
+        $idPadre=$row->idPadre;
+        $nombresp=$row->nombrePadre;
+		$apellidos=$row->apellidos;
 	$this->pdf=new pdf;
 	$this->pdf->AddPage();
+	$this->pdf->Cell(10,5,'Cochabamba 2022',10,0,'L',0);
+	$this->pdf->Ln(5);
 	$this->pdf->Cell(10,5,'Nro',0,0,'L',0);
 	$this->pdf->Cell(130,5,$num,0,0,'L',0);
-	$this->pdf->Cell(10,5,'Cochabamba 2022',10,0,'L',0);
+	
 	$this->pdf->Ln(10);
 	$this->pdf->SetTitle("Comprobante");
 	$this->pdf->SetLeftMargin(15);
@@ -190,34 +222,53 @@ public function deshabilitarbd()
 	
 	$this->pdf->SetFillColor(0,205,205);
 	$this->pdf->Cell(50,8,'A favor del estudiante:','LTBR',0,'L',20);
-	$this->pdf->Cell(120,8,'','LTBR',3,'L',0);
+     $this->pdf->Cell(30,8,$nombre,'TB',0,'L',0);
+	$this->pdf->Cell(45,8,$primerApellido,'TB',0,'L',0);
+	$this->pdf->Cell(45,8,$segundoApellido,'TBR',0,'L',0);
 	$this->pdf->Ln(8);
+	if ($idPadre==1) {
+		$this->pdf->Cell(30,8,$nombre,'TB',0,'L',0);
+		$this->pdf->Cell(45,8,$primerApellido,'TB',0,'L',0);
+		$this->pdf->Cell(45,8,$segundoApellido,'TBR',0,'L',0);
+		$this->pdf->Ln(8);
+	}
+	else{
 	$this->pdf->Cell(30,8,'De:','LTBR',0,'L',20);
-	$this->pdf->Cell(140,8,'','LTBR',0,0,0);
+	$this->pdf->Cell(45,8,$nombresp,'TB',0,'L',0);
+	$this->pdf->Cell(95,8,$apellidos,'TBR',0,'L',0);
 	$this->pdf->Ln(8);
+	}
+ foreach($lista2 as $row)
+	{
+		$nombresE=$row->nombresE;
+		$primerApellidoE=$row->primerApellidoE;
+		$segundoApellidoE=$row->segundoApellidoE;
 	$this->pdf->Cell(30,8,'Atendido por:','LTBR',0,'L',20);
-	$this->pdf->Cell(140,8,'','LTBR',0,0,0);
+	$this->pdf->Cell(40,8,$nombresE,'TB',0,'L',0);
+	$this->pdf->Cell(50,8,$primerApellidoE,'TB',0,'L',0);
+	$this->pdf->Cell(50,8,$segundoApellidoE,'TBR',0,'L',0);
 	$this->pdf->Ln(10);
+	}
+	
 	$this->pdf->Cell(20,8,'Curso:','LTBR',0,'L',20);
-	$this->pdf->Cell(60,8,'','LTBR',0,0,0);
-	$this->pdf->Cell(25,8,'equipo:','LTBR',0,'L',20);
-	$this->pdf->Cell(65,8,'','LTBR',0,0,0);
+	$this->pdf->Cell(150,8,utf8_decode($curso),'LTBR',0,'L',0);
 	$this->pdf->Ln(8);
 	$this->pdf->Cell(20,8,'Mes:','LTBR',0,'L',20);
-	$this->pdf->Cell(150,8,'','LTBR',0,0,0);
+	$this->pdf->Cell(150,8,$mes,'LTBR',0,'L',0);
 	$this->pdf->Ln(8);
 	$this->pdf->Cell(40,8,'Cantidad meses:','LTBR',0,'L',20);
-	$this->pdf->Cell(130,8,'','LTBR',0,0,0);
+	$this->pdf->Cell(130,8,$cantidad,'LTBR',0,'L',0);
 	$this->pdf->Ln(8);
 	$this->pdf->Cell(43,8,'Monto a cancelar Bs:','LTBR',0,'L',20);
-	$this->pdf->Cell(127,8,'','LTBR',0,0,0);
+	$this->pdf->Cell(127,8,$monto,'LTBR',0,'L',0);
 	$this->pdf->Ln(15);
 	$this->pdf->Cell(80,5,'Monto Cancelado:',0,'C',0);
-	$this->pdf->Cell(15,5,'150 bs',0,0,0);
+	$this->pdf->Cell(15,5,$monto,0,'L',0);
+	$this->pdf->Cell(15,5,'BS.',0,0,0);
 	$this->pdf->Cell(60,5,'/ciento cincuenta bolivianos',0,0,0);
 	$this->pdf->SetFont('Arial','',9);
 	
-	
+	 }
 	$this->pdf->Output("mensualidad.pdf",'I');
 	}
 }
