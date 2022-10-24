@@ -78,14 +78,16 @@ public function inscribirbd()
 }
 public function mensualidadbd()
 	{
-	   $data['monto'] =$_POST['monto'];
 	   $data['cantidad'] =$_POST['cantidad'];
 	   $data['mes'] =$_POST['mes'];
+	   $calculo =$_POST['cantidad'];
+	   $monto=$calculo*150;
+	   $data['monto'] =$monto;
+	   $data['fecha']=$_POST['fecha'];
 	   $data['estado'] =1;
-	   $data['idInscripcion']=2;
+	   $data['idInscripcion']=$_POST['idInscripcion'];
        $data['IdEstudiante']=$_POST['IdEstudiante'];
 	  $lista=$this->estudiante_model->mensualidad($data);
-     redirect('estudiante/indexEstudiante','refresh');
 }
 
 public function deshabilitarbd()
@@ -135,6 +137,12 @@ public function deshabilitarbd()
 	$this->load->view('cobrarmensualidad',$data);
 	$this->load->view('include/fooder');
 	}
+	public function seleccionado1()
+	{
+	$this->load->view('include/header');
+	$this->load->view('cobrarmensualidad');
+	$this->load->view('include/fooder');
+	}
 		public function listapdf()
 	{   
 	   $lista=$this->estudiante_model->listaestudiantes();
@@ -181,11 +189,10 @@ public function deshabilitarbd()
 	}
 		public function mensualidadpdf()
 	{   
-		$IdEstudiante=$_POST['IdEstudiante'];
-		$idEntrenador=$this->session->userdata('idEntrenador');
-		 $lista=$this->estudiante_model->datoscomprobante($IdEstudiante);
+		 $IdEstudiante=$_POST['IdEstudiante'];
+		 $lista=$this->estudiante_model->comprobante($IdEstudiante);
          $lista=$lista->result();
-         $lista2=$this->curso_model->recuperarentrenador($idEntrenador);
+         $lista2=$this->curso_model->entrenador();
          $lista2=$lista2->result();
 	 $num=1;
 	 foreach($lista as $row)
@@ -200,6 +207,7 @@ public function deshabilitarbd()
         $idPadre=$row->idPadre;
         $nombresp=$row->nombrePadre;
 		$apellidos=$row->apellidos;
+ 
 	$this->pdf=new pdf;
 	$this->pdf->AddPage();
 	$this->pdf->Cell(10,5,'Cochabamba 2022',10,0,'L',0);
@@ -227,6 +235,7 @@ public function deshabilitarbd()
 	$this->pdf->Cell(45,8,$segundoApellido,'TBR',0,'L',0);
 	$this->pdf->Ln(8);
 	if ($idPadre==1) {
+		$this->pdf->Cell(30,8,'De:','LTBR',0,'L',20);
 		$this->pdf->Cell(30,8,$nombre,'TB',0,'L',0);
 		$this->pdf->Cell(45,8,$primerApellido,'TB',0,'L',0);
 		$this->pdf->Cell(45,8,$segundoApellido,'TBR',0,'L',0);
@@ -255,9 +264,6 @@ public function deshabilitarbd()
 	$this->pdf->Ln(8);
 	$this->pdf->Cell(20,8,'Mes:','LTBR',0,'L',20);
 	$this->pdf->Cell(150,8,$mes,'LTBR',0,'L',0);
-	$this->pdf->Ln(8);
-	$this->pdf->Cell(40,8,'Cantidad meses:','LTBR',0,'L',20);
-	$this->pdf->Cell(130,8,$cantidad,'LTBR',0,'L',0);
 	$this->pdf->Ln(8);
 	$this->pdf->Cell(43,8,'Monto a cancelar Bs:','LTBR',0,'L',20);
 	$this->pdf->Cell(127,8,$monto,'LTBR',0,'L',0);

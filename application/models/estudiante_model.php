@@ -29,23 +29,13 @@ class estudiante_model extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('estudiante');
 		$this->db->join('curso','estudiante.idCurso=curso.idCurso');
+		$this->db->join('padre','padre.idPadre=estudiante.idPadre');
+			$this->db->join('inscripcion','inscripcion.IdEstudiante=estudiante.IdEstudiante');
 		$this->db->where('estudiante.IdEstudiante',$IdEstudiante);
 		$this->db->where('estudiante.estado',1);
 		return $this->db->get();
 	}
 
-		public function datoscomprobante($IdEstudiante)
-	{
-		$this->db->select('*');
-		$this->db->from('estudiante');
-		$this->db->join('inscripcion','estudiante.IdEstudiante=inscripcion.IdEstudiante');
-		$this->db->join('mensualidad','mensualidad.idInscripcion=inscripcion.idInscripcion');
-		$this->db->join('curso','curso.idCurso=estudiante.idCurso');
-		$this->db->join('padre','padre.idPadre=estudiante.idPadre');
-		$this->db->where('estudiante.IdEstudiante',$IdEstudiante);
-		$this->db->where('estudiante.estado',1);
-		return $this->db->get();
-	}
 	public function modificarestudiante($IdEstudiante,$data)
 	{
 		$this->db->where('IdEstudiante',$IdEstudiante);
@@ -58,6 +48,18 @@ class estudiante_model extends CI_Model {
 		$this->db->from('entrenador');
 		$this->db->where('usuario',$usuario);
 		$this->db->where('password',$password);
+		return $this->db->get();
+	}
+		public function comprobante($IdEstudiante)
+	{
+		$this->db->select('*');
+		$this->db->from('estudiante');
+		$this->db->join('curso','estudiante.idCurso=curso.idCurso');
+		$this->db->join('inscripcion','inscripcion.IdEstudiante=estudiante.IdEstudiante');
+			$this->db->join('mensualidad','mensualidad.idInscripcion=inscripcion.idInscripcion');
+		$this->db->join('padre','padre.idPadre=estudiante.idPadre');
+		$this->db->where('estudiante.IdEstudiante',$IdEstudiante);
+		$this->db->where('estudiante.estado',1);
 		return $this->db->get();
 	}
 		public function inscribir($data,$idCurso,$idEntrenador)
