@@ -18,5 +18,8 @@
     <!--  BEGIN CUSTOM SCRIPTS FILE  -->
      <script src="<?php echo base_url(); ?> assets/js/authentication/form-2.js"></script>
  <script src="<?php echo base_url(); ?>  assets/js/libs/jquery-3.1.1.min.js"></script>
+  <script src="<?php echo base_url(); ?>assets/js/elements/custom-search.js"></script>
+
+  
 </body>
 </html>
