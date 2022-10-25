@@ -251,7 +251,6 @@ foreach ($curso->result() as $row) {
 <?php
 }
 ?>
-  
 </select>
  <input type="hidden" name="idEntrenador"  value="<?php echo $this->session->userdata('idEntrenador'); ?>">  <br>
 <legend class="text-center">Pagante</legend>

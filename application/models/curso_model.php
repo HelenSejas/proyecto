@@ -43,6 +43,15 @@ class curso_model extends CI_Model {
 		$this->db->where('idCurso',$idCurso);
 	    $this->db->update('curso',$data);
 	}
+	public function listauncurso($idCurso)
+	{
+		$this->db->select('*');
+		$this->db->from('estudiante');
+		$this->db->join('curso','estudiante.idCurso=curso.idCurso');
+		$this->db->where('idCurso',$idCurso);;
+	}
+
+
 	//model_entrenador
 	public function listaentrenador()
 	{
@@ -76,6 +85,9 @@ class curso_model extends CI_Model {
 		$this->db->where('idEntrenador',$idEntrenador);
 	    $this->db->update('entrenador',$data);
 	}
+
+
+
 	//model_equipos
 	public function listaequipos()
 	{

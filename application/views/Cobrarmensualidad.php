@@ -54,8 +54,8 @@ foreach ($infoestudiante->result() as $row) {
     <input type="text" class="form-control"  value="<?php echo $row->apellidos;?> ">
     </div>
     <div>
-            <label>Escojer mes:</label>
-        <input type="text" name="mes" class="form-control" placeholder="Ingrese mes de pago">
+            <label>Mes:</label>
+        <input type="text" name="mes" class="form-control" placeholder="Ingrese mes de pago" required>
         <label>Fecha:</label>
     <input type="date" name="fecha" class="form-control" >
         <label>Cantidad de meses a pagar:</label>

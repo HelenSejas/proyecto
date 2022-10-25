@@ -194,7 +194,11 @@ foreach ($curso->result() as $row) {
              <button class="mr-2 btn btn-warning">Ver lista</button>
          
         <?php echo form_close(); ?>
-        <button class="btn btn-primary">crear pdf lista</button>
+         <?php echo form_open_multipart('curso/listaestudiantes'); ?>
+          <input type="hidden" name="idCurso" value="<?php echo $row->idCurso;?>">
+            <button class="btn btn-primary">crear pdf lista</button>
+        <?php echo form_close(); ?>
+        
     </div>
                                                     </ul>
                                                    

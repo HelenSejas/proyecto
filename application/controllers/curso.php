@@ -35,45 +35,7 @@ class curso extends CI_Controller {
 		$this->load->view('include/fooder');
       
 	}
-	public function listapdf()
-	{   
-	   $lista=$this->curso_model->listacurso();
-        $lista=$lista->result();
-	$this->pdf=new pdf;
-	$this->pdf->AddPage();
-	$this->pdf->SetTitle("Lista Cursos");
-	$this->pdf->SetLeftMargin(15);
-	$this->pdf->SetRightMargin(15);
-	$this->pdf->SetFillColor(210,210,210);
-	$this->pdf->SetFont('Arial','B',11);
-	$this->pdf->Cell(30);
-	$this->pdf->Cell(120,10,'LISTA DE CURSOS','LTBR',0,'C',1);
-	$this->pdf->Ln(20);
 
-	$this->pdf->Cell(10,5,'Nro','TBLR',0,'L',0);
-	$this->pdf->Cell(40,5,'CURSO','TBLR',0,'L',0);
-	$this->pdf->Cell(35,5,'CUPOS TOTALES','TBLR',0,'L',0);
-	$this->pdf->Cell(35,5,'HORARIO','TBLR',0,'L',0);
-	$this->pdf->Cell(40,5,'DIA','TBLR',0,'L',0);
-	$this->pdf->Ln(5);
-	$this->pdf->SetFont('Arial','',9);
-	$num=1;
-	foreach($lista as $row)
-	{
-		$curso=$row->curso;
-		$cantidad=$row->cantidad;
-		$horario=$row->horario;
-		$dia=$row->dia;
-		$this->pdf->Cell(10,5,$num,'TBLR',0,'L',0);
-		$this->pdf->Cell(40,5,utf8_decode($curso),'TBLR',0,'L',0);
-		$this->pdf->Cell(35,5,$cantidad,'TBLR',0,'L',0);
-		$this->pdf->Cell(35,5,$horario,'TBLR',0,'L',0);
-		$this->pdf->Cell(40,5,$dia,'TBLR',0,'L',0);
-		$num++;
-		$this->pdf->Ln(5);
-        }
-	$this->pdf->Output("listacurso.pdf",'I');
-	}
 public function agregar()
 	{
 		$this->load->view('include/header');
@@ -126,11 +88,109 @@ public function agregar()
 		$this->curso_model->modificarcurso($idCurso,$data);
 		redirect('curso/index');
 	}
+	public function listaestudiantes()
+	{ 
+	$idCurso=$_POST['idCurso'];
+	$lista=$this->curso_model->listauncurso($idCurso);
+    $lista=$lista->result();
+	$this->pdf=new pdf;
+	$this->pdf->AddPage();
+	$this->pdf->SetTitle("Lista Cursos");
+	$this->pdf->SetLeftMargin(15);
+	$this->pdf->SetRightMargin(15);
+	$this->pdf->SetFillColor(210,210,210);
+	$this->pdf->SetFont('Arial','B',11);
+	$this->pdf->Cell(30);
+	$this->pdf->Cell(120,10,'LISTA DE ESTUDIANTES','LTBR',0,'C',1);
+	$this->pdf->Ln(20);
+foreach($lista as $row)
+	{
+		$curso=$row->curso;
+		$cantidad=$row->cantidad;
+		$horario=$row->horario;
+		$dia=$row->dia;
+		$this->pdf->Cell(30,8,'CURSO : ',0,0,'C',1);
+		$this->pdf->Cell(30,8,utf8_decode($curso),'TBLR',0,'L',0);
+		$this->pdf->Cell(30,8,'Capacidad:',0,0,'C',1);
+		$this->pdf->Cell(35,8,$cantidad,0,0,'L',0);
+		$this->pdf->Cell(40,8,'Horario: ',0,0,'C',1);
+		$this->pdf->Cell(35,5,$horario,0,0,'L',0);
+		$this->pdf->Cell(40,8,'Dias: ',0,0,'C',1);
+		$this->pdf->Cell(40,8,$dia,'TBLR',0,'L',0);
+}
+	$this->pdf->Cell(10,5,'Nro','TBLR',0,'L',0);
+	$this->pdf->Cell(40,5,'NOMBRE','TBLR',0,'L',0);
+	$this->pdf->Cell(70,5,'APELLIDOS','TBLR',0,'L',0);
+	$this->pdf->Cell(15,5,'EDAD','TBLR',0,'L',0);
+	$this->pdf->Ln(5);
+	$this->pdf->SetFont('Arial','',9);
+	$num=1;
+	foreach($lista as $row)
+	{
+		$nombre=$row->nombres;
+		$primerApellido=$row->primerApellido;
+		$segundoApellido=$row->segundoApellido;
+		$edad=$row->Edad;
+		$this->pdf->Cell(10,5,$num,'TBLR',0,'L',0);
+		$this->pdf->Cell(40,5,$nombre,'TBLR',0,'L',0);
+		$this->pdf->Cell(35,5,$primerApellido,'TBLR',0,'L',0);
+		$this->pdf->Cell(35,5,$segundoApellido,'TBLR',0,'L',0);
+		$this->pdf->Cell(35,5,$edad,'TBLR',0,'L',0);
+		$num++;
+		$this->pdf->Ln(5);
+        }
+	$this->pdf->Output("listacurso.pdf",'I');
+	}
+      
+
+
+
+	//uniforme
 
 	public function indexUniforme()
 	{
 		$this->load->view('include/header');
 		$this->load->view('uniformes');
 		$this->load->view('include/fooder');
+	}
+
+		public function listapdf()
+	{   
+	   $lista=$this->curso_model->listacurso();
+        $lista=$lista->result();
+	$this->pdf=new pdf;
+	$this->pdf->AddPage();
+	$this->pdf->SetTitle("Lista Cursos");
+	$this->pdf->SetLeftMargin(15);
+	$this->pdf->SetRightMargin(15);
+	$this->pdf->SetFillColor(210,210,210);
+	$this->pdf->SetFont('Arial','B',11);
+	$this->pdf->Cell(30);
+	$this->pdf->Cell(120,10,'LISTA DE CURSOS','LTBR',0,'C',1);
+	$this->pdf->Ln(20);
+
+	$this->pdf->Cell(10,5,'Nro','TBLR',0,'L',0);
+	$this->pdf->Cell(40,5,'CURSO','TBLR',0,'L',0);
+	$this->pdf->Cell(35,5,'CUPOS TOTALES','TBLR',0,'L',0);
+	$this->pdf->Cell(35,5,'HORARIO','TBLR',0,'L',0);
+	$this->pdf->Cell(40,5,'DIA','TBLR',0,'L',0);
+	$this->pdf->Ln(5);
+	$this->pdf->SetFont('Arial','',9);
+	$num=1;
+	foreach($lista as $row)
+	{
+		$curso=$row->curso;
+		$cantidad=$row->cantidad;
+		$horario=$row->horario;
+		$dia=$row->dia;
+		$this->pdf->Cell(10,5,$num,'TBLR',0,'L',0);
+		$this->pdf->Cell(40,5,utf8_decode($curso),'TBLR',0,'L',0);
+		$this->pdf->Cell(35,5,$cantidad,'TBLR',0,'L',0);
+		$this->pdf->Cell(35,5,$horario,'TBLR',0,'L',0);
+		$this->pdf->Cell(40,5,$dia,'TBLR',0,'L',0);
+		$num++;
+		$this->pdf->Ln(5);
+        }
+	$this->pdf->Output("listacurso.pdf",'I');
 	}
 }

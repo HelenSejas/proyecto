@@ -88,6 +88,8 @@ public function mensualidadbd()
 	   $data['idInscripcion']=$_POST['idInscripcion'];
        $data['IdEstudiante']=$_POST['IdEstudiante'];
 	  $lista=$this->estudiante_model->mensualidad($data);
+	  redirect('estudiante/seleccionado1','refresh');
+	   $data['IdEstudiante']=$_POST['IdEstudiante'];
 }
 
 public function deshabilitarbd()
@@ -139,8 +141,10 @@ public function deshabilitarbd()
 	}
 	public function seleccionado1()
 	{
+    $IdEstudiante=$_POST['IdEstudiante'];
+	$data['infoestudiante']=$this->estudiante_model->recuperarestudiante($IdEstudiante);
 	$this->load->view('include/header');
-	$this->load->view('cobrarmensualidad');
+	$this->load->view('cobrarmensualidad',$data);
 	$this->load->view('include/fooder');
 	}
 		public function listapdf()
@@ -237,14 +241,14 @@ public function deshabilitarbd()
 	if ($idPadre==1) {
 		$this->pdf->Cell(30,8,'De:','LTBR',0,'L',20);
 		$this->pdf->Cell(30,8,$nombre,'TB',0,'L',0);
-		$this->pdf->Cell(45,8,$primerApellido,'TB',0,'L',0);
-		$this->pdf->Cell(45,8,$segundoApellido,'TBR',0,'L',0);
+		$this->pdf->Cell(55,8,$primerApellido,'TB',0,'L',0);
+		$this->pdf->Cell(55,8,$segundoApellido,'TBR',0,'L',0);
 		$this->pdf->Ln(8);
 	}
 	else{
 	$this->pdf->Cell(30,8,'De:','LTBR',0,'L',20);
-	$this->pdf->Cell(45,8,$nombresp,'TB',0,'L',0);
-	$this->pdf->Cell(95,8,$apellidos,'TBR',0,'L',0);
+	$this->pdf->Cell(50,8,$nombresp,'TB',0,'L',0);
+	$this->pdf->Cell(105,8,$apellidos,'TBR',0,'L',0);
 	$this->pdf->Ln(8);
 	}
  foreach($lista2 as $row)
