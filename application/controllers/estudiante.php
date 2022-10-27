@@ -88,8 +88,8 @@ public function mensualidadbd()
 	   $data['idInscripcion']=$_POST['idInscripcion'];
        $data['IdEstudiante']=$_POST['IdEstudiante'];
 	  $lista=$this->estudiante_model->mensualidad($data);
-	  redirect('estudiante/seleccionado1','refresh');
-	   $data['IdEstudiante']=$_POST['IdEstudiante'];
+	   $IdEstudiante=$_POST['IdEstudiante'];
+	   mensualidadpdf();
 }
 
 public function deshabilitarbd()

@@ -88,7 +88,7 @@ public function agregar()
 		$this->curso_model->modificarcurso($idCurso,$data);
 		redirect('curso/index');
 	}
-	public function listaestudiantes()
+	public function listaestudiante()
 	{ 
 	$idCurso=$_POST['idCurso'];
 	$lista=$this->curso_model->listauncurso($idCurso);

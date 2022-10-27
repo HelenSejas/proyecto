@@ -175,26 +175,28 @@ foreach ($curso->result() as $row) {
                                                         </li>
                                                         <li class="list-group-item d-flex justify-content-between align-items-center"><?php echo $row->dia;?>
                                                         </li>
-                                                        <?php echo form_open_multipart('curso/modificar'); ?>
+         <?php echo form_open_multipart('curso/modificar'); ?>
           <input type="hidden" name="idCurso" value="<?php echo $row->idCurso; ?>">
           <div class="d-grid gap-2 my-2">
           <input type="submit" name="buttonM" value="Modificar" class="btn btn-info"></div>
           <?php echo form_close(); ?>
+
           <div class="d-grid gap-2 my-2">
           <?php echo form_open_multipart('curso/deshabilitarbd'); ?>
           <input type="hidden" name="idCurso" value="<?php echo $row->idCurso;?>">
-  </div>
-             <button class="mr-2 btn btn-info">Eliminar</button>
-         
+          </div>
+             <button class="mr-2 btn btn-info">Eliminar</button> 
         <?php echo form_close(); ?>
+
         <?php echo form_open_multipart('curso/lista'); ?>
           <input type="hidden" name="idCurso" value="<?php echo $row->idCurso;?>">
+          <?php echo form_close(); ?>
   <div class="d-grid gap-2 my-2">
      <?php echo form_open_multipart('curso/inactivos'); ?>
              <button class="mr-2 btn btn-warning">Ver lista</button>
          
         <?php echo form_close(); ?>
-         <?php echo form_open_multipart('curso/listaestudiantes'); ?>
+         <?php echo form_open_multipart('curso/listaestudiante'); ?>
           <input type="hidden" name="idCurso" value="<?php echo $row->idCurso;?>">
             <button class="btn btn-primary">crear pdf lista</button>
         <?php echo form_close(); ?>
