@@ -15,7 +15,7 @@
       
 
            <nav class="nav "style="background:url(<?php echo base_url(); ?>assets/img/cancha.jpg);">
-             <img src="<?php echo base_url(); ?>assets/img/logo.jpg" class="navbar-logo" alt="logo" width=50>
+             <img src="<?php echo base_url(); ?>assets/img/logo.png" class="navbar-logo" alt="logo" width=50>
             <h4 class="admin-logo">VICTOR MURIEL</h4>
             <div class="mx-5"> <?php echo form_open_multipart('estudiante/indexEstudiante'); ?>
            <button type="submit" class="btn btn-outline-warning">Atras</button>
@@ -66,7 +66,8 @@
                                                               
                                                               <img src="<?php echo base_url(); ?>assets/img/balon.png" width=180>
                                                                 <li class="nav-item my-2">
-                                                                    <button class="btn btn-secondary mb-4 mr-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>Lista de equipos</button>
+                                                                    <a target="_blank" href="<?php echo base_url(); ?>index.php/equipo/listapdf">
+                                                                    <button class="btn btn-secondary mb-4 mr-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>Lista de equipos</button></a>
                                                                 </li>
                                                             </ul>
                                 

@@ -30,9 +30,9 @@ public function agregar()
 	}
 	public function agregarbd()
 	{
-		$data['nombres'] =$_POST['nombres'];
-        $data['primerApellido'] =$_POST['primerApellido'];
-        $data['segundoApellido'] =$_POST['segundoApellido'];
+		$data['nombres'] =$_POST['nombresE'];
+        $data['primerApellido'] =$_POST['primerApellidoE'];
+        $data['segundoApellido'] =$_POST['segundoApellidoE'];
         $data['sueldo'] =$_POST['sueldo'];
         $data['fechaIngreso'] =$_POST['fechaIngreso'];
        
@@ -58,9 +58,9 @@ public function deshabilitarbd()
 	public function modificarbd()
 	{
     $idEntrenador=$_POST['idEntrenador'];
-	$data['nombres'] =$_POST['nombres'];
-    $data['primerApellido'] =$_POST['primerApellido'];
-    $data['segundoApellido'] =$_POST['segundoApellido'];
+	$data['nombres'] =$_POST['nombresE'];
+    $data['primerApellido'] =$_POST['primerApellidoE'];
+    $data['segundoApellido'] =$_POST['segundoApellidoE'];
     $data['sueldo'] =$_POST['sueldo'];
     $data['fechaIngreso'] =$_POST['fechaIngreso'];
     $this->entrenador_model->modificarEntrenador($idEntrenador,$data);

@@ -4,12 +4,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class usuarios extends CI_Controller {
 
 	
-	public function indexInicio()
+	public function indexMensualidad()
 	{
 		$lista=$this->estudiante_model->listaestudiantes();
 		 $data['estudiante']=$lista;
 		$this->load->view('include/header');
-		$this->load->view('inicio',$data);
+		$this->load->view('mensualidad',$data);
 		$this->load->view('include/fooder');
 	}
 		public function indexSesion()
@@ -30,6 +30,12 @@ public function index()
 		$this->load->view('include/fooder');
 		}
 		
+	}
+		public function indexInicio()
+	{
+		$this->load->view('include/header');
+		$this->load->view('inicio');
+		$this->load->view('include/fooder');
 	}
 
 public function validar()
@@ -54,7 +60,7 @@ public function panel()
 	{
 		if($this->session->userdata('usuario'))
 		{
-			redirect ('estudiante/indexEstudiante', 'refresh');
+			redirect ('usuarios/indexInicio', 'refresh');
 		}
 		else
 	{

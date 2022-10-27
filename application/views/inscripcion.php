@@ -13,7 +13,7 @@
             <a href="javascript:void(0);" class="sidebarCollapse" data-placement="bottom"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></a>
 
             <div class="nav-logo align-self-center">
-                <a class="navbar-brand" href="index.html"><img alt="logo" src="<?php echo base_url(); ?>assets/img/logo.jpg" > <span class="navbar-brand-name">VICTOR MURIEL</span></a>
+                <a class="navbar-brand" href="index.html"><img alt="logo" src="<?php echo base_url(); ?>assets/img/logo.png" > <span class="navbar-brand-name">VICTOR MURIEL</span></a>
             </div>
 
             <ul class="navbar-item flex-row nav-dropdowns">
@@ -38,7 +38,12 @@
             <nav id="topbar" style="background:url(<?php echo base_url(); ?>assets/img/fondo2.jfif);">
 
                 <ul class="list-unstyled menu-categories" id="topAccordion">
-
+<li class="menu single-menu">
+                        <?php echo form_open_multipart('estudiante/indexEstudiante'); ?>
+                        <button type="submit" class="btn btn-outline-warning">atras</button>
+                        <?php echo form_close(); ?>
+                        
+                    </li>
                     <li class="menu single-menu">
                         <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle autodroprown">
                             <div class="">
@@ -124,30 +129,9 @@
                             <li>
                                 <a href="<?php echo base_url(); ?>index.php/entrenador/index">ver</a>
                             </li>
-                            <li>
-                               <a href="<?php echo base_url(); ?>index.php/curso/index">Reportes</a>
-                            </li>
-                            <li>
+                           
                         </ul>
                     </li>
-
-                    <li class="menu single-menu">
-                        <a href="#more" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                            <div class="">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
-                                <span>Inscribir</span>
-                            </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                        </a>
-                        <ul class="collapse submenu list-unstyled" id="more" data-parent="#topAccordion">
-                            <li>
-                                <a href="dragndrop_dragula.html"> Inscribir Nuevo Alumno</a>
-                            </li>
-
-                         
-                        </ul>
-                    </li>
-
 
                     <li class="menu single-menu">
                         <a href="#more" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">

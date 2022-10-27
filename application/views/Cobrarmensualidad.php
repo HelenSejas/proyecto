@@ -6,12 +6,13 @@
 
 
     <nav class="nav navbar-dark bg-dark ">
-    <?php echo form_open_multipart('usuarios/indexInicio'); ?>
+    <?php echo form_open_multipart('usuarios/indexMensualidad'); ?>
            <button type="submit" class="btn btn-outline-warning">Atras</button>
            <?php echo form_close(); ?>
-          <?php echo form_open_multipart('estudiante/index'); ?>
+          <?php echo form_open_multipart('usuarios/indexInicio'); ?>
            <button type="submit" class="btn btn-outline-warning">Inicio</button>
            <?php echo form_close(); ?>
+           
 </nav>
 
     <div class="helpdesk container" >

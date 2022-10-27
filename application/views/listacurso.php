@@ -15,15 +15,7 @@
            <button type="submit" class="btn btn-outline-warning">Atras</button>
            <?php echo form_close(); ?>
 
-</div></li><li class="menu single-menu">
-                            <div class="mx-2">
-                                
-                                 <?php echo form_open_multipart('inicio/index'); ?>
-           <button type="submit" class="btn btn-outline-warning">Inicio</button>
-           <?php echo form_close(); ?>
-                            </div></li>
-                            
-
+</div></li>
                     <li class="menu single-menu active">
                         <a href="#app" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">
                             <div class="">
@@ -33,15 +25,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </a>
                         <ul class="collapse submenu list-unstyled" id="app" data-parent="#topAccordion">
-                            <li>
-                                 <?php echo form_open_multipart('usuarios/indexInicio'); ?>
-                                 <button type="submit" class="btn btn-outline-warning">Mesualidades</button>
-                                 <?php echo form_close(); ?>
-                            </li>
-                            <li>
-                                   <?php echo form_open_multipart('usuarios/indexSesion'); ?>
-                                 <button type="submit" class="btn btn-outline-warning">Pago por sesion</button>
-                                 <?php echo form_close(); ?>
+                            <li><a href="<?php echo base_url(); ?>index.php/usuarios/indexMensualidad">Mensualidad</a>
                             </li>
                         </ul>
                     </li>
@@ -55,9 +39,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </a>
                         <ul class="collapse submenu list-unstyled" id="components" data-parent="#topAccordion">
-                            <li>  <?php echo form_open_multipart('curso/indexEquipo'); ?>
-                        <button type="submit" class="btn btn-outline-warning">ver Equipo</button>
-                        <?php echo form_close(); ?></li>
+                            <li>  <a href="<?php echo base_url(); ?>index.php/equipo/indexEquipo">Ver Equipos</a></li>
                         </ul>
                     </li>
 
@@ -73,6 +55,7 @@
                             <li>
                                 <a href="ui_alerts.html">Ver precios</a>
                             </li>
+                            <li><a href="<?php echo base_url(); ?>index.php/curso/indexUniforme">Ver Uniformes</a></li>
                         </ul>
                     </li>
 
@@ -86,9 +69,7 @@
                         </a>
                         <ul class="collapse submenu list-unstyled" id="tables"  data-parent="#topAccordion">
                             <li>
-                          <?php echo form_open_multipart('estudiante/index'); ?>
-                        <button type="submit" class="btn btn-outline-warning">Ver Estudiantes</button>
-                        <?php echo form_close(); ?>
+                           <a href="<?php echo base_url(); ?>index.php/estudiante/indexEstudiante">Ver Estudiantes</a>
                             </li>
                         </ul>
                     </li>
@@ -103,13 +84,29 @@
                         </a>
                         <ul class="collapse submenu list-unstyled" id="page"  data-parent="#topAccordion">
                             <li>
-                               <?php echo form_open_multipart('entrenador/index'); ?>
-                        <button type="submit" class="btn btn-outline-warning">ver</button>
-                        <?php echo form_close(); ?>
+                                <a href="<?php echo base_url(); ?>index.php/entrenador/index">ver</a>
                             </li>
-                            
+                           
                         </ul>
                     </li>
+
+                    <li class="menu single-menu">
+                        <a href="#more" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                            <div class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                                <span>Inscribir</span>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </a>
+                        <ul class="collapse submenu list-unstyled" id="more" data-parent="#topAccordion">
+                            <li>
+                                <a href="<?php echo base_url(); ?>index.php/estudiante/inscribir">Inscribir Alumno</a>
+                            </li>
+
+                         
+                        </ul>
+                    </li>
+
 
                     <li class="menu single-menu">
                         <a href="#more" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
@@ -125,9 +122,6 @@
                         <?php echo form_close(); ?>
                             </li>
 
-                         
-                        </ul>
-                    </li>
                 </ul>
             </nav>
 </nav>
@@ -187,15 +181,7 @@ foreach ($curso->result() as $row) {
           </div>
              <button class="mr-2 btn btn-info">Eliminar</button> 
         <?php echo form_close(); ?>
-
-        <?php echo form_open_multipart('curso/lista'); ?>
-          <input type="hidden" name="idCurso" value="<?php echo $row->idCurso;?>">
-          <?php echo form_close(); ?>
   <div class="d-grid gap-2 my-2">
-     <?php echo form_open_multipart('curso/inactivos'); ?>
-             <button class="mr-2 btn btn-warning">Ver lista</button>
-         
-        <?php echo form_close(); ?>
          <?php echo form_open_multipart('curso/listaestudiante'); ?>
           <input type="hidden" name="idCurso" value="<?php echo $row->idCurso;?>">
             <button class="btn btn-primary">crear pdf lista</button>

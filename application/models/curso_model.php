@@ -93,7 +93,9 @@ class curso_model extends CI_Model {
 	{
 		$this->db->select('*');
 		$this->db->from('equipo');
-		$this->db->where('estado',1);
+		$this->db->join('categoria','categoria.idCategoria=equipo.idCategoria');
+	
+	
 		return $this->db->get();
 	}
 	public function agregarequipo ($data)

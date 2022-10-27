@@ -12,7 +12,7 @@
             <a href="javascript:void(0);" class="sidebarCollapse" data-placement="bottom"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></a>
 
             <div class="nav-logo align-self-center">
-                <a class="navbar-brand" href="index.html"><img alt="logo" src="<?php echo base_url(); ?>assets/img/logo.jpg" > <span class="navbar-brand-name">VICTOR MURIEL</span></a>
+                <a class="navbar-brand" href="index.html"><img alt="logo" src="<?php echo base_url(); ?>assets/img/logo.png" > <span class="navbar-brand-name">VICTOR MURIEL</span></a>
             </div>
 
             <ul class="navbar-item flex-row nav-dropdowns">
@@ -40,6 +40,7 @@
 <li class="menu single-menu"> <?php echo form_open_multipart('estudiante/indexEstudiante'); ?>
            <button type="submit" class="btn btn-outline-warning">Atras</button>
            <?php echo form_close(); ?></li>
+           
                     <li class="menu single-menu">
                         <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle autodroprown">
                             <div class="">
@@ -209,8 +210,8 @@ $indice=1;
 foreach ($entrenador->result() as $row) {
 ?>
                                             <div class="pricing__item"  style="background:url(<?php echo base_url(); ?>assets/img/fondonegro.jfif);"> 
-                                                <h3 class="pricing__title">Nombres: <?php echo $row->nombres;?></h3>
-                                                <p class="pricing__sentence">Apellidos: <?php echo $row->primerApellido;?>  <?php echo $row->segundoApellido;?></p>
+                                                <h3 class="pricing__title">Nombres: <?php echo $row->nombresE;?></h3>
+                                                <p class="pricing__sentence">Apellidos: <?php echo $row->primerApellidoE;?>  <?php echo $row->segundoApellidoE;?></p>
                                          <img class="card-img" src="<?php echo base_url(); ?>assets/img/usuario.png" width="80"> 
                                     <ul class="pricing__feature-list text-center">
                                                    

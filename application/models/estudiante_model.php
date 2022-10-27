@@ -81,6 +81,8 @@ class estudiante_model extends CI_Model {
 		public function mensualidad($data)
 	{
 			$this->db->insert('mensualidad',$data);
+
 	}
+	
 }
 ?>
